@@ -37,6 +37,10 @@ export const Navbar = () => {
     setIsVisible(false);
   }, [location]);
 
+  useEffect(() => {
+    return () => clearAll();
+  }, []);
+
   const clearAll = () => {
     if (closeTimer.current) clearTimeout(closeTimer.current);
     if (openTimer.current) clearTimeout(openTimer.current);
@@ -45,15 +49,15 @@ export const Navbar = () => {
   const openDropdown = useCallback((name: DropdownKey) => {
     clearAll();
     setActiveDropdown(name);
-    openTimer.current = setTimeout(() => setIsVisible(true), 10);
+    setIsVisible(true);
   }, []);
 
   const scheduleClose = useCallback(() => {
     clearAll();
     closeTimer.current = setTimeout(() => {
       setIsVisible(false);
-      setTimeout(() => setActiveDropdown(null), 220);
-    }, 120);
+      setTimeout(() => setActiveDropdown(null), 200);
+    }, 160);
   }, []);
 
   const cancelClose = useCallback(() => {
@@ -64,18 +68,35 @@ export const Navbar = () => {
 
   return (
     <>
-      <div className={`fixed py-2 top-0 inset-x-0 z-50 transition-all duration-300 ease-out ${isMenuOpen ? "bg-[#0a0e1a] shadow-[0_8px_40px_rgba(0,0,0,0.6)]" : scrolled ? "bg-[#0a0e1a]/95 backdrop-blur-xl shadow-[0_1px_40px_rgba(0,0,0,0.45)] border-b border-white/[0.06]" : "bg-transparent"}`}>
-        <div className={`transition-all duration-300 ease-out max-w-screen-xl mx-auto px-4 md:px-8`}>
-          <div className={`flex items-center justify-between transition-all duration-300 ease-out ${shrink ? "h-14" : "h-16"} `}>
+      <div className="fixed top-0 inset-x-0 z-50">
+        <div className="max-w-screen-xl mx-auto ">
+          <div
+            className={`flex items-center justify-between h-16 border px-3 md:px-4 transition-all duration-300 ease-out ${
+              shrink
+                ? "rounded-b-2xl border-white/[0.10] bg-[#0a0e1a] shadow-[0_14px_45px_rgba(0,0,0,0.45)]"
+                : "rounded-none border-transparent bg-[#0a0e1a] shadow-none"
+            }`}
+          >
             <NavbarLogo />
 
-            <div className="hidden md:flex items-center gap-0.5">
+            <div className="hidden md:flex items-center gap-0.5" onMouseEnter={cancelClose} onMouseLeave={scheduleClose}>
               {(["product", "industries", "resources"] as DropdownKey[]).map((key) => {
                 const label = key === "product" ? t("nav.product") : key === "industries" ? t("nav.industries") : t("nav.resources");
                 const isActive = activeDropdown === key;
                 return (
-                  <div key={key} className="relative" onMouseEnter={() => openDropdown(key)} onMouseLeave={scheduleClose}>
-                    <button className={`flex items-center gap-1.5 px-3.5 py-2 rounded-lg text-sm font-medium transition-all duration-200 select-none ${isActive ? "text-white bg-white/[0.08]" : "text-slate-300 hover:text-white hover:bg-white/[0.05]"}`}>
+                  <div key={key} className="relative">
+                    <button
+                      onMouseEnter={() => openDropdown(key)}
+                      onFocus={() => openDropdown(key)}
+                      onClick={() => {
+                        if (activeDropdown === key && isVisible) {
+                          scheduleClose();
+                          return;
+                        }
+                        openDropdown(key);
+                      }}
+                      className={`flex items-center gap-1.5 px-3.5 py-2 rounded-lg text-sm font-medium transition-all duration-200 select-none ${isActive ? "text-white bg-white/[0.08]" : "text-slate-300 hover:text-white hover:bg-white/[0.05]"}`}
+                    >
                       {label}
                       <svg className={`w-3.5 h-3.5 transition-transform duration-200 ${isActive ? "rotate-180 text-brand-400" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                         <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
@@ -83,7 +104,7 @@ export const Navbar = () => {
                     </button>
 
                     {isActive && (
-                      <div className="absolute left-0 right-0 h-4 bottom-0 translate-y-full" onMouseEnter={cancelClose} onMouseLeave={scheduleClose} />
+                      <div className="absolute left-0 right-0 h-6 bottom-0 translate-y-full" onMouseEnter={cancelClose} onMouseLeave={scheduleClose} />
                     )}
                   </div>
                 );
@@ -115,9 +136,7 @@ export const Navbar = () => {
                   </select>
                 </div>
               )}
-              <button className="px-3.5 py-1.5 text-sm font-medium text-slate-300 hover:text-white transition-colors duration-200 rounded-lg hover:bg-white/[0.05]">
-                {t("nav.login")}
-              </button>
+       
               <Link to="/talk-to-sales" className="flex items-center gap-2 px-3.5 py-1.5 text-sm font-medium text-slate-300 border border-white/10 rounded-lg hover:bg-white/[0.05] hover:text-white hover:border-white/20 transition-all duration-200">
                 <Phone className="w-3.5 h-3.5" />
                 {t("nav.talkToSales")}
@@ -134,9 +153,14 @@ export const Navbar = () => {
         </div>
 
         {activeDropdown && (
-          <div className={`w-full border-t border-white/[0.07] transition-all duration-220 ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-2 pointer-events-none"}`} style={{transitionProperty: "opacity, transform", transitionDuration: isVisible ? "200ms" : "180ms", transitionTimingFunction: isVisible ? "cubic-bezier(0.16,1,0.3,1)" : "cubic-bezier(0.4,0,1,1)"}} onMouseEnter={cancelClose} onMouseLeave={scheduleClose}>
-            <div className={`transition-all duration-220 ease-out overflow-hidden ${isVisible ? "max-h-[640px]" : "max-h-0"}`} style={{transitionProperty: "max-height", transitionDuration: isVisible ? "240ms" : "200ms", transitionTimingFunction: isVisible ? "cubic-bezier(0.16,1,0.3,1)" : "cubic-bezier(0.4,0,1,1)"}}>
-              <div className={`transition-all duration-300 ease-out ${shrink ? "max-w-[1160px]" : "max-w-screen-xl"} mx-auto`}>
+          <div className="max-w-screen-xl mx-auto px-4 md:px-8 mt-1">
+            <div
+              className={`rounded-2xl border border-white/[0.10] bg-[#0a0e1a] shadow-[0_18px_45px_rgba(0,0,0,0.45)] transition-all duration-220 ease-out overflow-hidden ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-2 pointer-events-none"}`}
+              style={{ transitionProperty: "opacity, transform", transitionDuration: isVisible ? "200ms" : "180ms", transitionTimingFunction: isVisible ? "cubic-bezier(0.16,1,0.3,1)" : "cubic-bezier(0.4,0,1,1)" }}
+              onMouseEnter={cancelClose}
+              onMouseLeave={scheduleClose}
+            >
+              <div className={`transition-all duration-220 ease-out ${isVisible ? "max-h-[640px]" : "max-h-0"}`} style={{ transitionProperty: "max-height", transitionDuration: isVisible ? "240ms" : "200ms", transitionTimingFunction: isVisible ? "cubic-bezier(0.16,1,0.3,1)" : "cubic-bezier(0.4,0,1,1)" }}>
                 {activeDropdown === "product" && <ProductDropdown onClose={() => { setIsVisible(false); setTimeout(() => setActiveDropdown(null), 220); }} />}
                 {activeDropdown === "industries" && <IndustriesDropdown onClose={() => { setIsVisible(false); setTimeout(() => setActiveDropdown(null), 220); }} />}
                 {activeDropdown === "resources" && <ResourcesDropdown onClose={() => { setIsVisible(false); setTimeout(() => setActiveDropdown(null), 220); }} />}

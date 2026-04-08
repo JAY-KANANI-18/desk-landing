@@ -8,12 +8,12 @@ import {
 import { useI18n } from "@/hooks/useI18n";
 
 const platformChannels = [
-  { src: "https://cdn.simpleicons.org/whatsapp/25D366", alt: "WhatsApp" },
-  { src: "https://cdn.simpleicons.org/instagram/E4405F", alt: "Instagram" },
-  { src: "https://cdn.simpleicons.org/messenger/0084FF", alt: "Messenger" },
-  { src: "https://cdn.simpleicons.org/gmail/EA4335", alt: "Email" },
-  { src: "https://cdn.simpleicons.org/telegram/26A5E4", alt: "Telegram" },
-  { src: "https://cdn.simpleicons.org/line/06C755", alt: "Line" },
+  { src: "https://cdn.simpleicons.org/whatsapp", alt: "WhatsApp" },
+  { src: "https://cdn.simpleicons.org/instagram", alt: "Instagram" },
+  { src: "https://cdn.simpleicons.org/messenger", alt: "Messenger" },
+  { src: "https://cdn.simpleicons.org/gmail", alt: "Email" },
+  { src: "https://cdn.simpleicons.org/telegram", alt: "Telegram" },
+  { src: "https://cdn.simpleicons.org/googlechat", alt: "WebsiteChat" },
 ];
 
 const sections = [
@@ -88,19 +88,7 @@ export const ProductDropdown = ({ onClose, fullWidth }: Props) => {
     <div className="w-full bg-[#0a0e1a]">
       <div className="max-w-screen-xl mx-auto px-4 md:px-8">
         {/* Top strip */}
-        <div className="flex items-center justify-between py-3 border-b border-white/[0.05]">
-          <div className="flex items-center gap-3">
-            <Sparkles className="w-3.5 h-3.5 text-brand-400" />
-            <span className="text-[10px] font-black uppercase tracking-widest text-slate-400">{t("dropdown.product.platformOverview")}</span>
-            <div className="flex items-center gap-1.5 ml-3">
-              <div className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
-              <span className="text-[10px] text-green-400 font-medium">{t("footer.systemStatus")}</span>
-            </div>
-          </div>
-          <Link to="/features" onClick={onClose} className="flex items-center gap-1 text-xs text-brand-400 hover:text-brand-300 font-semibold transition-colors group">
-            {t("dropdown.product.viewFullPlatform")} <ChevronRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
-          </Link>
-        </div>
+   
 
         {/* Main grid */}
         <div className="flex py-4 gap-0">
@@ -132,10 +120,10 @@ export const ProductDropdown = ({ onClose, fullWidth }: Props) => {
             {/* Channel pills */}
             <div className="mt-4 pt-3 border-t border-white/[0.05] px-1">
               <p className="text-[9px] font-black uppercase tracking-widest text-slate-600 mb-2">{t("dropdown.product.channels")}</p>
-              <div className="flex flex-wrap gap-1.5">
+              <div className="flex flex-wrap gap-2">
                 {platformChannels.map((ch) => (
-                  <div key={ch.alt} title={ch.alt} className="w-6 h-6 rounded-full bg-white/[0.05] border border-white/10 flex items-center justify-center hover:scale-110 transition-transform cursor-default">
-                    <img src={ch.src} alt={ch.alt} className="w-3.5 h-3.5 object-contain" />
+                  <div key={ch.alt} title={ch.alt} className="w-8 h-8  flex items-center justify-center hover:scale-110 transition-transform cursor-default">
+                    <img src={ch.src} alt={ch.alt} className="w-6 h-6 object-contain" />
                   </div>
                 ))}
                 <div className="w-6 h-6 rounded-full bg-white/[0.07] border border-white/10 flex items-center justify-center text-[8px] text-slate-400 font-bold">+5</div>
@@ -172,7 +160,7 @@ export const ProductDropdown = ({ onClose, fullWidth }: Props) => {
           </div>
 
           {/* Right: CTA panel */}
-          <div className="w-52 shrink-0 pl-4 border-l border-white/[0.05] flex flex-col gap-3">
+          {/* <div className="w-52 shrink-0 pl-4 border-l border-white/[0.05] flex flex-col gap-3">
             <div className={`flex-1 p-4 rounded-xl border ${ac.border} ${ac.bg} flex flex-col gap-2`}>
               <div className={`flex items-center gap-2 ${ac.text} mb-1`}>
                 {activeSection.icon}
@@ -198,20 +186,11 @@ export const ProductDropdown = ({ onClose, fullWidth }: Props) => {
                 {t("dropdown.product.getStarted")} <ArrowRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
               </Link>
             </div>
-          </div>
+          </div> */}
         </div>
 
         {/* Footer */}
-        <div className="flex items-center gap-6 py-3 border-t border-white/[0.05]">
-          <Link to="/features" onClick={onClose} className="text-xs text-slate-500 hover:text-white transition-colors font-medium">{t("dropdown.product.features")}</Link>
-          <Link to="/pricing" onClick={onClose} className="text-xs text-slate-500 hover:text-white transition-colors font-medium">{t("nav.pricing")}</Link>
-          <Link to="/why-us" onClick={onClose} className="text-xs text-slate-500 hover:text-white transition-colors font-medium">{t("nav.whyUs")}</Link>
-          <div className="ml-auto">
-            <Link to="/" onClick={onClose} className="flex items-center gap-2 px-4 py-1.5 bg-brand-600 hover:bg-brand-500 text-white text-xs font-bold rounded-lg transition-all">
-              {t("nav.startFreeTrial")} <ArrowRight className="w-3 h-3" />
-            </Link>
-          </div>
-        </div>
+  
       </div>
     </div>
   );

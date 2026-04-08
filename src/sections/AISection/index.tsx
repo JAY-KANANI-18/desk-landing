@@ -336,36 +336,9 @@ const JourneyVisual: React.FC<{ type: string; color: string; glow: string }> = (
 
 /* ─── Main Section ────────────────────────────────────── */
 export const AISection: React.FC = () => {
-  const [activeStage, setActiveStage] = useState(0);
-  const [activeCap, setActiveCap] = useState(0);
   const [capKey, setCapKey] = useState(0);
   const sectionRef = useRef<HTMLDivElement>(null);
-  const inView = useInView(sectionRef, { threshold: 0.1 });
-
-  /* auto-carousel for journey stages */
-  useEffect(() => {
-    const t = setInterval(() => setActiveStage((p) => (p + 1) % stages.length), 4500);
-    return () => clearInterval(t);
-  }, []);
-
-  /* reset chat animation when cap changes */
-  const handleCapChange = (i: number) => {
-    setActiveCap(i);
-    setCapKey((p) => p + 1);
-  };
-  useEffect(() => {
-    const t = setInterval(() => {
-      setActiveCap((p) => {
-        const next = (p + 1) % aiCaps.length;
-        setCapKey((k) => k + 1);
-        return next;
-      });
-    }, 6000);
-    return () => clearInterval(t);
-  }, []);
-
-  const stage = stages[activeStage];
-  const cap = aiCaps[activeCap];
+  useInView(sectionRef, { threshold: 0.1 });
 
   return (
     <section ref={sectionRef} className="relative py-28 overflow-hidden" style={{ background: "linear-gradient(180deg,#080c14 0%,#0a0e1a 60%,#080c14 100%)" }}>
@@ -397,73 +370,39 @@ export const AISection: React.FC = () => {
 
         {/* ── JOURNEY STAGES (Capture / Convert / Retain) ── */}
         <AnimatedSection animation="up" delay={100} className="mb-28">
-          {/* Tab switcher */}
-          <div className="flex justify-center mb-10">
-            <div className="inline-flex gap-1 p-1.5 rounded-2xl bg-white/5 border border-white/10">
-              {stages.map((s, i) => (
-                <button
-                  key={s.id}
-                  onClick={() => setActiveStage(i)}
-                  className="relative px-6 py-2.5 rounded-xl text-sm font-semibold transition-all duration-300"
-                  style={
-                    i === activeStage
-                      ? { background: s.color, color: "#fff", boxShadow: `0 0 20px ${s.glow}` }
-                      : { color: "rgba(255,255,255,0.4)" }
-                  }
-                >
-                  <span className="mr-1.5">{s.emoji}</span>
-                  {s.label}
-                </button>
-              ))}
-            </div>
-          </div>
-
-          {/* Stage content */}
-          <div className="grid lg:grid-cols-2 gap-10 items-center">
-            <div key={stage.id} className="animate-[fadeSlideUp_0.5s_ease_forwards]">
-              <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest px-3 py-1.5 rounded-full mb-5" style={{ background: `${stage.color}18`, color: stage.color, border: `1px solid ${stage.color}40` }}>
-                <stage.icon size={12} />
-                {stage.label}
-              </div>
-              <h3 className="text-3xl font-bold text-white mb-3">{stage.tagline}</h3>
-              <p className="text-white/55 leading-relaxed mb-6">{stage.desc}</p>
-              <ul className="space-y-3 mb-8">
-                {stage.bullets.map((b, i) => (
-                  <li key={i} className="flex items-center gap-3 text-sm text-white/70">
-                    <CheckCircle2 size={15} style={{ color: stage.color, flexShrink: 0 }} />
-                    {b}
-                  </li>
-                ))}
-              </ul>
-              <div className="inline-flex items-center gap-3 px-4 py-3 rounded-2xl border" style={{ background: `${stage.color}10`, borderColor: `${stage.color}30` }}>
+          <div className="space-y-12">
+            {stages.map((stage) => (
+              <div key={stage.id} className="grid lg:grid-cols-2 gap-10 items-center">
                 <div>
-                  <div className="text-3xl font-black" style={{ color: stage.color }}>{stage.statNum}</div>
-                  <div className="text-xs text-white/50">{stage.statLabel}</div>
+                  <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest px-3 py-1.5 rounded-full mb-5" style={{ background: `${stage.color}18`, color: stage.color, border: `1px solid ${stage.color}40` }}>
+                    <stage.icon size={12} />
+                    {stage.label}
+                  </div>
+                  <h3 className="text-3xl font-bold text-white mb-3">{stage.tagline}</h3>
+                  <p className="text-white/55 leading-relaxed mb-6">{stage.desc}</p>
+                  <ul className="space-y-3 mb-8">
+                    {stage.bullets.map((b, i) => (
+                      <li key={i} className="flex items-center gap-3 text-sm text-white/70">
+                        <CheckCircle2 size={15} style={{ color: stage.color, flexShrink: 0 }} />
+                        {b}
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="inline-flex items-center gap-3 px-4 py-3 rounded-2xl border" style={{ background: `${stage.color}10`, borderColor: `${stage.color}30` }}>
+                    <div>
+                      <div className="text-3xl font-black" style={{ color: stage.color }}>{stage.statNum}</div>
+                      <div className="text-xs text-white/50">{stage.statLabel}</div>
+                    </div>
+                    <div className="w-px h-10 bg-white/10" />
+                    <button className="flex items-center gap-2 text-sm font-semibold text-white/70 hover:text-white transition-colors">
+                      Learn more <ArrowRight size={14} />
+                    </button>
+                  </div>
                 </div>
-                <div className="w-px h-10 bg-white/10" />
-                <button className="flex items-center gap-2 text-sm font-semibold text-white/70 hover:text-white transition-colors">
-                  Learn more <ArrowRight size={14} />
-                </button>
+                <div>
+                  <JourneyVisual type={stage.visual} color={stage.color} glow={stage.glow} />
+                </div>
               </div>
-            </div>
-            <div key={stage.id + "-visual"} className="animate-[fadeSlideUp_0.5s_ease_forwards]">
-              <JourneyVisual type={stage.visual} color={stage.color} glow={stage.glow} />
-            </div>
-          </div>
-
-          {/* Progress dots */}
-          <div className="flex justify-center gap-2 mt-8">
-            {stages.map((s, i) => (
-              <button
-                key={i}
-                onClick={() => setActiveStage(i)}
-                className="rounded-full transition-all duration-300"
-                style={
-                  i === activeStage
-                    ? { width: 28, height: 8, background: s.color }
-                    : { width: 8, height: 8, background: "rgba(255,255,255,0.2)" }
-                }
-              />
             ))}
           </div>
         </AnimatedSection>
@@ -484,71 +423,38 @@ export const AISection: React.FC = () => {
             </p>
           </div>
 
-          {/* Cap selector */}
-          <div className="flex justify-center mb-10">
-            <div className="inline-flex gap-1 p-1.5 rounded-2xl bg-white/5 border border-white/10">
-              {aiCaps.map((c, i) => (
-                <button
-                  key={c.id}
-                  onClick={() => handleCapChange(i)}
-                  className="flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold transition-all duration-300"
-                  style={
-                    i === activeCap
-                      ? { background: c.color, color: "#fff", boxShadow: `0 0 20px ${c.glow}` }
-                      : { color: "rgba(255,255,255,0.4)" }
-                  }
-                >
-                  <c.icon size={14} />
-                  {c.label}
-                </button>
-              ))}
-            </div>
-          </div>
-
           {/* Cap content */}
-          <div key={capKey} className="grid lg:grid-cols-2 gap-10 items-center animate-[fadeSlideUp_0.5s_ease_forwards]">
-            {/* Left — info */}
-            <div>
-              <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-5" style={{ background: `${cap.color}18`, color: cap.color, border: `1px solid ${cap.color}40` }}>
-                <cap.icon size={12} />
-                {cap.badge}
-              </div>
-              <h4 className="text-2xl md:text-3xl font-bold text-white mb-3">{cap.headline}</h4>
-              <p className="text-white/55 leading-relaxed mb-7">{cap.sub}</p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {cap.highlights.map((h, i) => (
-                  <div key={i} className="flex items-start gap-3 p-3 rounded-xl bg-white/5 border border-white/10 hover:border-white/20 transition-colors">
-                    <div className="w-7 h-7 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5" style={{ background: `${cap.color}22`, border: `1px solid ${cap.color}40` }}>
-                      <h.icon size={13} style={{ color: cap.color }} />
-                    </div>
-                    <span className="text-sm text-white/65 leading-snug">{h.text}</span>
+          <div className="space-y-14">
+            {aiCaps.map((cap, capIndex) => (
+              <div key={cap.id} className="grid lg:grid-cols-2 gap-10 items-center">
+                {/* Left — info */}
+                <div>
+                  <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-5" style={{ background: `${cap.color}18`, color: cap.color, border: `1px solid ${cap.color}40` }}>
+                    <cap.icon size={12} />
+                    {cap.badge}
                   </div>
-                ))}
+                  <h4 className="text-2xl md:text-3xl font-bold text-white mb-3">{cap.headline}</h4>
+                  <p className="text-white/55 leading-relaxed mb-7">{cap.sub}</p>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    {cap.highlights.map((h, i) => (
+                      <div key={i} className="flex items-start gap-3 p-3 rounded-xl bg-white/5 border border-white/10 hover:border-white/20 transition-colors">
+                        <div className="w-7 h-7 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5" style={{ background: `${cap.color}22`, border: `1px solid ${cap.color}40` }}>
+                          <h.icon size={13} style={{ color: cap.color }} />
+                        </div>
+                        <span className="text-sm text-white/65 leading-snug">{h.text}</span>
+                      </div>
+                    ))}
+                  </div>
+                  <button className="mt-7 flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold text-white transition-all duration-200 hover:scale-105" style={{ background: cap.color, boxShadow: `0 0 20px ${cap.glow}` }}>
+                    Explore {cap.label} <ArrowRight size={14} />
+                  </button>
+                </div>
+                {/* Right — chat preview */}
+                <div>
+                  <div className="text-xs text-white/30 uppercase tracking-widest mb-3 text-center">Live Preview — {cap.label}</div>
+                  <ChatMock key={`${cap.id}-${capIndex}-${capKey}`} messages={cap.mockMessages} color={cap.color} glow={cap.glow} />
+                </div>
               </div>
-              <button className="mt-7 flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold text-white transition-all duration-200 hover:scale-105" style={{ background: cap.color, boxShadow: `0 0 20px ${cap.glow}` }}>
-                Explore {cap.label} <ArrowRight size={14} />
-              </button>
-            </div>
-            {/* Right — chat preview */}
-            <div>
-              <div className="text-xs text-white/30 uppercase tracking-widest mb-3 text-center">Live Preview — {cap.label}</div>
-              <ChatMock key={capKey} messages={cap.mockMessages} color={cap.color} glow={cap.glow} />
-            </div>
-          </div>
-
-          {/* Progress dots */}
-          <div className="flex justify-center gap-2 mt-10">
-            {aiCaps.map((c, i) => (
-              <button
-                key={i}
-                onClick={() => handleCapChange(i)}
-                className="rounded-full transition-all duration-300"
-                style={
-                  i === activeCap
-                    ? { width: 28, height: 8, background: c.color }
-                    : { width: 8, height: 8, background: "rgba(255,255,255,0.2)" }
-                }
-              />
             ))}
           </div>
         </AnimatedSection>
