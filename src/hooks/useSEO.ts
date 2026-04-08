@@ -150,7 +150,7 @@ export const ORG_SCHEMA = {
   "@id": `${SITE_URL}/#organization`,
   "name": "OmniChat",
   "url": SITE_URL,
-  "logo": `${SITE_URL}/logo.png`,
+  "logo": `${SITE_URL}/img/logo/axodesk-new-logo-dark.png`,
   "foundingDate": "2022",
   "description": "OmniChat is the leading omnichannel customer messaging platform — unifying WhatsApp, Instagram, Messenger, Email and Live Chat with AI automation.",
   "sameAs": [
@@ -175,8 +175,8 @@ export const SOFTWARE_APP_SCHEMA = {
   "operatingSystem": "Web, iOS, Android",
   "url": SITE_URL,
   "offers": [
-    { "@type": "Offer", "name": "Starter",  "price": "29",  "priceCurrency": "USD", "priceValidUntil": "2027-12-31" },
-    { "@type": "Offer", "name": "Growth",   "price": "79",  "priceCurrency": "USD", "priceValidUntil": "2027-12-31" },
+    { "@type": "Offer", "name": "Starter", "price": "29", "priceCurrency": "USD", "priceValidUntil": "2027-12-31" },
+    { "@type": "Offer", "name": "Growth", "price": "79", "priceCurrency": "USD", "priceValidUntil": "2027-12-31" },
     { "@type": "Offer", "name": "Business", "price": "149", "priceCurrency": "USD", "priceValidUntil": "2027-12-31" },
   ],
   "aggregateRating": {
@@ -241,7 +241,7 @@ export function buildArticleSchema(post: {
     "publisher": {
       "@type": "Organization",
       "name": "OmniChat",
-      "logo": { "@type": "ImageObject", "url": `${SITE_URL}/logo.png` },
+      "logo": { "@type": "ImageObject", "url": `${SITE_URL}/img/logo/axodesk-new-logo-dark.png` },
     },
     "mainEntityOfPage": { "@type": "WebPage", "@id": `${SITE_URL}/blog/${post.slug}` },
   };

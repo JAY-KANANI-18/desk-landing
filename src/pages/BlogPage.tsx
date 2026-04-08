@@ -224,7 +224,7 @@ function BlogListPage() {
       "publisher": {
         "@type": "Organization",
         "name": "OmniChat",
-        "logo": { "@type": "ImageObject", "url": "https://omnichat.io/logo.png" }
+        "logo": { "@type": "ImageObject", "url": "https://omnichat.io/img/logo/axodesk-new-logo-dark.png" }
       }
     },
   });

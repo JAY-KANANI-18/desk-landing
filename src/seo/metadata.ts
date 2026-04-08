@@ -1,6 +1,7 @@
 import type { ParsedUrlQuery } from "querystring";
 import { HELP_CATEGORIES, getArticleBySlug, getCategoryBySlug } from "@/data/helpCenter";
 import { getPostBySlug } from "@/data/blog";
+import type { SupportedLocale } from "@/i18n/messages";
 
 export type SeoMeta = {
   title: string;
@@ -19,9 +20,18 @@ function absolute(path: string) {
   return `${SITE_URL}${path}`;
 }
 
-export function getSeoMeta(pathname: string, query: ParsedUrlQuery): SeoMeta {
+export function getSeoMeta(pathname: string, query: ParsedUrlQuery, locale: SupportedLocale = "en"): SeoMeta {
+  const localizedSiteName: Record<SupportedLocale, string> = {
+    en: "OmniChat",
+    es: "OmniChat",
+    ar: "OmniChat",
+    fr: "OmniChat",
+    pt: "OmniChat",
+    de: "OmniChat",
+    it: "OmniChat",
+  };
   const base: SeoMeta = {
-    title: "OmniChat — Omnichannel Customer Communication Platform",
+    title: `${localizedSiteName[locale]} — Omnichannel Customer Communication Platform`,
     description:
       "OmniChat unifies WhatsApp, Instagram, Messenger, Email, and Live Chat in one inbox with AI automation.",
     canonical: absolute(pathname === "/" ? "/" : pathname),

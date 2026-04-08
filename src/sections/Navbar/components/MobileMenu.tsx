@@ -9,6 +9,7 @@ import {
   Clock, RefreshCw, Code2, Video, Rss, Calculator, Link2, Award,
   QrCode, LayoutGrid, Cpu, Shirt, Sofa, Watch
 } from "lucide-react";
+import { useI18n } from "@/hooks/useI18n";
 
 type Props = { onClose: () => void };
 
@@ -108,6 +109,7 @@ const resourcesSections = [
 type SlideView = "main" | "product" | "industries" | "resources";
 
 export const MobileMenu = ({ onClose }: Props) => {
+  const { t } = useI18n();
   const [view, setView] = useState<SlideView>("main");
   const [animating, setAnimating] = useState(false);
 
@@ -134,15 +136,15 @@ export const MobileMenu = ({ onClose }: Props) => {
             className="flex items-center gap-2 text-slate-300 hover:text-white transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
-            <span className="text-sm font-medium">Back</span>
+            <span className="text-sm font-medium">{t("mobile.back")}</span>
           </button>
         ) : (
-          <span className="text-white font-bold text-lg tracking-tight">OmniChat</span>
+          <img src="/img/logo/axodesk-new-logo-dark.png" alt="OmniChat" className="h-8 w-auto object-contain" />
         )}
 
         {view !== "main" && (
           <span className="text-sm font-semibold text-white absolute left-1/2 -translate-x-1/2">
-            {view === "product" ? "Product" : view === "industries" ? "Industries" : "Resources"}
+            {view === "product" ? t("nav.product") : view === "industries" ? t("nav.industries") : t("nav.resources")}
           </span>
         )}
 
@@ -168,8 +170,8 @@ export const MobileMenu = ({ onClose }: Props) => {
                   <Sparkles className="w-4 h-4 text-brand-400" />
                 </div>
                 <div className="text-left">
-                  <p className="text-sm font-semibold text-white">Product</p>
-                  <p className="text-xs text-slate-500">Inbox, AI, Automation & more</p>
+                  <p className="text-sm font-semibold text-white">{t("mobile.product")}</p>
+                  <p className="text-xs text-slate-500">{t("mobile.productDesc")}</p>
                 </div>
               </div>
               <ChevronRight className="w-4 h-4 text-slate-500" />
@@ -185,8 +187,8 @@ export const MobileMenu = ({ onClose }: Props) => {
                   <Briefcase className="w-4 h-4 text-purple-400" />
                 </div>
                 <div className="text-left">
-                  <p className="text-sm font-semibold text-white">Industries</p>
-                  <p className="text-xs text-slate-500">E-commerce, Healthcare & 6 more</p>
+                  <p className="text-sm font-semibold text-white">{t("mobile.industries")}</p>
+                  <p className="text-xs text-slate-500">{t("mobile.industriesDesc")}</p>
                 </div>
               </div>
               <ChevronRight className="w-4 h-4 text-slate-500" />
@@ -202,8 +204,8 @@ export const MobileMenu = ({ onClose }: Props) => {
                   <Rss className="w-4 h-4 text-orange-400" />
                 </div>
                 <div className="text-left">
-                  <p className="text-sm font-semibold text-white">Resources</p>
-                  <p className="text-xs text-slate-500">Blog, docs, tools & support</p>
+                  <p className="text-sm font-semibold text-white">{t("mobile.resources")}</p>
+                  <p className="text-xs text-slate-500">{t("mobile.resourcesDesc")}</p>
                 </div>
               </div>
               <ChevronRight className="w-4 h-4 text-slate-500" />
@@ -216,8 +218,8 @@ export const MobileMenu = ({ onClose }: Props) => {
                 <Tag className="w-4 h-4 text-slate-400" />
               </div>
               <div>
-                <p className="text-sm font-semibold text-white">Pricing</p>
-                <p className="text-xs text-slate-500">Plans starting from free</p>
+                <p className="text-sm font-semibold text-white">{t("nav.pricing")}</p>
+                <p className="text-xs text-slate-500">{t("mobile.pricingDesc")}</p>
               </div>
             </Link>
 
@@ -226,8 +228,8 @@ export const MobileMenu = ({ onClose }: Props) => {
                 <TrendingUp className="w-4 h-4 text-slate-400" />
               </div>
               <div>
-                <p className="text-sm font-semibold text-white">Why Us</p>
-                <p className="text-xs text-slate-500">OmniChat vs competitors</p>
+                <p className="text-sm font-semibold text-white">{t("nav.whyUs")}</p>
+                <p className="text-xs text-slate-500">{t("mobile.whyUsDesc")}</p>
               </div>
             </Link>
           </div>
@@ -235,14 +237,14 @@ export const MobileMenu = ({ onClose }: Props) => {
           {/* CTA buttons */}
           <div className="px-4 pt-4 pb-8 space-y-3 border-t border-white/[0.06] mt-4">
             <button className="w-full py-3 text-sm font-medium text-slate-300 border border-white/10 rounded-xl hover:bg-white/[0.06] transition-all">
-              Login
+              {t("nav.login")}
             </button>
             <Link to="/talk-to-sales" onClick={onClose} className="w-full flex items-center justify-center gap-2 py-3 text-sm font-medium text-slate-300 border border-white/10 rounded-xl hover:bg-white/[0.06] transition-all">
               <Phone className="w-4 h-4" />
-              Talk to Sales
+              {t("nav.talkToSales")}
             </Link>
             <Link to="/" onClick={onClose} className="block w-full py-3 text-sm font-semibold text-white bg-brand-600 rounded-xl hover:bg-brand-500 transition-all text-center">
-              Start Free Trial
+              {t("nav.startFreeTrial")}
             </Link>
           </div>
         </div>

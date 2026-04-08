@@ -5,6 +5,7 @@ import {
   MessageSquare, Bot, Phone, Mail, Globe, ChevronRight,
   Shield, Sparkles, ArrowRight
 } from "lucide-react";
+import { useI18n } from "@/hooks/useI18n";
 
 const platformChannels = [
   { src: "https://cdn.simpleicons.org/whatsapp/25D366", alt: "WhatsApp" },
@@ -79,6 +80,7 @@ type Section = typeof sections[0];
 type Props = { onClose: () => void; fullWidth?: boolean };
 
 export const ProductDropdown = ({ onClose, fullWidth }: Props) => {
+  const { t } = useI18n();
   const [activeSection, setActiveSection] = useState<Section>(sections[0]);
   const ac = accentClasses[activeSection.accent];
 
@@ -89,14 +91,14 @@ export const ProductDropdown = ({ onClose, fullWidth }: Props) => {
         <div className="flex items-center justify-between py-3 border-b border-white/[0.05]">
           <div className="flex items-center gap-3">
             <Sparkles className="w-3.5 h-3.5 text-brand-400" />
-            <span className="text-[10px] font-black uppercase tracking-widest text-slate-400">Platform Overview</span>
+            <span className="text-[10px] font-black uppercase tracking-widest text-slate-400">{t("dropdown.product.platformOverview")}</span>
             <div className="flex items-center gap-1.5 ml-3">
               <div className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
-              <span className="text-[10px] text-green-400 font-medium">All systems operational</span>
+              <span className="text-[10px] text-green-400 font-medium">{t("footer.systemStatus")}</span>
             </div>
           </div>
           <Link to="/features" onClick={onClose} className="flex items-center gap-1 text-xs text-brand-400 hover:text-brand-300 font-semibold transition-colors group">
-            View full platform <ChevronRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
+            {t("dropdown.product.viewFullPlatform")} <ChevronRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
           </Link>
         </div>
 
@@ -104,7 +106,7 @@ export const ProductDropdown = ({ onClose, fullWidth }: Props) => {
         <div className="flex py-4 gap-0">
           {/* Left: journey stage tabs */}
           <div className="w-48 shrink-0 pr-4 border-r border-white/[0.05]">
-            <p className="text-[9px] font-black uppercase tracking-widest text-slate-600 mb-2">Journey stages</p>
+            <p className="text-[9px] font-black uppercase tracking-widest text-slate-600 mb-2">{t("dropdown.product.journeyStages")}</p>
             {sections.map((sec) => {
               const isActive = sec.label === activeSection.label;
               const a = accentClasses[sec.accent];
@@ -129,7 +131,7 @@ export const ProductDropdown = ({ onClose, fullWidth }: Props) => {
 
             {/* Channel pills */}
             <div className="mt-4 pt-3 border-t border-white/[0.05] px-1">
-              <p className="text-[9px] font-black uppercase tracking-widest text-slate-600 mb-2">Channels</p>
+              <p className="text-[9px] font-black uppercase tracking-widest text-slate-600 mb-2">{t("dropdown.product.channels")}</p>
               <div className="flex flex-wrap gap-1.5">
                 {platformChannels.map((ch) => (
                   <div key={ch.alt} title={ch.alt} className="w-6 h-6 rounded-full bg-white/[0.05] border border-white/10 flex items-center justify-center hover:scale-110 transition-transform cursor-default">
@@ -184,16 +186,16 @@ export const ProductDropdown = ({ onClose, fullWidth }: Props) => {
               ))}
               <div className="mt-auto pt-3 border-t border-white/[0.06]">
                 <Link to="/features" onClick={onClose} className={`text-xs font-bold ${ac.text} flex items-center gap-1 hover:gap-2 transition-all`}>
-                  Explore all <ArrowRight className="w-3 h-3" />
+                  {t("dropdown.product.exploreAll")} <ArrowRight className="w-3 h-3" />
                 </Link>
               </div>
             </div>
 
             <div className="p-4 rounded-xl border border-white/[0.08] bg-gradient-to-br from-brand-600/10 to-purple-600/8">
-              <p className="text-xs font-bold text-white mb-1">14-day free trial</p>
-              <p className="text-[10px] text-slate-500 mb-3 leading-snug">No credit card required. Full platform access.</p>
+              <p className="text-xs font-bold text-white mb-1">{t("dropdown.product.trialTitle")}</p>
+              <p className="text-[10px] text-slate-500 mb-3 leading-snug">{t("dropdown.product.trialDesc")}</p>
               <Link to="/" onClick={onClose} className="flex items-center gap-1.5 text-xs font-bold text-brand-400 hover:text-brand-300 transition-colors group">
-                Get started <ArrowRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
+                {t("dropdown.product.getStarted")} <ArrowRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
               </Link>
             </div>
           </div>
@@ -201,12 +203,12 @@ export const ProductDropdown = ({ onClose, fullWidth }: Props) => {
 
         {/* Footer */}
         <div className="flex items-center gap-6 py-3 border-t border-white/[0.05]">
-          <Link to="/features" onClick={onClose} className="text-xs text-slate-500 hover:text-white transition-colors font-medium">Features</Link>
-          <Link to="/pricing" onClick={onClose} className="text-xs text-slate-500 hover:text-white transition-colors font-medium">Pricing</Link>
-          <Link to="/why-us" onClick={onClose} className="text-xs text-slate-500 hover:text-white transition-colors font-medium">Why Us</Link>
+          <Link to="/features" onClick={onClose} className="text-xs text-slate-500 hover:text-white transition-colors font-medium">{t("dropdown.product.features")}</Link>
+          <Link to="/pricing" onClick={onClose} className="text-xs text-slate-500 hover:text-white transition-colors font-medium">{t("nav.pricing")}</Link>
+          <Link to="/why-us" onClick={onClose} className="text-xs text-slate-500 hover:text-white transition-colors font-medium">{t("nav.whyUs")}</Link>
           <div className="ml-auto">
             <Link to="/" onClick={onClose} className="flex items-center gap-2 px-4 py-1.5 bg-brand-600 hover:bg-brand-500 text-white text-xs font-bold rounded-lg transition-all">
-              Start Free Trial <ArrowRight className="w-3 h-3" />
+              {t("nav.startFreeTrial")} <ArrowRight className="w-3 h-3" />
             </Link>
           </div>
         </div>

@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Twitter, Linkedin, Github, Youtube, Mail, Phone, MapPin, ArrowRight } from "lucide-react";
+import { useI18n } from "@/hooks/useI18n";
 
 const channels = [
   { src: "https://cdn.simpleicons.org/whatsapp/25D366", alt: "WhatsApp" },
@@ -10,6 +11,7 @@ const channels = [
 ];
 
 export const Footer = () => {
+  const { t } = useI18n();
   return (
     <footer className="border-t border-white/5 bg-[#060a10]">
       {/* Newsletter banner */}
@@ -17,17 +19,17 @@ export const Footer = () => {
         <div className="max-w-screen-xl mx-auto px-4 md:px-6 py-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div>
-              <h3 className="text-white font-bold text-lg mb-1">Stay up to date with OmniChat</h3>
-              <p className="text-sm text-slate-400">Product updates, tips, and industry insights — delivered to your inbox.</p>
+              <h3 className="text-white font-bold text-lg mb-1">{t("footer.newsletterTitle")}</h3>
+              <p className="text-sm text-slate-400">{t("footer.newsletterDesc")}</p>
             </div>
             <div className="flex items-center gap-3 w-full md:w-auto">
               <input
                 type="email"
-                placeholder="Enter your email"
+                placeholder={t("footer.emailPlaceholder")}
                 className="flex-1 md:w-64 px-4 py-2.5 bg-white/5 border border-white/10 rounded-xl text-sm text-white placeholder-slate-500 focus:outline-none focus:border-brand-600/50 transition-colors"
               />
               <button className="flex items-center gap-2 px-4 py-2.5 bg-brand-600 hover:bg-brand-500 text-white font-semibold rounded-xl text-sm transition-all whitespace-nowrap">
-                Subscribe <ArrowRight className="w-3.5 h-3.5" />
+                {t("footer.subscribe")} <ArrowRight className="w-3.5 h-3.5" />
               </button>
             </div>
           </div>
@@ -39,15 +41,10 @@ export const Footer = () => {
           {/* Brand col */}
           <div className="col-span-2">
             <div className="flex items-center gap-2.5 mb-4">
-              <div className="w-8 h-8 bg-gradient-to-br from-brand-500 to-brand-700 rounded-xl flex items-center justify-center">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" fill="white" opacity="0.9"/>
-                </svg>
-              </div>
-              <span className="text-white text-lg font-bold">OmniChat</span>
+              <img src="/img/logo/axodesk-new-logo-dark.png" alt="OmniChat" className="h-9 w-auto object-contain" />
             </div>
             <p className="text-sm text-slate-400 mb-5 leading-relaxed max-w-xs">
-              One inbox for every customer conversation. Manage WhatsApp, Instagram, Messenger, Email, and more — all in one place.
+              {t("footer.brandDesc")}
             </p>
 
             {/* Channels */}
@@ -74,7 +71,7 @@ export const Footer = () => {
 
           {/* Product */}
           <div>
-            <h3 className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-4">Product</h3>
+            <h3 className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-4">{t("footer.product")}</h3>
             <ul className="space-y-2.5">
               {[
                 { label: "Features", to: "/features" },
@@ -93,7 +90,7 @@ export const Footer = () => {
 
           {/* Industries */}
           <div>
-            <h3 className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-4">Industries</h3>
+            <h3 className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-4">{t("footer.industries")}</h3>
             <ul className="space-y-2.5">
               {[
                 { label: "E-commerce", to: "/industry/ecommerce" },
@@ -112,7 +109,7 @@ export const Footer = () => {
 
           {/* Resources */}
           <div>
-            <h3 className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-4">Resources</h3>
+            <h3 className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-4">{t("footer.resources")}</h3>
             <ul className="space-y-2.5">
               {["Documentation", "Help Center", "Blog", "Community", "Webinars", "Case Studies"].map(l => (
                 <li key={l}>
@@ -124,7 +121,7 @@ export const Footer = () => {
 
           {/* Company + Contact */}
           <div>
-            <h3 className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-4">Company</h3>
+            <h3 className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-4">{t("footer.company")}</h3>
             <ul className="space-y-2.5 mb-6">
               {["About Us", "Careers", "Partners", "Press Kit", "Security", "Contact Us"].map(l => (
                 <li key={l}>
@@ -147,15 +144,16 @@ export const Footer = () => {
 
         {/* Bottom bar */}
         <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-slate-600">© 2026 OmniChat Inc. All rights reserved.</p>
+          <p className="text-xs text-slate-600">{t("footer.allRights")}</p>
           <div className="flex items-center gap-6">
-            {["Privacy Policy", "Terms of Service", "Cookie Policy", "GDPR"].map(l => (
-              <a key={l} href="#" className="text-xs text-slate-600 hover:text-slate-400 transition-colors">{l}</a>
-            ))}
+            <a href="#" className="text-xs text-slate-600 hover:text-slate-400 transition-colors">{t("footer.privacy")}</a>
+            <a href="#" className="text-xs text-slate-600 hover:text-slate-400 transition-colors">{t("footer.terms")}</a>
+            <a href="#" className="text-xs text-slate-600 hover:text-slate-400 transition-colors">{t("footer.cookies")}</a>
+            <a href="#" className="text-xs text-slate-600 hover:text-slate-400 transition-colors">{t("footer.gdpr")}</a>
           </div>
           <div className="flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-            <span className="text-xs text-slate-600">All systems operational</span>
+            <span className="text-xs text-slate-600">{t("footer.systemStatus")}</span>
           </div>
         </div>
       </div>

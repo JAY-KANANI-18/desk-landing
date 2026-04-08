@@ -26,7 +26,7 @@ export const HomePage = () => {
         "@id": "https://omnichat.io/#organization",
         "name": "OmniChat",
         "url": "https://omnichat.io",
-        "logo": "https://omnichat.io/logo.png",
+        "logo": "https://omnichat.io/img/logo/axodesk-new-logo-dark.png",
         "foundingDate": "2022",
         "description": "OmniChat is the leading omnichannel customer messaging platform — unifying WhatsApp, Instagram, Messenger, Email and Live Chat with AI automation.",
         "sameAs": ["https://twitter.com/omnichat","https://linkedin.com/company/omnichat","https://facebook.com/omnichat","https://g2.com/products/omnichat"],

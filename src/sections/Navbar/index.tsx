@@ -6,10 +6,13 @@ import { IndustriesDropdown } from "./components/IndustriesDropdown";
 import { ResourcesDropdown } from "./components/ResourcesDropdown";
 import { MobileMenu } from "./components/MobileMenu";
 import { Menu, X, Globe, Phone } from "lucide-react";
+import { useI18n } from "@/hooks/useI18n";
+import { enableMultilanguage } from "@/i18n/messages";
 
 type DropdownKey = "product" | "industries" | "resources";
 
 export const Navbar = () => {
+  const { t, locale, supportedLocales, localeLabels, changeLocale } = useI18n();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<DropdownKey | null>(null);
@@ -61,14 +64,14 @@ export const Navbar = () => {
 
   return (
     <>
-      <div className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ease-out ${isMenuOpen ? "bg-[#0a0e1a] shadow-[0_8px_40px_rgba(0,0,0,0.6)]" : scrolled ? "bg-[#0a0e1a]/95 backdrop-blur-xl shadow-[0_1px_40px_rgba(0,0,0,0.45)] border-b border-white/[0.06]" : "bg-transparent"}`}>
-        <div className={`transition-all duration-300 ease-out ${shrink ? "max-w-[1160px]" : "max-w-screen-xl"} mx-auto px-4 md:px-8`}>
-          <div className={`flex items-center justify-between transition-all duration-300 ease-out ${shrink ? "h-14" : "h-16"}`}>
+      <div className={`fixed py-2 top-0 inset-x-0 z-50 transition-all duration-300 ease-out ${isMenuOpen ? "bg-[#0a0e1a] shadow-[0_8px_40px_rgba(0,0,0,0.6)]" : scrolled ? "bg-[#0a0e1a]/95 backdrop-blur-xl shadow-[0_1px_40px_rgba(0,0,0,0.45)] border-b border-white/[0.06]" : "bg-transparent"}`}>
+        <div className={`transition-all duration-300 ease-out max-w-screen-xl mx-auto px-4 md:px-8`}>
+          <div className={`flex items-center justify-between transition-all duration-300 ease-out ${shrink ? "h-14" : "h-16"} `}>
             <NavbarLogo />
 
             <div className="hidden md:flex items-center gap-0.5">
               {(["product", "industries", "resources"] as DropdownKey[]).map((key) => {
-                const label = key === "product" ? "Product" : key === "industries" ? "Industries" : "Resources";
+                const label = key === "product" ? t("nav.product") : key === "industries" ? t("nav.industries") : t("nav.resources");
                 const isActive = activeDropdown === key;
                 return (
                   <div key={key} className="relative" onMouseEnter={() => openDropdown(key)} onMouseLeave={scheduleClose}>
@@ -87,27 +90,40 @@ export const Navbar = () => {
               })}
 
               <Link to="/pricing" className="px-3.5 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-white hover:bg-white/[0.05] transition-all duration-200">
-                Pricing
+                {t("nav.pricing")}
               </Link>
               <Link to="/why-us" className="px-3.5 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-white hover:bg-white/[0.05] transition-all duration-200">
-                Why Us
+                {t("nav.whyUs")}
               </Link>
             </div>
 
             <div className="hidden md:flex items-center gap-1.5">
-              <button className="flex items-center gap-1.5 px-3 py-1.5 text-sm text-slate-400 hover:text-white transition-colors duration-200 rounded-lg hover:bg-white/[0.05]">
-                <Globe className="w-3.5 h-3.5" />
-                <span className="text-xs font-medium">EN</span>
-              </button>
+              {enableMultilanguage && (
+                <div className="flex items-center gap-1.5 px-2 py-1 text-sm text-slate-400 rounded-lg border border-white/10">
+                  <Globe className="w-3.5 h-3.5" />
+                  <select
+                    value={locale}
+                    onChange={(e) => void changeLocale(e.target.value as (typeof supportedLocales)[number])}
+                    className="bg-transparent text-xs font-medium outline-none cursor-pointer"
+                    aria-label="Select language"
+                  >
+                    {supportedLocales.map((loc) => (
+                      <option key={loc} value={loc} className="bg-[#0a0e1a] text-white">
+                        {localeLabels[loc]}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+              )}
               <button className="px-3.5 py-1.5 text-sm font-medium text-slate-300 hover:text-white transition-colors duration-200 rounded-lg hover:bg-white/[0.05]">
-                Login
+                {t("nav.login")}
               </button>
               <Link to="/talk-to-sales" className="flex items-center gap-2 px-3.5 py-1.5 text-sm font-medium text-slate-300 border border-white/10 rounded-lg hover:bg-white/[0.05] hover:text-white hover:border-white/20 transition-all duration-200">
                 <Phone className="w-3.5 h-3.5" />
-                Talk to Sales
+                {t("nav.talkToSales")}
               </Link>
               <Link to="/" className="px-4 py-1.5 text-sm font-semibold text-white bg-brand-600 rounded-lg hover:bg-brand-500 transition-all duration-200 glow-brand-sm">
-                Start Free Trial
+                {t("nav.startFreeTrial")}
               </Link>
             </div>
 

@@ -6,6 +6,7 @@ import {
   Home, Landmark, Utensils, BookOpen, Stethoscope, Scale,
   Building, Tag, Star
 } from "lucide-react";
+import { useI18n } from "@/hooks/useI18n";
 
 /* ─── TYPES ───────────────────────────────────────────────── */
 interface SubItem {
@@ -145,6 +146,7 @@ const industries: Industry[] = [
 type Props = { onClose: () => void };
 
 export const IndustriesDropdown = ({ onClose }: Props) => {
+  const { t } = useI18n();
   const [active, setActive] = useState<Industry>(industries[0]);
 
   return (
@@ -227,9 +229,9 @@ export const IndustriesDropdown = ({ onClose }: Props) => {
 
         {/* Footer */}
         <div className="flex items-center justify-between py-3 border-t border-white/[0.05]">
-          <p className="text-xs text-slate-600">Don&#39;t see your industry? OmniChat works for any B2C business.</p>
+          <p className="text-xs text-slate-600">{t("dropdown.industries.noIndustry")}</p>
           <Link to="/talk-to-sales" onClick={onClose} className="flex items-center gap-2 px-4 py-1.5 bg-brand-600 hover:bg-brand-500 text-white text-xs font-bold rounded-lg transition-all">
-            Talk to Sales <ArrowRight className="w-3 h-3" />
+            {t("nav.talkToSales")} <ArrowRight className="w-3 h-3" />
           </Link>
         </div>
       </div>

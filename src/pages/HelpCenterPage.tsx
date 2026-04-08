@@ -713,7 +713,7 @@ export const HelpCenterPage = () => {
             "description": currentArticleData.excerpt,
             "dateModified": currentArticleData.lastUpdated,
             "author": { "@type": "Person", "name": currentArticleData.author.name },
-            "publisher": { "@type": "Organization", "name": "OmniChat", "logo": { "@type": "ImageObject", "url": "https://omnichat.io/logo.png" } },
+            "publisher": { "@type": "Organization", "name": "OmniChat", "logo": { "@type": "ImageObject", "url": "https://omnichat.io/img/logo/axodesk-new-logo-dark.png" } },
             "mainEntityOfPage": { "@type": "WebPage", "@id": `https://omnichat.io/help/${currentArticleData.category}/${currentArticleData.slug}` }
           },
         }

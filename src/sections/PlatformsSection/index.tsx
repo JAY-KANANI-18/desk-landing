@@ -1,4 +1,5 @@
 import { useInView } from "../../hooks/useInView";
+import { useI18n } from "@/hooks/useI18n";
 
 const channels = [
   { name: "WhatsApp", icon: "https://cdn.simpleicons.org/whatsapp/25D366", color: "#25D366", users: "2B+ users", hoverBorder: "#25D366" },
@@ -11,6 +12,7 @@ const channels = [
 const allChannels = [...channels, ...channels, ...channels, ...channels];
 
 export const PlatformsSection = () => {
+  const { t } = useI18n();
   const { ref, inView } = useInView({ threshold: 0.2 });
 
   return (
@@ -19,7 +21,7 @@ export const PlatformsSection = () => {
         <p
           className={`text-center text-xs font-bold uppercase tracking-widest text-slate-500 mb-10 transition-all duration-700 ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
         >
-          Connect every channel your customers use
+          {t("platforms.title")}
         </p>
       </div>
 
