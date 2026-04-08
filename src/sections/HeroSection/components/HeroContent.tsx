@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { ArrowRight, Play, Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useTypewriter } from "../../../hooks/useTypewriter";
@@ -8,6 +8,10 @@ const words = ["WhatsApp", "Instagram", "Messenger", "Email", "Live Chat"];
 
 export const HeroContent = () => {
   const typed = useTypewriter(words, 90, 2000);
+  const longestWordLength = useMemo(
+    () => words.reduce((max, word) => Math.max(max, word.length), 0),
+    []
+  );
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -47,12 +51,15 @@ export const HeroContent = () => {
 
       {/* Typewriter sub */}
       <div
-        className={`flex flex-wrap items-center gap-2 mb-4 ${anim(200)}`}
+        className={`flex items-center gap-2 mb-4 ${anim(200)}`}
         style={{ transitionDelay: visible ? "200ms" : "0ms" }}
       >
         <span className="text-slate-400 text-sm sm:text-base">Manage</span>
-        <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-lg bg-brand-600/20 border border-brand-600/30 text-brand-300 font-semibold text-sm sm:text-base min-w-[110px]">
-          {typed}
+        <span
+          className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-lg bg-brand-600/20 border border-brand-600/30 text-brand-300 font-semibold text-sm sm:text-base"
+          style={{ width: `${longestWordLength + 2}ch` }}
+        >
+          {typed || "\u00A0"}
           <span className="w-0.5 h-4 bg-brand-400 animate-pulse ml-0.5" />
         </span>
         <span className="text-slate-400 text-sm sm:text-base">— all in one place.</span>

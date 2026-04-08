@@ -10,21 +10,25 @@ export function useTypewriter(words: string[], speed = 80, pause = 2200) {
     const current = words[wordIndex % words.length];
     let timeout: ReturnType<typeof setTimeout>;
 
-    if (!deleting && charIndex <= current.length) {
+    if (!deleting && charIndex < current.length) {
       timeout = setTimeout(() => {
-        setDisplayed(current.slice(0, charIndex));
-        setCharIndex(c => c + 1);
+        const nextIndex = charIndex + 1;
+        setDisplayed(current.slice(0, nextIndex));
+        setCharIndex(nextIndex);
       }, speed);
-    } else if (!deleting && charIndex > current.length) {
+    } else if (!deleting && charIndex === current.length) {
       timeout = setTimeout(() => setDeleting(true), pause);
-    } else if (deleting && charIndex >= 0) {
+    } else if (deleting && charIndex > 0) {
       timeout = setTimeout(() => {
-        setDisplayed(current.slice(0, charIndex));
-        setCharIndex(c => c - 1);
+        const nextIndex = charIndex - 1;
+        setDisplayed(current.slice(0, nextIndex));
+        setCharIndex(nextIndex);
       }, speed / 2);
     } else {
       setDeleting(false);
-      setWordIndex(w => w + 1);
+      setWordIndex(w => (w + 1) % words.length);
+      setCharIndex(0);
+      setDisplayed("");
     }
 
     return () => clearTimeout(timeout);

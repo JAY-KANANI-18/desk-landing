@@ -8,7 +8,7 @@ const channels = [
   { name: "Live Chat", icon: "https://cdn.simpleicons.org/livechat/FF5100", color: "#FF5100", users: "Website visitors", hoverBorder: "#FF5100" },
 ];
 
-const allChannels = [...channels, ...channels];
+const allChannels = [...channels, ...channels, ...channels, ...channels];
 
 export const PlatformsSection = () => {
   const { ref, inView } = useInView({ threshold: 0.2 });
@@ -24,11 +24,14 @@ export const PlatformsSection = () => {
       </div>
 
       {/* Auto-scroll rail */}
-      <div className="relative">
+      <div className="relative group">
         <div className="absolute left-0 top-0 bottom-0 w-24 z-10 pointer-events-none" style={{ background: "linear-gradient(90deg, #080c14, transparent)" }} />
         <div className="absolute right-0 top-0 bottom-0 w-24 z-10 pointer-events-none" style={{ background: "linear-gradient(-90deg, #080c14, transparent)" }} />
-        <div className="flex gap-4 overflow-hidden">
-          <div className="flex gap-4 animate-marquee hover:[animation-play-state:paused]">
+        <div className="overflow-hidden">
+          <div
+            className="flex w-max gap-4 [animation-play-state:running] group-hover:[animation-play-state:paused]"
+            style={{ animation: "platformsMarquee 28s linear infinite" }}
+          >
             {allChannels.map((ch, i) => (
               <div
                 key={i}
@@ -60,6 +63,16 @@ export const PlatformsSection = () => {
           </div>
         </div>
       </div>
+      <style jsx>{`
+        @keyframes platformsMarquee {
+          from {
+            transform: translateX(0);
+          }
+          to {
+            transform: translateX(-25%);
+          }
+        }
+      `}</style>
     </section>
   );
 };
