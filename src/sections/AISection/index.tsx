@@ -157,6 +157,7 @@ const aiCaps = [
 /* ─── Fake WhatsApp Chat Preview ──────────────────────── */
 const ChatMock: React.FC<{ messages: typeof aiCaps[0]["mockMessages"]; color: string; glow: string }> = ({ messages, color, glow }) => {
   const [visible, setVisible] = useState(0);
+  const messagesRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     setVisible(0);
@@ -170,9 +171,14 @@ const ChatMock: React.FC<{ messages: typeof aiCaps[0]["mockMessages"]; color: st
     return () => clearTimeout(t);
   }, [messages]);
 
+  useEffect(() => {
+    if (!messagesRef.current) return;
+    messagesRef.current.scrollTop = messagesRef.current.scrollHeight;
+  }, [visible, messages]);
+
   return (
     <div
-      className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl"
+      className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl flex flex-col h-[360px] sm:h-[390px]"
       style={{ background: "#0e1621", boxShadow: `0 0 40px ${glow}` }}
     >
       {/* Phone header */}
@@ -195,7 +201,10 @@ const ChatMock: React.FC<{ messages: typeof aiCaps[0]["mockMessages"]; color: st
       </div>
 
       {/* Messages */}
-      <div className="p-4 space-y-3 min-h-[200px]">
+      <div
+        ref={messagesRef}
+        className="p-4 space-y-3 flex-1 overflow-y-auto pr-2 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+      >
         {messages.slice(0, visible + 1).map((m, i) => (
           <div
             key={i}
