@@ -1,3 +1,4 @@
+import { useMemo } from "react";
 import type { AnchorHTMLAttributes, PropsWithChildren, ReactElement, ReactNode } from "react";
 import NextLink from "next/link";
 import { useRouter } from "next/router";
@@ -37,7 +38,16 @@ export function useNavigate() {
 
 export function useLocation() {
   const router = useRouter();
-  return { pathname: router.pathname, search: "", hash: "" };
+  return useMemo(() => {
+    const asPath = router.asPath || "/";
+    const [pathAndQuery, hashPart] = asPath.split("#");
+    const [pathnamePart, queryPart] = pathAndQuery.split("?");
+    return {
+      pathname: pathnamePart || "/",
+      search: queryPart ? `?${queryPart}` : "",
+      hash: hashPart ? `#${hashPart}` : "",
+    };
+  }, [router.asPath]);
 }
 
 export function BrowserRouter({ children }: { children: ReactNode }) {
