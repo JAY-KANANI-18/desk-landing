@@ -384,27 +384,27 @@ export const TalkToSalesPage = () => {
               <div className="bg-white/[0.03] border border-white/8 rounded-2xl p-6">
                 <h3 className="font-bold text-white text-base mb-4">Prefer to reach out directly?</h3>
                 <div className="space-y-3">
-                  <a href="mailto:sales@axodesk.in" className="flex items-center gap-3 p-3 rounded-xl bg-white/[0.03] border border-white/8 hover:border-brand-500/40 hover:bg-brand-500/5 transition-all group">
+                  <a href="mailto:sales@axorainfotech.com" className="flex items-center gap-3 p-3 rounded-xl bg-white/[0.03] border border-white/8 hover:border-brand-500/40 hover:bg-brand-500/5 transition-all group">
                     <div className="w-8 h-8 rounded-lg bg-brand-600/15 flex items-center justify-center shrink-0">
                       <Mail className="w-4 h-4 text-brand-400" />
                     </div>
                     <div>
                       <div className="text-xs text-slate-500">Email us</div>
-                      <div className="text-sm font-semibold text-slate-200 group-hover:text-white transition-colors">sales@axodesk.in</div>
+                      <div className="text-sm font-semibold text-slate-200 group-hover:text-white transition-colors">sales@axorainfotech.com</div>
                     </div>
                     <ChevronRight className="w-4 h-4 text-slate-600 group-hover:text-slate-400 ml-auto transition-colors" />
                   </a>
-                  <a href="tel:+12345678900" className="flex items-center gap-3 p-3 rounded-xl bg-white/[0.03] border border-white/8 hover:border-brand-500/40 hover:bg-brand-500/5 transition-all group">
+                  <a href="tel:+916353969157" className="flex items-center gap-3 p-3 rounded-xl bg-white/[0.03] border border-white/8 hover:border-brand-500/40 hover:bg-brand-500/5 transition-all group">
                     <div className="w-8 h-8 rounded-lg bg-brand-600/15 flex items-center justify-center shrink-0">
                       <Phone className="w-4 h-4 text-brand-400" />
                     </div>
                     <div>
                       <div className="text-xs text-slate-500">Call us</div>
-                      <div className="text-sm font-semibold text-slate-200 group-hover:text-white transition-colors">+1 (234) 567-890</div>
+                      <div className="text-sm font-semibold text-slate-200 group-hover:text-white transition-colors">+91 6353969157</div>
                     </div>
                     <ChevronRight className="w-4 h-4 text-slate-600 group-hover:text-slate-400 ml-auto transition-colors" />
                   </a>
-                  <a href="https://wa.me/12345678900" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 p-3 rounded-xl bg-white/[0.03] border border-white/8 hover:border-[#25D366]/40 hover:bg-[#25D366]/5 transition-all group">
+                  <a href="https://wa.me/916353969157" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 p-3 rounded-xl bg-white/[0.03] border border-white/8 hover:border-[#25D366]/40 hover:bg-[#25D366]/5 transition-all group">
                     <div className="w-8 h-8 rounded-lg bg-[#25D366]/10 flex items-center justify-center shrink-0">
                       <img src="https://cdn.simpleicons.org/whatsapp/25D366" alt="WhatsApp" className="w-4 h-4" />
                     </div>
