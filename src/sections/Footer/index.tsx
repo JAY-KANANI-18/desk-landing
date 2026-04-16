@@ -130,13 +130,13 @@ export const Footer = () => {
               ))}
             </ul>
             <div className="space-y-2">
-              <a href="mailto:hello@axodesk.in" className="flex items-center gap-2 text-xs text-slate-500 hover:text-white transition-colors">
+              <a href="mailto:info@axorainfotech.com" className="flex items-center gap-2 text-xs text-slate-500 hover:text-white transition-colors">
                 <Mail className="w-3.5 h-3.5 shrink-0" />
-                hello@axodesk.in
+                  info@axorainfotech.com
               </a>
-              <a href="tel:+1234567890" className="flex items-center gap-2 text-xs text-slate-500 hover:text-white transition-colors">
+              <a href="tel:+916353969157" className="flex items-center gap-2 text-xs text-slate-500 hover:text-white transition-colors">
                 <Phone className="w-3.5 h-3.5 shrink-0" />
-                +1 (234) 567-890
+                +91 6353969157
               </a>
             </div>
           </div>
