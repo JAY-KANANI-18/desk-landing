@@ -15,7 +15,9 @@ export const Navbar = () => {
   const { t, locale, supportedLocales, localeLabels, changeLocale } = useI18n();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [activeDropdown, setActiveDropdown] = useState<DropdownKey | null>(null);
+  const [activeDropdown, setActiveDropdown] = useState<DropdownKey | null>(
+    null,
+  );
   const [isVisible, setIsVisible] = useState(false);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const openTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -79,41 +81,72 @@ export const Navbar = () => {
           >
             <NavbarLogo />
 
-            <div className="hidden lg:flex items-center gap-0.5" onMouseEnter={cancelClose} onMouseLeave={scheduleClose}>
-              {(["product", "industries", "resources"] as DropdownKey[]).map((key) => {
-                const label = key === "product" ? t("nav.product") : key === "industries" ? t("nav.industries") : t("nav.resources");
-                const isActive = activeDropdown === key;
-                return (
-                  <div key={key} className="relative">
-                    <button
-                      onMouseEnter={() => openDropdown(key)}
-                      onFocus={() => openDropdown(key)}
-                      onClick={() => {
-                        if (activeDropdown === key && isVisible) {
-                          scheduleClose();
-                          return;
-                        }
-                        openDropdown(key);
-                      }}
-                      className={`flex items-center gap-1.5 px-3.5 py-2 rounded-lg text-sm font-medium transition-all duration-200 select-none ${isActive ? "text-white bg-white/[0.08]" : "text-slate-300 hover:text-white hover:bg-white/[0.05]"}`}
-                    >
-                      {label}
-                      <svg className={`w-3.5 h-3.5 transition-transform duration-200 ${isActive ? "rotate-180 text-brand-400" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-                      </svg>
-                    </button>
+            <div
+              className="hidden lg:flex items-center gap-0.5"
+              onMouseEnter={cancelClose}
+              onMouseLeave={scheduleClose}
+            >
+              {(["product", "industries", "resources"] as DropdownKey[]).map(
+                (key) => {
+                  const label =
+                    key === "product"
+                      ? t("nav.product")
+                      : key === "industries"
+                        ? t("nav.industries")
+                        : t("nav.resources");
+                  const isActive = activeDropdown === key;
+                  return (
+                    <div key={key} className="relative">
+                      <button
+                        onMouseEnter={() => openDropdown(key)}
+                        onFocus={() => openDropdown(key)}
+                        onClick={() => {
+                          if (activeDropdown === key && isVisible) {
+                            scheduleClose();
+                            return;
+                          }
+                          openDropdown(key);
+                        }}
+                        className={`flex items-center gap-1.5 px-3.5 py-2 rounded-lg text-sm font-medium transition-all duration-200 select-none ${isActive ? "text-white bg-white/[0.08]" : "text-slate-300 hover:text-white hover:bg-white/[0.05]"}`}
+                      >
+                        {label}
+                        <svg
+                          className={`w-3.5 h-3.5 transition-transform duration-200 ${isActive ? "rotate-180 text-brand-400" : ""}`}
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                          strokeWidth={2.5}
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M19 9l-7 7-7-7"
+                          />
+                        </svg>
+                      </button>
 
-                    {isActive && (
-                      <div className="absolute left-0 right-0 h-6 bottom-0 translate-y-full" onMouseEnter={cancelClose} onMouseLeave={scheduleClose} />
-                    )}
-                  </div>
-                );
-              })}
+                      {isActive && (
+                        <div
+                          className="absolute left-0 right-0 h-6 bottom-0 translate-y-full"
+                          onMouseEnter={cancelClose}
+                          onMouseLeave={scheduleClose}
+                        />
+                      )}
+                    </div>
+                  );
+                },
+              )}
 
-              <Link to="/pricing" className="px-3.5 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-white hover:bg-white/[0.05] transition-all duration-200">
+              <Link
+                to="/pricing"
+                className="px-3.5 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-white hover:bg-white/[0.05] transition-all duration-200"
+              >
                 {t("nav.pricing")}
               </Link>
-              <Link to="/why-us" className="px-3.5 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-white hover:bg-white/[0.05] transition-all duration-200">
+              <Link
+                to="/why-us"
+                className="px-3.5 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-white hover:bg-white/[0.05] transition-all duration-200"
+              >
                 {t("nav.whyUs")}
               </Link>
             </div>
@@ -124,30 +157,53 @@ export const Navbar = () => {
                   <Globe className="w-3.5 h-3.5" />
                   <select
                     value={locale}
-                    onChange={(e) => void changeLocale(e.target.value as (typeof supportedLocales)[number])}
+                    onChange={(e) =>
+                      void changeLocale(
+                        e.target.value as (typeof supportedLocales)[number],
+                      )
+                    }
                     className="bg-transparent text-xs font-medium outline-none cursor-pointer"
                     aria-label="Select language"
                   >
                     {supportedLocales.map((loc) => (
-                      <option key={loc} value={loc} className="bg-[#0a0e1a] text-white">
+                      <option
+                        key={loc}
+                        value={loc}
+                        className="bg-[#0a0e1a] text-white"
+                      >
                         {localeLabels[loc]}
                       </option>
                     ))}
                   </select>
                 </div>
               )}
-       
-              <Link to="/talk-to-sales" className="flex items-center gap-2 px-3.5 py-1.5 text-sm font-medium text-slate-300 border border-white/10 rounded-lg hover:bg-white/[0.05] hover:text-white hover:border-white/20 transition-all duration-200">
+
+              <Link
+                to="/talk-to-sales"
+                className="flex items-center gap-2 px-3.5 py-1.5 text-sm font-medium text-slate-300 border border-white/10 rounded-lg hover:bg-white/[0.05] hover:text-white hover:border-white/20 transition-all duration-200"
+              >
                 <Phone className="w-3.5 h-3.5" />
                 {t("nav.talkToSales")}
               </Link>
-              <Link to="/" className="px-4 py-1.5 text-sm font-semibold text-white bg-brand-600 rounded-lg hover:bg-brand-500 transition-all duration-200 glow-brand-sm">
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://app.axodesk.in"
+                className="px-4 py-1.5 text-sm font-semibold text-white bg-brand-600 rounded-lg hover:bg-brand-500 transition-all duration-200 glow-brand-sm"
+              >
                 {t("nav.startFreeTrial")}
-              </Link>
+              </a>
             </div>
 
-            <button className="lg:hidden p-2 text-slate-300 hover:text-white transition-colors" onClick={() => setMobileOpen(!mobileOpen)}>
-              {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            <button
+              className="lg:hidden p-2 text-slate-300 hover:text-white transition-colors"
+              onClick={() => setMobileOpen(!mobileOpen)}
+            >
+              {mobileOpen ? (
+                <X className="w-5 h-5" />
+              ) : (
+                <Menu className="w-5 h-5" />
+              )}
             </button>
           </div>
         </div>
@@ -156,14 +212,50 @@ export const Navbar = () => {
           <div className="max-w-screen-xl mx-auto px-4 md:px-8 mt-1">
             <div
               className={`rounded-2xl border border-white/[0.10] bg-[#0a0e1a] shadow-[0_18px_45px_rgba(0,0,0,0.45)] transition-all duration-220 ease-out overflow-hidden ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-2 pointer-events-none"}`}
-              style={{ transitionProperty: "opacity, transform", transitionDuration: isVisible ? "200ms" : "180ms", transitionTimingFunction: isVisible ? "cubic-bezier(0.16,1,0.3,1)" : "cubic-bezier(0.4,0,1,1)" }}
+              style={{
+                transitionProperty: "opacity, transform",
+                transitionDuration: isVisible ? "200ms" : "180ms",
+                transitionTimingFunction: isVisible
+                  ? "cubic-bezier(0.16,1,0.3,1)"
+                  : "cubic-bezier(0.4,0,1,1)",
+              }}
               onMouseEnter={cancelClose}
               onMouseLeave={scheduleClose}
             >
-              <div className={`transition-all duration-220 ease-out ${isVisible ? "max-h-[640px]" : "max-h-0"}`} style={{ transitionProperty: "max-height", transitionDuration: isVisible ? "240ms" : "200ms", transitionTimingFunction: isVisible ? "cubic-bezier(0.16,1,0.3,1)" : "cubic-bezier(0.4,0,1,1)" }}>
-                {activeDropdown === "product" && <ProductDropdown onClose={() => { setIsVisible(false); setTimeout(() => setActiveDropdown(null), 220); }} />}
-                {activeDropdown === "industries" && <IndustriesDropdown onClose={() => { setIsVisible(false); setTimeout(() => setActiveDropdown(null), 220); }} />}
-                {activeDropdown === "resources" && <ResourcesDropdown onClose={() => { setIsVisible(false); setTimeout(() => setActiveDropdown(null), 220); }} />}
+              <div
+                className={`transition-all duration-220 ease-out ${isVisible ? "max-h-[640px]" : "max-h-0"}`}
+                style={{
+                  transitionProperty: "max-height",
+                  transitionDuration: isVisible ? "240ms" : "200ms",
+                  transitionTimingFunction: isVisible
+                    ? "cubic-bezier(0.16,1,0.3,1)"
+                    : "cubic-bezier(0.4,0,1,1)",
+                }}
+              >
+                {activeDropdown === "product" && (
+                  <ProductDropdown
+                    onClose={() => {
+                      setIsVisible(false);
+                      setTimeout(() => setActiveDropdown(null), 220);
+                    }}
+                  />
+                )}
+                {activeDropdown === "industries" && (
+                  <IndustriesDropdown
+                    onClose={() => {
+                      setIsVisible(false);
+                      setTimeout(() => setActiveDropdown(null), 220);
+                    }}
+                  />
+                )}
+                {activeDropdown === "resources" && (
+                  <ResourcesDropdown
+                    onClose={() => {
+                      setIsVisible(false);
+                      setTimeout(() => setActiveDropdown(null), 220);
+                    }}
+                  />
+                )}
               </div>
             </div>
           </div>
@@ -175,7 +267,13 @@ export const Navbar = () => {
       </div>
 
       {isMenuOpen && (
-        <div className="fixed inset-0 z-40" onClick={() => { setIsVisible(false); setTimeout(() => setActiveDropdown(null), 220); }} />
+        <div
+          className="fixed inset-0 z-40"
+          onClick={() => {
+            setIsVisible(false);
+            setTimeout(() => setActiveDropdown(null), 220);
+          }}
+        />
       )}
 
       {mobileOpen && <MobileMenu onClose={() => setMobileOpen(false)} />}
