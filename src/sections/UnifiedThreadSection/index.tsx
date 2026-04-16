@@ -7,15 +7,15 @@ import { AnimatedSection } from "../../components/AnimatedSection";
 const messages = [
   { channel: "WhatsApp", icon: "https://cdn.simpleicons.org/whatsapp/25D366", from: "customer", name: "Alex Chen", text: "Hi, when does my order arrive?", time: "10:30 AM" },
   { channel: "Instagram", icon: "https://cdn.simpleicons.org/instagram/E4405F", from: "customer", name: "Alex Chen (IG)", text: "Also checking here — same shipment?", time: "10:32 AM" },
-  { channel: "system", icon: "", from: "system", name: "System", text: "🔗 Contacts automatically merged", time: "" },
-  { channel: "agent", icon: "", from: "agent", name: "You", text: "Hi Alex! Yes — same order. Ships tomorrow. Tracking: FDX-8821. You&#39;ll get a notification too! 👍", time: "10:33 AM" },
+  { channel: "system", icon: "", from: "system", name: "System", text: "🔗 Contacts merged", time: "" },
+  { channel: "agent", icon: "https://cdn.simpleicons.org/instagram/E4405F", from: "agent", name: "You", text: "Hi Alex! Yes — same order. Ships tomorrow. Tracking: FDX-8821. You&#39;ll get a notification too! 👍", time: "10:33 AM" },
 ];
 
 const features = [
-  "Complete cross-channel conversation history",
+  "One customer timeline across every channel",
   "Automatic duplicate contact merging",
-  "Real-time message sync across all platforms",
-  "Full context before every reply",
+  "Shared team ownership with full message context",
+  "Faster handoffs with fewer repeated questions",
 ];
 
 export const UnifiedThreadSection = () => {
@@ -38,9 +38,9 @@ export const UnifiedThreadSection = () => {
               <div className="flex items-center gap-2 px-4 py-3 bg-white/3 border-b border-white/5">
                 <div className="text-sm font-semibold text-white">Alex Chen</div>
                 <div className="flex items-center gap-1 ml-auto">
-                  <img src="https://cdn.simpleicons.org/whatsapp/25D366" alt="WA" className="w-4 h-4 rounded-full" />
-                  <img src="https://cdn.simpleicons.org/instagram/E4405F" alt="IG" className="w-4 h-4 rounded-full" />
-                  <span className="text-[10px] text-slate-500 ml-1">2 channels</span>
+                  <span className="text-[10px] text-slate-500 ml-1">connected</span>
+                  <img src="https://cdn.simpleicons.org/whatsapp" alt="WA" className="w-4 h-4  " />
+                  <img src="https://cdn.simpleicons.org/instagram" alt="IG" className="w-4 h-4 " />
                 </div>
               </div>
               <div className="p-5 space-y-3 min-h-[200px]">
@@ -53,12 +53,21 @@ export const UnifiedThreadSection = () => {
                   );
                   return (
                     <div key={i} className={`flex items-start gap-3 transition-all duration-500 ${m.from === "agent" ? "flex-row-reverse" : ""}`} style={{ opacity: show ? 1 : 0, transform: show ? "translateY(0)" : "translateY(10px)" }}>
-                      <div className="relative shrink-0">
-                        <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-xs font-bold text-white">
-                          {m.name[0]}
-                        </div>
-                        {m.icon && <img src={m.icon} alt="" className="absolute -bottom-0.5 -right-0.5 w-3.5 h-3.5 rounded-full border border-[#0d1220]" />}
-                      </div>
+                     <div className="relative shrink-0">
+  <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-sm font-bold text-white">
+    {m.name[0]}
+  </div>
+
+  {m.icon && (
+    <div className="absolute -bottom-1 -right-1 w-[18px] h-[18px] rounded-full bg-[#0d1220] ring-2 ring-[#0d1220] flex items-center justify-center">
+      <img
+        src={m.icon}
+        alt={m.channel}
+        className="w-[13px] h-[13px] object-contain"
+      />
+    </div>
+  )}
+</div>
                       <div className={`max-w-[70%] ${m.from === "agent" ? "items-end" : "items-start"} flex flex-col`}>
                         <div className="flex items-center gap-2 mb-1">
                           <span className="text-[10px] text-slate-500 font-medium">{m.name}</span>
@@ -80,14 +89,14 @@ export const UnifiedThreadSection = () => {
 
           <AnimatedSection direction="right">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-600/15 border border-brand-600/20 text-brand-400 text-xs font-semibold mb-5 tracking-wide uppercase">
-              Unified Experience
+              Why It Matters
             </div>
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-5 leading-tight">
-              All conversations.<br />
-              <span className="text-gradient">One thread.</span>
+              Stop switching tabs.<br />
+              <span className="text-gradient">Keep one customer context.</span>
             </h2>
             <p className="text-slate-400 text-lg leading-relaxed mb-8">
-              When a customer messages you on WhatsApp and then follows up on Instagram, it all shows up as one unified thread. No duplication, no lost context — just seamless continuity.
+              When the same customer reaches out on multiple channels, AxoDesk keeps everything in one thread. Your team sees the full history instantly, avoids duplicate replies, and resolves issues faster.
             </p>
             <ul className="space-y-3 mb-8">
               {features.map((f, i) => (
@@ -98,7 +107,7 @@ export const UnifiedThreadSection = () => {
               ))}
             </ul>
             <Link to="/features" className="group inline-flex items-center gap-2 text-brand-400 hover:text-brand-300 font-semibold text-sm transition-colors">
-              Explore unified inbox
+              See how shared inbox works
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
           </AnimatedSection>

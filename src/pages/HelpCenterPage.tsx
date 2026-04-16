@@ -335,7 +335,7 @@ function HelpHome({ onNavigate, onCategorySelect }: { onNavigate: (slug: string)
         </div>
         <h1 className="text-3xl font-black text-white mb-3 leading-tight">How can we help you?</h1>
         <p className="text-slate-400 text-sm leading-relaxed max-w-xl">
-          Step-by-step guides, API references, and best practices to get the most out of OmniChat.
+          Step-by-step guides, API references, and best practices to get the most out of AxoDesk.
         </p>
       </div>
 
@@ -486,7 +486,7 @@ function ArticleView({ article, onNavigate, onCategorySelect }: {
 
   /* Inject OG meta */
   useEffect(() => {
-    document.title = `${article.title} — OmniChat Help Center`;
+    document.title = `${article.title} — AxoDesk Help Center`;
     const setMeta = (name: string, content: string, prop = false) => {
       const attr = prop ? "property" : "name";
       let el = document.querySelector<HTMLMetaElement>(`meta[${attr}="${name}"]`);
@@ -494,9 +494,9 @@ function ArticleView({ article, onNavigate, onCategorySelect }: {
       el.setAttribute("content", content);
     };
     setMeta("description", article.excerpt);
-    setMeta("og:title", `${article.title} — OmniChat Help Center`, true);
+    setMeta("og:title", `${article.title} — AxoDesk Help Center`, true);
     setMeta("og:description", article.excerpt, true);
-    return () => { document.title = "OmniChat Help Center"; };
+    return () => { document.title = "AxoDesk Help Center"; };
   }, [article]);
 
   return (
@@ -695,9 +695,9 @@ export const HelpCenterPage = () => {
   useSEO(
     currentArticleData
       ? {
-          title: `${currentArticleData.title} — OmniChat Help Center`,
+          title: `${currentArticleData.title} — AxoDesk Help Center`,
           description: currentArticleData.excerpt,
-          canonical: `https://omnichat.io/help/${currentArticleData.category}/${currentArticleData.slug}`,
+          canonical: `https://axodesk.in/help/${currentArticleData.category}/${currentArticleData.slug}`,
           ogType: "article",
           keywords: currentArticleData.tags.join(", "),
           breadcrumb: [
@@ -713,15 +713,15 @@ export const HelpCenterPage = () => {
             "description": currentArticleData.excerpt,
             "dateModified": currentArticleData.lastUpdated,
             "author": { "@type": "Person", "name": currentArticleData.author.name },
-            "publisher": { "@type": "Organization", "name": "OmniChat", "logo": { "@type": "ImageObject", "url": "https://omnichat.io/img/logo/axodesk-new-logo-dark.png" } },
-            "mainEntityOfPage": { "@type": "WebPage", "@id": `https://omnichat.io/help/${currentArticleData.category}/${currentArticleData.slug}` }
+            "publisher": { "@type": "Organization", "name": "AxoDesk", "logo": { "@type": "ImageObject", "url": "https://axodesk.in/img/logo/axodesk-new-logo-dark.png" } },
+            "mainEntityOfPage": { "@type": "WebPage", "@id": `https://axodesk.in/help/${currentArticleData.category}/${currentArticleData.slug}` }
           },
         }
       : currentCatData
       ? {
-          title: `${currentCatData.label} — OmniChat Help Center`,
+          title: `${currentCatData.label} — AxoDesk Help Center`,
           description: currentCatData.description,
-          canonical: `https://omnichat.io/help/${currentCatData.slug}`,
+          canonical: `https://axodesk.in/help/${currentCatData.slug}`,
           breadcrumb: [
             { name: "Home", url: "/" },
             { name: "Help Center", url: "/help" },
@@ -730,16 +730,16 @@ export const HelpCenterPage = () => {
           schema: {
             "@context": "https://schema.org",
             "@type": "WebPage",
-            "name": `${currentCatData.label} — OmniChat Help Center`,
+            "name": `${currentCatData.label} — AxoDesk Help Center`,
             "description": currentCatData.description,
-            "url": `https://omnichat.io/help/${currentCatData.slug}`
+            "url": `https://axodesk.in/help/${currentCatData.slug}`
           },
         }
       : {
-          title: "OmniChat Help Center — Docs, Guides & FAQs for Omnichannel Messaging",
-          description: "Find step-by-step guides, API documentation, troubleshooting articles, and tutorials to master OmniChat's omnichannel messaging platform. 100+ help articles available.",
-          canonical: "https://omnichat.io/help",
-          keywords: "OmniChat help center, omnichannel messaging documentation, WhatsApp API setup guide, OmniChat tutorials, customer support platform docs, OmniChat troubleshooting, omnichannel inbox help",
+          title: "AxoDesk Help Center — Docs, Guides & FAQs for Omnichannel Messaging",
+          description: "Find step-by-step guides, API documentation, troubleshooting articles, and tutorials to master AxoDesk's omnichannel messaging platform. 100+ help articles available.",
+          canonical: "https://axodesk.in/help",
+          keywords: "AxoDesk help center, omnichannel messaging documentation, WhatsApp API setup guide, AxoDesk tutorials, customer support platform docs, AxoDesk troubleshooting, omnichannel inbox help",
           breadcrumb: [
             { name: "Home", url: "/" },
             { name: "Help Center", url: "/help" },
@@ -747,9 +747,9 @@ export const HelpCenterPage = () => {
           schema: {
             "@context": "https://schema.org",
             "@type": "WebPage",
-            "name": "OmniChat Help Center",
-            "description": "Complete documentation, step-by-step guides, and FAQ articles for OmniChat users.",
-            "url": "https://omnichat.io/help"
+            "name": "AxoDesk Help Center",
+            "description": "Complete documentation, step-by-step guides, and FAQ articles for AxoDesk users.",
+            "url": "https://axodesk.in/help"
           },
         }
   );
@@ -919,7 +919,7 @@ export const HelpCenterPage = () => {
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3 text-xs text-slate-600">
               <BookOpen className="w-3.5 h-3.5" />
-              <span>OmniChat Documentation — {HELP_ARTICLES.length} articles, updated regularly</span>
+              <span>AxoDesk Documentation — {HELP_ARTICLES.length} articles, updated regularly</span>
             </div>
             <div className="flex items-center gap-4 text-xs">
               <Link to="/blog" className="text-slate-500 hover:text-white transition-colors flex items-center gap-1.5">

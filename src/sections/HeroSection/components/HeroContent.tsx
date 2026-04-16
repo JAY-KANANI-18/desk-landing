@@ -27,7 +27,7 @@ export const HeroContent = () => {
   return (
     <div>
       {/* Badge */}
-      <div
+      {/* <div
         className={`inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-600/15 border border-brand-600/25 text-brand-400 text-xs font-semibold mb-7 tracking-wide ${anim(0)}`}
         style={{ transitionDelay: visible ? "0ms" : "0ms" }}
       >
@@ -37,7 +37,7 @@ export const HeroContent = () => {
           <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-400 opacity-75" />
           <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-500" />
         </span>
-      </div>
+      </div> */}
 
       {/* Headline */}
       <h1
@@ -72,7 +72,7 @@ export const HeroContent = () => {
         className={`text-slate-400 text-base sm:text-lg leading-relaxed mb-7 sm:mb-9 max-w-lg ${anim(300)}`}
         style={{ transitionDelay: visible ? "300ms" : "0ms" }}
       >
-        Boost team productivity, delight customers, and never miss a message again. OmniChat unifies every channel in a single intelligent inbox.
+        Boost team productivity, delight customers, and never miss a message again. AxoDesk unifies every channel in a single intelligent inbox.
       </p>
 
       {/* CTAs */}
@@ -101,15 +101,15 @@ export const HeroContent = () => {
       </div>
 
       {/* Trust */}
-      <p
+      {/* <p
         className={`text-slate-500 text-sm ${anim(500)}`}
         style={{ transitionDelay: visible ? "500ms" : "0ms" }}
       >
-        {t("hero.trust")}
-      </p>
+        Built for retail, ecommerce, and D2C teams handling high conversation volume.
+      </p> */}
 
       {/* Social proof */}
-      <div
+      {/* <div
         className={`mt-6 sm:mt-8 flex flex-wrap items-center gap-4 ${anim(600)}`}
         style={{ transitionDelay: visible ? "600ms" : "0ms" }}
       >
@@ -125,7 +125,7 @@ export const HeroContent = () => {
           ))}
         </div>
         <div>
-          <div className="text-sm font-semibold text-white">2,000+ businesses trust OmniChat</div>
+          <div className="text-sm font-semibold text-white">2,000+ businesses trust AxoDesk</div>
           <div className="flex items-center gap-1">
             {[1, 2, 3, 4, 5].map(s => (
               <span key={s} className="text-amber-400 text-xs animate-bounce-gentle" style={{ animationDelay: `${s * 100}ms` }}>★</span>
@@ -133,7 +133,7 @@ export const HeroContent = () => {
             <span className="text-slate-500 text-xs ml-1">4.9/5 rating</span>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

@@ -102,14 +102,14 @@ You MUST maintain this file to track your work across messages. This is NON-NEGO
 - App.tsx: added /resources and /resources/:section routes
 
 ## 2026-04-07 — Why Us Page
-- New page: src/pages/WhyUsPage.tsx — full "Why OmniChat vs Others" marketing page
+- New page: src/pages/WhyUsPage.tsx — full "Why AxoDesk vs Others" marketing page
 - Sections: Hero + blobs, Trusted-by marquee, animated stat count-ups, head-to-head comparison grid, 6 tilt pillar cards, approach steps with progress line, 3 testimonials, ratings bar, shimmer CTA
 - Wired into App.tsx (/why-us route) + Navbar link updated from anchor to Link to="/why-us"
 - Reuses: useInView, useCountUp, AnimatedSection; scan-glow, shimmer-bg, text-shimmer, stagger-children CSS utils
 
 ## 2026-04-07 — Advanced Animations & Interactions Pass
 ## 2026-04-07 — Why Us Page
-- New page: src/pages/WhyUsPage.tsx — full "Why OmniChat vs Others" marketing page
+- New page: src/pages/WhyUsPage.tsx — full "Why AxoDesk vs Others" marketing page
 - Sections: Hero + blobs, Trusted-by marquee, animated stat count-ups, head-to-head comparison grid, 6 tilt pillar cards, approach steps with progress line, 3 testimonials, ratings bar, shimmer CTA
 - Wired into App.tsx (/why-us route) + Navbar link updated from anchor to Link to="/why-us"
 - Reuses: useInView, useCountUp, AnimatedSection; scan-glow, shimmer-bg, text-shimmer, stagger-children CSS utils

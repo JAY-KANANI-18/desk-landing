@@ -43,14 +43,14 @@ export const CTASection = () => {
         <AnimatedSection direction="up">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-600/15 border border-brand-600/20 text-brand-400 text-xs font-semibold mb-7 uppercase tracking-wide">
             <Zap className="w-3.5 h-3.5 animate-bounce-gentle" />
-            Start Today
+            Ready to simplify support?
           </div>
           <h2 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
-            Start managing all your<br />
-            <span className="text-shimmer">conversations from one place</span>
+            Bring every customer channel<br />
+            <span className="text-shimmer">into one shared inbox</span>
           </h2>
           <p className="text-slate-400 text-xl mb-10 max-w-xl mx-auto leading-relaxed">
-            Join 2,000+ businesses using OmniChat to deliver faster support, drive more sales, and build lasting customer relationships.
+            Give your support and CX team a single place to manage conversations, collaborate clearly, and respond with full context.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
@@ -60,7 +60,7 @@ export const CTASection = () => {
                 className="group flex items-center gap-2 px-8 py-4 bg-brand-600 hover:bg-brand-500 text-white font-bold rounded-xl transition-all glow-brand-hover text-base relative overflow-hidden"
               >
                 <span className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/10 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
-                Start Free Trial
+                Start free trial
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
             </MagneticButton>
@@ -72,16 +72,16 @@ export const CTASection = () => {
           </div>
 
           <p className="text-slate-500 text-sm">
-            ✓ Free 14-day trial &nbsp;·&nbsp; No credit card &nbsp;·&nbsp; Full access &nbsp;·&nbsp; Cancel anytime
+            ✓ 14-day free trial &nbsp;·&nbsp; No credit card &nbsp;·&nbsp; Guided onboarding available
           </p>
         </AnimatedSection>
 
         {/* Count-up stats */}
-        <div className="grid grid-cols-3 gap-6 mt-14 pt-10 border-t border-white/8">
-          <StatItem value={2000} suffix="+" label="Businesses trust OmniChat" inView={inView} delay={300} />
-          <StatItem value={5} suffix="M+" label="Conversations managed monthly" inView={inView} delay={450} />
-          <StatItem value={4.9} suffix="/5" label="Average customer rating" inView={inView} delay={600} />
-        </div>
+        {/* <div className="grid grid-cols-3 gap-6 mt-14 pt-10 border-t border-white/8">
+          <StatItem value={2000} suffix="+" label="Teams using AxoDesk workflows" inView={inView} delay={300} />
+          <StatItem value={5} suffix="M+" label="Conversations organized monthly" inView={inView} delay={450} />
+          <StatItem value={4.9} suffix="/5" label="Support leader satisfaction score" inView={inView} delay={600} />
+        </div> */}
       </div>
     </section>
   );

@@ -14,48 +14,47 @@ import { CTASection } from "../sections/CTASection";
 
 export const HomePage = () => {
   useSEO({
-    title: "OmniChat — #1 Omnichannel Customer Messaging Platform | WhatsApp, Instagram, Email",
-    description: "OmniChat unifies WhatsApp Business API, Instagram DMs, Facebook Messenger, Email & Live Chat in one powerful inbox. AI automation, no-code workflows, real-time analytics. Better than respond.io & SleekFlow. Start free.",
-    canonical: "https://omnichat.io/",
-    ogImage: "https://omnichat.io/og-home.png",
-    keywords: "omnichannel messaging platform, WhatsApp business API software, customer communication platform, respond.io alternative, sleekflow alternative, unified customer inbox, WhatsApp CRM software, omnichannel support tool, AI customer messaging, Instagram DM management, WhatsApp automation platform, customer messaging software 2025",
+    title: "AxoDesk — Omnichannel Shared Inbox for Support & CX Teams",
+    description: "AxoDesk helps fast-growing retail and ecommerce teams manage WhatsApp, Instagram, Messenger, Email, and Website Chat in one shared inbox. Reduce missed messages, reply faster, and run cleaner support operations.",
+    canonical: "https://axodesk.in/",
+    ogImage: "https://axodesk.in/og-home.png",
+    keywords: "shared inbox, omnichannel support platform, ecommerce customer support software, whatsapp instagram inbox, customer communication platform, support operations software, d2c support tool, customer experience platform, team inbox for support",
     schema: [
       {
         "@context": "https://schema.org",
         "@type": "Organization",
-        "@id": "https://omnichat.io/#organization",
-        "name": "OmniChat",
-        "url": "https://omnichat.io",
-        "logo": "https://omnichat.io/img/logo/axodesk-new-logo-dark.png",
+        "@id": "https://axodesk.in/#organization",
+        "name": "AxoDesk",
+        "url": "https://axodesk.in",
+        "logo": "https://axodesk.in/img/logo/axodesk-new-logo-dark.png",
         "foundingDate": "2022",
-        "description": "OmniChat is the leading omnichannel customer messaging platform — unifying WhatsApp, Instagram, Messenger, Email and Live Chat with AI automation.",
-        "sameAs": ["https://twitter.com/omnichat","https://linkedin.com/company/omnichat","https://facebook.com/omnichat","https://g2.com/products/omnichat"],
-        "contactPoint": [{"@type":"ContactPoint","contactType":"customer support","email":"support@omnichat.io"},{"@type":"ContactPoint","contactType":"sales","email":"sales@omnichat.io"}]
+        "description": "AxoDesk is an omnichannel shared inbox for modern support and CX teams, unifying WhatsApp, Instagram, Messenger, Email, and Website Chat.",
+        "sameAs": ["https://twitter.com/axodesk","https://linkedin.com/company/axodesk","https://facebook.com/axodesk","https://g2.com/products/axodesk"],
+        "contactPoint": [{"@type":"ContactPoint","contactType":"customer support","email":"support@axodesk.in"},{"@type":"ContactPoint","contactType":"sales","email":"sales@axodesk.in"}]
       },
       {
         "@context": "https://schema.org",
         "@type": "SoftwareApplication",
-        "name": "OmniChat",
+        "name": "AxoDesk",
         "applicationCategory": "BusinessApplication",
         "operatingSystem": "Web, iOS, Android",
-        "url": "https://omnichat.io",
+        "url": "https://axodesk.in",
         "offers": [
           {"@type":"Offer","name":"Starter","price":"29","priceCurrency":"USD"},
           {"@type":"Offer","name":"Growth","price":"79","priceCurrency":"USD"},
           {"@type":"Offer","name":"Business","price":"149","priceCurrency":"USD"}
         ],
-        "aggregateRating": {"@type":"AggregateRating","ratingValue":"4.8","reviewCount":"560","bestRating":"5"},
-        "featureList": ["Unified Inbox","WhatsApp Business API","AI Automation","Team Collaboration","Real-Time Analytics","CRM","API & Webhooks","GDPR Compliant"]
+        "featureList": ["Shared Inbox","Omnichannel Messaging","Conversation Routing","Team Collaboration","SLA Tracking","Automation Workflows","Analytics","API & Webhooks"]
       },
       {
         "@context": "https://schema.org",
         "@type": "FAQPage",
         "mainEntity": [
-          {"@type":"Question","name":"What is OmniChat?","acceptedAnswer":{"@type":"Answer","text":"OmniChat is an omnichannel customer messaging platform that unifies WhatsApp, Instagram, Messenger, Email, and Live Chat into one inbox with AI automation and team collaboration."}},
-          {"@type":"Question","name":"How does OmniChat compare to respond.io and SleekFlow?","acceptedAnswer":{"@type":"Answer","text":"OmniChat delivers a truly unified inbox with AI automation included in every plan, faster onboarding, and significantly lower pricing than respond.io and SleekFlow."}},
-          {"@type":"Question","name":"Is OmniChat an official WhatsApp Business Solution Provider?","acceptedAnswer":{"@type":"Answer","text":"Yes, OmniChat is an official WhatsApp Business Solution Provider (BSP) with full API access, template management, broadcasting, and WhatsApp Calling API."}},
+          {"@type":"Question","name":"What is AxoDesk?","acceptedAnswer":{"@type":"Answer","text":"AxoDesk is an omnichannel shared inbox for support and CX teams. It combines WhatsApp, Instagram, Messenger, Email, and Website Chat in one workspace so teams can reply faster with full customer context."}},
+          {"@type":"Question","name":"Who is AxoDesk for?","acceptedAnswer":{"@type":"Answer","text":"AxoDesk is built for fast-growing retail, ecommerce, and D2C teams that handle high conversation volume across multiple channels and need better team coordination."}},
+          {"@type":"Question","name":"What problem does AxoDesk solve?","acceptedAnswer":{"@type":"Answer","text":"AxoDesk solves fragmented communication by centralizing scattered customer messages into one thread, reducing missed inquiries, duplicate effort, and delayed replies."}},
           {"@type":"Question","name":"Is there a free trial?","acceptedAnswer":{"@type":"Answer","text":"Yes — all plans include a 14-day free trial with full access. No credit card required."}},
-          {"@type":"Question","name":"What industries does OmniChat support?","acceptedAnswer":{"@type":"Answer","text":"OmniChat serves e-commerce, retail, real estate, healthcare, education, finance, restaurants, automotive, travel, and professional services."}}
+          {"@type":"Question","name":"Does AxoDesk support multiple industries?","acceptedAnswer":{"@type":"Answer","text":"Yes. AxoDesk supports retail, ecommerce, D2C, and support-led teams in other consumer-focused industries that need reliable omnichannel operations."}}
         ]
       }
     ],
@@ -65,15 +64,15 @@ export const HomePage = () => {
   return (
   <>
     <HeroSection />
-    <PlatformsSection />
+    {/* <PlatformsSection /> */}
     <UnifiedThreadSection />
     <FeaturesSection />
     <AutomationSection />
-    <AISection />
+    {/* <AISection /> */}
     <TeamCollaborationSection />
     <AnalyticsSection />
-    <ComingSoonSection />
-    <IntegrationsSection />
+    {/* <ComingSoonSection />
+    <IntegrationsSection /> */}
     <CTASection />
   </>
   );

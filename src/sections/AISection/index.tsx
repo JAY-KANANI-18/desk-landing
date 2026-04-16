@@ -20,61 +20,61 @@ import {
 
 /* ─── Journey Stages ─────────────────────────────────── */
 const stages = [
-  {
-    id: "capture",
-    emoji: "🎯",
-    label: "Capture",
-    tagline: "Unify every touchpoint to drive revenue",
-    color: "#6366f1",
-    glow: "rgba(99,102,241,0.35)",
-    desc: "Leads come from everywhere — WhatsApp chats, TikTok Ads, Instagram DMs, store visits. OmniChat unifies them into one smart inbox so no opportunity is ever missed.",
-    bullets: [
-      "Auto-capture leads from 12+ channels",
-      "CRM sync keeps profiles always fresh",
-      "Deduplication merges duplicate contacts",
-      "Smart tags route leads instantly",
-    ],
-    icon: TrendingUp,
-    statNum: "3×",
-    statLabel: "more leads captured",
-    visual: "capture",
-  },
-  {
-    id: "convert",
-    emoji: "💰",
-    label: "Convert",
-    tagline: "Sell more with AI and analytics",
-    color: "#10b981",
-    glow: "rgba(16,185,129,0.35)",
-    desc: "AI Agents qualify prospects, send product recommendations, and close deals — 24/7. Analytics surface exactly where leads drop so your team can intervene at the right moment.",
-    bullets: [
-      "AI-powered lead scoring and qualification",
-      "Automated product catalogue sharing",
-      "One-click order and payment links",
-      "Conversion funnel analytics dashboard",
-    ],
-    icon: ShoppingCart,
-    statNum: "68%",
-    statLabel: "higher conversion rate",
-    visual: "convert",
-  },
+  // {
+  //   id: "capture",
+  //   emoji: "🎯",
+  //   label: "Capture",
+  //   tagline: "Capture and organize inbound demand from every channel",
+  //   color: "#6366f1",
+  //   glow: "rgba(99,102,241,0.35)",
+  //   desc: "Customer conversations come from everywhere — WhatsApp, Instagram DMs, email, and website chat. AxoDesk unifies them into one operational inbox so teams can respond with full context.",
+  //   bullets: [
+  //     "Capture inbound messages across connected channels",
+  //     "Auto-merge duplicate contacts into one customer record",
+  //     "Route threads using tags, teams, and ownership rules",
+  //     "Keep every interaction searchable for follow-ups",
+  //   ],
+  //   icon: TrendingUp,
+  //   statNum: "37%",
+  //   statLabel: "fewer missed conversations",
+  //   visual: "capture",
+  // },
+  // {
+  //   id: "convert",
+  //   emoji: "💰",
+  //   label: "Convert",
+  //   tagline: "Resolve faster with AI-assisted replies and summaries",
+  //   color: "#10b981",
+  //   glow: "rgba(16,185,129,0.35)",
+  //   desc: "Use AI to reduce repetitive writing, summarize long threads, and help agents respond faster. Teams keep control, while AxoDesk handles repetitive context work in the background.",
+  //   bullets: [
+  //     "Suggested replies aligned to your tone and policy",
+  //     "Thread summaries before handoffs or escalations",
+  //     "Priority detection for urgent customer messages",
+  //     "Response quality support across high-volume shifts",
+  //   ],
+  //   icon: ShoppingCart,
+  //   statNum: "42%",
+  //   statLabel: "faster first responses",
+  //   visual: "convert",
+  // },
   {
     id: "retain",
     emoji: "🔁",
     label: "Retain",
-    tagline: "Build recurring revenue, not one-time sales",
+    tagline: "Retain customers with reliable follow-through",
     color: "#f59e0b",
     glow: "rgba(245,158,11,0.35)",
-    desc: "Re-engage customers with personalised campaigns, loyalty nudges, and proactive support before issues arise. Turn every buyer into a repeat customer automatically.",
+    desc: "Consistent support operations build trust. AxoDesk helps teams follow up on unresolved threads, run proactive updates, and deliver smoother post-purchase communication.",
     bullets: [
-      "Broadcast segments with personalisation",
-      "Automated re-engagement sequences",
-      "CSAT surveys after every resolution",
-      "Churn prediction alerts for agents",
+      "Automated follow-ups for unresolved conversations",
+      "Status-based outreach for delivery and refund updates",
+      "CSAT prompts after support resolution",
+      "Escalation workflows for at-risk customers",
     ],
     icon: Users,
-    statNum: "4.2×",
-    statLabel: "higher customer lifetime value",
+    statNum: "29%",
+    statLabel: "improvement in repeat support satisfaction",
     visual: "retain",
   },
 ];
@@ -87,15 +87,15 @@ const aiCaps = [
     color: "#6366f1",
     glow: "rgba(99,102,241,0.4)",
     label: "AI Agent",
-    badge: "Fully Autonomous",
+    badge: "Autonomous Mode",
     badgeColor: "#6366f1",
-    headline: "Full automation — no human needed",
-    sub: "Deploy AI Agents that handle entire conversations end-to-end: answer FAQs, qualify leads, process orders, book appointments, and escalate only when truly needed.",
+    headline: "Automate repetitive conversations where safe",
+    sub: "Deploy AI Agents for repetitive scenarios like FAQs, order status, and policy questions. Escalate to human agents when context, urgency, or complexity requires it.",
     highlights: [
-      { icon: Zap, text: "Responds instantly, 24 / 7 across all channels" },
-      { icon: CheckCircle2, text: "Handles 80% of queries without agent involvement" },
-      { icon: TrendingUp, text: "Learns from past conversations continuously" },
-      { icon: ShoppingCart, text: "Processes orders, bookings & payments autonomously" },
+      { icon: Zap, text: "Instant responses for repeat intent categories" },
+      { icon: CheckCircle2, text: "Controlled escalation when confidence is low" },
+      { icon: TrendingUp, text: "Improves with approved team feedback loops" },
+      { icon: ShoppingCart, text: "Supports guided flows for simple requests" },
     ],
     mockMessages: [
       { from: "user", text: "Hi, I want to order the Pro plan" },
@@ -111,15 +111,15 @@ const aiCaps = [
     color: "#10b981",
     glow: "rgba(16,185,129,0.4)",
     label: "AI Assist",
-    badge: "Copilot Mode",
+    badge: "Agent Copilot",
     badgeColor: "#10b981",
-    headline: "Supercharge every human reply",
-    sub: "AI Assist acts as a real-time copilot for your agents — generating smart reply suggestions, auto-summarising long threads, and coaching tone so every message is on-brand.",
+    headline: "Help agents reply faster and more consistently",
+    sub: "AI Assist supports your team with response suggestions, thread summaries, and tone guidance so each reply is faster, clearer, and on brand.",
     highlights: [
-      { icon: MessageSquare, text: "Smart reply suggestions in real time" },
-      { icon: Sparkles, text: "Auto-summarise long conversation threads" },
-      { icon: HeadphonesIcon, text: "Tone coaching to keep replies on-brand" },
-      { icon: CheckCircle2, text: "Translate messages into 50+ languages instantly" },
+      { icon: MessageSquare, text: "Reply suggestions in real time" },
+      { icon: Sparkles, text: "Thread summaries before agent handoff" },
+      { icon: HeadphonesIcon, text: "Tone guidance for quality consistency" },
+      { icon: CheckCircle2, text: "Translation support for multilingual support queues" },
     ],
     mockMessages: [
       { from: "user", text: "I've been waiting 3 days for my refund, this is unacceptable!" },
@@ -134,15 +134,15 @@ const aiCaps = [
     color: "#f59e0b",
     glow: "rgba(245,158,11,0.4)",
     label: "AI Automation",
-    badge: "No-Code Flows",
+    badge: "No-Code Operations",
     badgeColor: "#f59e0b",
-    headline: "Build powerful workflows visually",
-    sub: "Connect triggers, conditions and actions without writing a single line of code. Route leads, send broadcasts, sync CRMs, and trigger webhooks — all on autopilot.",
+    headline: "Build reliable support workflows visually",
+    sub: "Create trigger-condition-action flows without code. Route conversations, enforce SLA policies, sync external systems, and keep team processes consistent at scale.",
     highlights: [
-      { icon: Zap, text: "Visual drag-and-drop workflow builder" },
-      { icon: Bot, text: "Conditional logic with AI intent detection" },
-      { icon: TrendingUp, text: "Connect to 200+ apps via native integrations" },
-      { icon: Users, text: "Auto-assign conversations to the right team" },
+      { icon: Zap, text: "Visual workflow builder for support ops teams" },
+      { icon: Bot, text: "Intent-based branches for message triage" },
+      { icon: TrendingUp, text: "Integrations with CRM and internal systems" },
+      { icon: Users, text: "Auto-assignment based on queue rules" },
     ],
     mockMessages: [
       { from: "system", text: "🔵 TRIGGER — New lead from Facebook Ad" },
@@ -187,7 +187,7 @@ const ChatMock: React.FC<{ messages: typeof aiCaps[0]["mockMessages"]; color: st
           <Bot size={16} className="text-white" />
         </div>
         <div>
-          <div className="text-white text-sm font-semibold">OmniChat AI</div>
+          <div className="text-white text-sm font-semibold">AxoDesk AI</div>
           <div className="flex items-center gap-1">
             <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
             <span className="text-green-400 text-xs">Online</span>
@@ -355,16 +355,16 @@ export const AISection: React.FC = () => {
         <AnimatedSection animation="up" className="text-center mb-20">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-brand-500/30 bg-brand-500/10 text-brand-400 text-sm font-medium mb-6">
             <Sparkles size={14} />
-            AI-Powered Growth Engine
+            AI for Support Operations
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-5 leading-tight">
-            Scale business growth with every
+            Use AI where it improves
             <span className="block text-transparent bg-clip-text" style={{ backgroundImage: "linear-gradient(90deg,#6366f1,#10b981,#f59e0b)" }}>
-              customer conversation
+              support speed and consistency
             </span>
           </h2>
           <p className="text-lg text-white/55 max-w-2xl mx-auto leading-relaxed">
-            As chats and calls multiply, old inboxes break. OmniChat&#39;s AI framework helps you manage the entire customer journey across every channel — even at high volume.
+            As conversation volume grows, teams need practical AI that supports operations. AxoDesk combines automation, assistive replies, and workflow intelligence without removing human control.
           </p>
         </AnimatedSection>
 
@@ -413,13 +413,13 @@ export const AISection: React.FC = () => {
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 text-white/60 text-sm font-medium mb-5">
               <Bot size={14} />
-              AI built on a trusted foundation
+              Practical AI capabilities
             </div>
             <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Scale without adding headcount
+              Improve quality without increasing complexity
             </h3>
             <p className="text-white/50 max-w-xl mx-auto">
-              Accelerate growth on every channel with AI that responds, routes and performs tasks accurately and reliably — 24 / 7.
+              Choose where AI should automate, where it should assist, and where humans should stay in control.
             </p>
           </div>
 
@@ -460,13 +460,13 @@ export const AISection: React.FC = () => {
         </AnimatedSection>
 
         {/* ── BOTTOM TRUST BAR ───────────────────────────── */}
-        <AnimatedSection animation="up" delay={200} className="mt-24 pt-10 border-t border-white/10">
+        {/* <AnimatedSection animation="up" delay={200} className="mt-24 pt-10 border-t border-white/10">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             {[
-              { num: "10M+", label: "Conversations handled daily", color: "#6366f1" },
-              { num: "80%", label: "Queries resolved by AI", color: "#10b981" },
-              { num: "3 min", label: "Average first response time", color: "#f59e0b" },
-              { num: "99.9%", label: "Uptime guarantee", color: "#ec4899" },
+              { num: "10M+", label: "Support events processed daily", color: "#6366f1" },
+              { num: "80%", label: "Repetitive intents handled automatically", color: "#10b981" },
+              { num: "3 min", label: "Median first response time", color: "#f59e0b" },
+              { num: "99.9%", label: "Platform uptime", color: "#ec4899" },
             ].map((s, i) => (
               <div key={i} className="p-5 rounded-2xl bg-white/5 border border-white/10 hover:border-white/20 transition-colors">
                 <div className="text-3xl font-black mb-1" style={{ color: s.color }}>{s.num}</div>
@@ -474,7 +474,7 @@ export const AISection: React.FC = () => {
               </div>
             ))}
           </div>
-        </AnimatedSection>
+        </AnimatedSection> */}
 
       </div>
     </section>

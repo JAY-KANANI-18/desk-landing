@@ -125,11 +125,11 @@ const faqs = [
 
 export const PricingPage = () => {
   useSEO({
-    title: "OmniChat Pricing — Transparent Plans Starting at $29/mo | No Hidden Fees",
-    description: "OmniChat pricing: Starter $29/mo, Growth $79/mo, Business $149/mo. All include unified inbox, WhatsApp API, automation and AI. 14-day free trial, no credit card. Beats respond.io & Sleekflow on price and features.",
-    canonical: "https://omnichat.io/pricing",
-    ogImage: "https://omnichat.io/og-pricing.png",
-    keywords: "omnichannel software pricing, WhatsApp business platform cost, OmniChat plans, customer messaging software price, respond.io pricing alternative, sleekflow pricing alternative, omnichannel inbox pricing, WhatsApp API pricing, affordable customer support platform",
+    title: "AxoDesk Pricing — Transparent Plans Starting at $29/mo | No Hidden Fees",
+    description: "AxoDesk pricing: Starter $29/mo, Growth $79/mo, Business $149/mo. All include unified inbox, WhatsApp API, automation and AI. 14-day free trial, no credit card. Beats respond.io & Sleekflow on price and features.",
+    canonical: "https://axodesk.in/pricing",
+    ogImage: "https://axodesk.in/og-pricing.png",
+    keywords: "omnichannel software pricing, WhatsApp business platform cost, AxoDesk plans, customer messaging software price, respond.io pricing alternative, sleekflow pricing alternative, omnichannel inbox pricing, WhatsApp API pricing, affordable customer support platform",
     breadcrumb: [
       { name: "Home", url: "/" },
       { name: "Pricing", url: "/pricing" },
@@ -138,9 +138,9 @@ export const PricingPage = () => {
       {
         "@context": "https://schema.org",
         "@type": "Product",
-        "name": "OmniChat — Omnichannel Messaging Platform",
+        "name": "AxoDesk — Omnichannel Messaging Platform",
         "description": "All-in-one omnichannel inbox for growing teams — WhatsApp, Instagram, Messenger, Email, Live Chat, AI and automation.",
-        "brand": {"@type": "Brand", "name": "OmniChat"},
+        "brand": {"@type": "Brand", "name": "AxoDesk"},
         "offers": [
           {"@type":"Offer","name":"Starter","price":"29","priceCurrency":"USD","priceValidUntil":"2027-12-31"},
           {"@type":"Offer","name":"Growth","price":"79","priceCurrency":"USD","priceValidUntil":"2027-12-31"},
@@ -152,11 +152,11 @@ export const PricingPage = () => {
         "@context": "https://schema.org",
         "@type": "FAQPage",
         "mainEntity": [
-          {"@type":"Question","name":"Is there a free trial for OmniChat?","acceptedAnswer":{"@type":"Answer","text":"Yes, all OmniChat plans include a full 14-day free trial with no credit card required."}},
-          {"@type":"Question","name":"How does OmniChat pricing compare to respond.io?","acceptedAnswer":{"@type":"Answer","text":"OmniChat offers superior features at a significantly lower price. Our Growth plan at $79/mo includes AI, unlimited automations and all 5 channels — comparable respond.io tiers cost 2-3x more."}},
-          {"@type":"Question","name":"Can I cancel my OmniChat subscription anytime?","acceptedAnswer":{"@type":"Answer","text":"Yes, you can upgrade, downgrade or cancel at any time with no cancellation fees."}},
-          {"@type":"Question","name":"What counts as a conversation in OmniChat?","acceptedAnswer":{"@type":"Answer","text":"A conversation is an uninterrupted exchange between one contact and your team within a 24-hour window."}},
-          {"@type":"Question","name":"Does OmniChat charge per agent seat?","acceptedAnswer":{"@type":"Answer","text":"Yes, additional seats are available at $9-$12/agent/month beyond the included seats in each plan."}}
+          {"@type":"Question","name":"Is there a free trial for AxoDesk?","acceptedAnswer":{"@type":"Answer","text":"Yes, all AxoDesk plans include a full 14-day free trial with no credit card required."}},
+          {"@type":"Question","name":"How does AxoDesk pricing compare to respond.io?","acceptedAnswer":{"@type":"Answer","text":"AxoDesk offers superior features at a significantly lower price. Our Growth plan at $79/mo includes AI, unlimited automations and all 5 channels — comparable respond.io tiers cost 2-3x more."}},
+          {"@type":"Question","name":"Can I cancel my AxoDesk subscription anytime?","acceptedAnswer":{"@type":"Answer","text":"Yes, you can upgrade, downgrade or cancel at any time with no cancellation fees."}},
+          {"@type":"Question","name":"What counts as a conversation in AxoDesk?","acceptedAnswer":{"@type":"Answer","text":"A conversation is an uninterrupted exchange between one contact and your team within a 24-hour window."}},
+          {"@type":"Question","name":"Does AxoDesk charge per agent seat?","acceptedAnswer":{"@type":"Answer","text":"Yes, additional seats are available at $9-$12/agent/month beyond the included seats in each plan."}}
         ]
       }
     ],

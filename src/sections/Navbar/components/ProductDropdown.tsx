@@ -25,7 +25,7 @@ const sections = [
     items: [
       { icon: <MessageSquare className="w-4 h-4" />, label: "Capture from Ads", desc: "Meta & Google Ads integration", badge: null },
       { icon: <Globe className="w-4 h-4" />, label: "Website Live Chat", desc: "Embeddable chat widget", badge: null },
-      { icon: <Users className="w-4 h-4" />, label: "Social Capture", desc: "IG, FB, WA DMs", badge: null },
+      { icon: <Users className="w-4 h-4" />, label: "Social Capture", desc: "Whatsapp, Facebook, Instagram DMs & many more", badge: null },
       { icon: <Tag className="w-4 h-4" />, label: "Offline to Online", desc: "QR codes & deep links", badge: null },
     ],
   },

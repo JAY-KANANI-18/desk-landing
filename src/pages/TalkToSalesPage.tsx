@@ -69,11 +69,11 @@ const stats = [
 
 export const TalkToSalesPage = () => {
   useSEO({
-    title: "Talk to OmniChat Sales — Book a Free Demo | Omnichannel Platform",
-    description: "Book a free 30-minute personalised demo with OmniChat's sales team. See how to unify WhatsApp, Instagram, and Email into one inbox — and get a custom pricing proposal for your team.",
-    canonical: "https://omnichat.io/talk-to-sales",
-    ogImage: "https://omnichat.io/og-sales.png",
-    keywords: "OmniChat demo, book omnichannel demo, WhatsApp platform sales, OmniChat pricing custom, talk to sales omnichannel, enterprise messaging demo, customer communication platform demo",
+    title: "Talk to AxoDesk Sales — Book a Free Demo | Omnichannel Platform",
+    description: "Book a free 30-minute personalised demo with AxoDesk's sales team. See how to unify WhatsApp, Instagram, and Email into one inbox — and get a custom pricing proposal for your team.",
+    canonical: "https://axodesk.in/talk-to-sales",
+    ogImage: "https://axodesk.in/og-sales.png",
+    keywords: "AxoDesk demo, book omnichannel demo, WhatsApp platform sales, AxoDesk pricing custom, talk to sales omnichannel, enterprise messaging demo, customer communication platform demo",
     breadcrumb: [
       { name: "Home", url: "/" },
       { name: "Talk to Sales", url: "/talk-to-sales" },
@@ -81,12 +81,12 @@ export const TalkToSalesPage = () => {
     schema: {
       "@context": "https://schema.org",
       "@type": "ContactPage",
-      "name": "Talk to OmniChat Sales",
-      "description": "Book a free personalised demo with OmniChat's sales team and get a custom pricing proposal.",
-      "url": "https://omnichat.io/talk-to-sales",
+      "name": "Talk to AxoDesk Sales",
+      "description": "Book a free personalised demo with AxoDesk's sales team and get a custom pricing proposal.",
+      "url": "https://axodesk.in/talk-to-sales",
       "contactOption": "TollFree",
       "contactType": "sales",
-      "email": "sales@omnichat.io",
+      "email": "sales@axodesk.in",
       "availableLanguage": ["English", "Arabic", "Spanish"]
     },
   });
@@ -144,7 +144,7 @@ export const TalkToSalesPage = () => {
 
           <AnimatedSection animation="up" delay={140}>
             <p className="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed">
-              Our sales team will walk you through OmniChat, help you understand what&#39;s right for your team, and get you up and running fast.
+              Our sales team will walk you through AxoDesk, help you understand what&#39;s right for your team, and get you up and running fast.
             </p>
           </AnimatedSection>
 
@@ -359,7 +359,7 @@ export const TalkToSalesPage = () => {
                   {[
                     { icon: Clock, label: "30-min personalised call", sub: "No generic pitches — we tailor the demo to your business" },
                     { icon: Users, label: "Meet your dedicated rep", sub: "One point of contact through your entire evaluation" },
-                    { icon: Zap, label: "Live product walkthrough", sub: "See exactly how OmniChat works for your industry" },
+                    { icon: Zap, label: "Live product walkthrough", sub: "See exactly how AxoDesk works for your industry" },
                     { icon: Building2, label: "Custom pricing proposal", sub: "Get a quote scoped to your team size and channels" },
                   ].map(item => {
                     const Icon = item.icon;
@@ -384,13 +384,13 @@ export const TalkToSalesPage = () => {
               <div className="bg-white/[0.03] border border-white/8 rounded-2xl p-6">
                 <h3 className="font-bold text-white text-base mb-4">Prefer to reach out directly?</h3>
                 <div className="space-y-3">
-                  <a href="mailto:sales@omnichat.io" className="flex items-center gap-3 p-3 rounded-xl bg-white/[0.03] border border-white/8 hover:border-brand-500/40 hover:bg-brand-500/5 transition-all group">
+                  <a href="mailto:sales@axodesk.in" className="flex items-center gap-3 p-3 rounded-xl bg-white/[0.03] border border-white/8 hover:border-brand-500/40 hover:bg-brand-500/5 transition-all group">
                     <div className="w-8 h-8 rounded-lg bg-brand-600/15 flex items-center justify-center shrink-0">
                       <Mail className="w-4 h-4 text-brand-400" />
                     </div>
                     <div>
                       <div className="text-xs text-slate-500">Email us</div>
-                      <div className="text-sm font-semibold text-slate-200 group-hover:text-white transition-colors">sales@omnichat.io</div>
+                      <div className="text-sm font-semibold text-slate-200 group-hover:text-white transition-colors">sales@axodesk.in</div>
                     </div>
                     <ChevronRight className="w-4 h-4 text-slate-600 group-hover:text-slate-400 ml-auto transition-colors" />
                   </a>

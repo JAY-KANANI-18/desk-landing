@@ -16,7 +16,7 @@ const en = {
 
   "platforms.title": "Connect every channel your customers use",
 
-  "footer.newsletterTitle": "Stay up to date with OmniChat",
+  "footer.newsletterTitle": "Stay up to date with AxoDesk",
   "footer.newsletterDesc": "Product updates, tips, and industry insights — delivered to your inbox.",
   "footer.emailPlaceholder": "Enter your email",
   "footer.subscribe": "Subscribe",
@@ -26,7 +26,7 @@ const en = {
   "footer.industries": "Industries",
   "footer.resources": "Resources",
   "footer.company": "Company",
-  "footer.allRights": "© 2026 OmniChat Inc. All rights reserved.",
+  "footer.allRights": "© 2026 AxoDesk Inc. All rights reserved.",
   "footer.systemStatus": "All systems operational",
   "footer.privacy": "Privacy Policy",
   "footer.terms": "Terms of Service",
@@ -41,7 +41,7 @@ const en = {
   "mobile.resources": "Resources",
   "mobile.resourcesDesc": "Blog, docs, tools & support",
   "mobile.pricingDesc": "Plans starting from free",
-  "mobile.whyUsDesc": "OmniChat vs competitors",
+  "mobile.whyUsDesc": "AxoDesk vs competitors",
 
   "dropdown.product.platformOverview": "Platform Overview",
   "dropdown.product.viewFullPlatform": "View full platform",
@@ -57,14 +57,14 @@ const en = {
   "dropdown.resources.contactUs": "Contact Us",
   "dropdown.resources.contactUsDesc": "With 24/5 live support and 24/7 AI support, we're here to help",
   "dropdown.resources.helpCenter": "Help Center",
-  "dropdown.resources.helpCenterDesc": "Handy step-by-step guides to configure and use OmniChat",
+  "dropdown.resources.helpCenterDesc": "Handy step-by-step guides to configure and use AxoDesk",
   "dropdown.resources.learn": "Learn",
   "dropdown.resources.videoGuides": "Video Guides",
   "dropdown.resources.videoGuidesDesc": "Master business messaging from industry experts to build customer connections",
   "dropdown.resources.blog": "Blog",
   "dropdown.resources.blogDesc": "Growth playbooks, AI deep-dives, case studies and product updates",
   "dropdown.resources.developerHub": "Developer Hub",
-  "dropdown.resources.developerHubDesc": "Guides and documentation to help you start working with OmniChat",
+  "dropdown.resources.developerHubDesc": "Guides and documentation to help you start working with AxoDesk",
   "dropdown.resources.tools": "Tools",
   "dropdown.resources.waPricing": "WhatsApp Pricing Calculator",
   "dropdown.resources.waPricingDesc": "Calculate your WhatsApp Business Messaging and Calling costs",
@@ -74,7 +74,7 @@ const en = {
   "dropdown.resources.partnersDesc": "Join a growing network of partners with commissions for referrals",
   "dropdown.resources.explorePartners": "Explore Our Partner Program",
 
-  "dropdown.industries.noIndustry": "Don't see your industry? OmniChat works for any B2C business.",
+  "dropdown.industries.noIndustry": "Don't see your industry? AxoDesk works for any B2C business.",
 } as const;
 
 export default en;

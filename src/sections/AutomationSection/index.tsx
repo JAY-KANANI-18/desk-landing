@@ -4,24 +4,24 @@ import { useInView } from "../../hooks/useInView";
 import { AnimatedSection } from "../../components/AnimatedSection";
 
 const triggers = [
-  { label: "New message received", icon: <MessageSquare className="w-4 h-4" />, color: "text-green-400 bg-green-600/15" },
-  { label: "Conversation opened", icon: <Zap className="w-4 h-4" />, color: "text-blue-400 bg-blue-600/15" },
-  { label: "Conversation closed", icon: <CheckCircle2 className="w-4 h-4" />, color: "text-slate-400 bg-slate-600/15" },
-  { label: "Agent assigned", icon: <UserCheck className="w-4 h-4" />, color: "text-purple-400 bg-purple-600/15" },
+  { label: "New customer message", icon: <MessageSquare className="w-4 h-4" />, color: "text-green-400 bg-green-600/15" },
+  { label: "No reply within SLA", icon: <Zap className="w-4 h-4" />, color: "text-blue-400 bg-blue-600/15" },
+  { label: "Conversation resolved", icon: <CheckCircle2 className="w-4 h-4" />, color: "text-slate-400 bg-slate-600/15" },
+  { label: "High-priority tag added", icon: <UserCheck className="w-4 h-4" />, color: "text-purple-400 bg-purple-600/15" },
 ];
 
 const actions = [
-  { label: "Send auto-reply message", icon: <MessageSquare className="w-4 h-4" />, color: "text-brand-400 bg-brand-600/15" },
-  { label: "Assign to agent or team", icon: <UserCheck className="w-4 h-4" />, color: "text-emerald-400 bg-emerald-600/15" },
-  { label: "Add tag to contact", icon: <Tag className="w-4 h-4" />, color: "text-pink-400 bg-pink-600/15" },
-  { label: "Trigger webhook / API", icon: <Bell className="w-4 h-4" />, color: "text-orange-400 bg-orange-600/15" },
+  { label: "Send channel-specific reply", icon: <MessageSquare className="w-4 h-4" />, color: "text-brand-400 bg-brand-600/15" },
+  { label: "Assign to queue or owner", icon: <UserCheck className="w-4 h-4" />, color: "text-emerald-400 bg-emerald-600/15" },
+  { label: "Tag and set status", icon: <Tag className="w-4 h-4" />, color: "text-pink-400 bg-pink-600/15" },
+  { label: "Notify tools via webhook", icon: <Bell className="w-4 h-4" />, color: "text-orange-400 bg-orange-600/15" },
 ];
 
 const workflowSteps = [
-  { label: "Trigger: New message", sub: "Customer sends any message", icon: <MessageSquare className="w-4 h-4" />, color: "text-green-400 bg-green-600/20 border-green-600/30", dot: "bg-green-400" },
-  { label: "Condition: Contains keyword", sub: '"pricing", "cost", or "demo"', icon: <GitBranch className="w-4 h-4" />, color: "text-blue-400 bg-blue-600/20 border-blue-600/30", dot: "bg-blue-400" },
-  { label: "Action: Send auto-reply", sub: "Sends pricing PDF + books demo", icon: <Zap className="w-4 h-4" />, color: "text-purple-400 bg-purple-600/20 border-purple-600/30", dot: "bg-purple-400" },
-  { label: "Action: Assign to Sales", sub: "Routes to Sales team inbox", icon: <UserCheck className="w-4 h-4" />, color: "text-brand-400 bg-brand-600/20 border-brand-600/30", dot: "bg-brand-400" },
+  { label: "Trigger: New message", sub: "Customer reaches out on any channel", icon: <MessageSquare className="w-4 h-4" />, color: "text-green-400 bg-green-600/20 border-green-600/30", dot: "bg-green-400" },
+  { label: "Condition: Intent detected", sub: "Intent includes pricing, refund, or delivery", icon: <GitBranch className="w-4 h-4" />, color: "text-blue-400 bg-blue-600/20 border-blue-600/30", dot: "bg-blue-400" },
+  { label: "Action: Send guided reply", sub: "Shares approved response + next steps", icon: <Zap className="w-4 h-4" />, color: "text-purple-400 bg-purple-600/20 border-purple-600/30", dot: "bg-purple-400" },
+  { label: "Action: Route to right team", sub: "Assigns to queue with SLA tracking", icon: <UserCheck className="w-4 h-4" />, color: "text-brand-400 bg-brand-600/20 border-brand-600/30", dot: "bg-brand-400" },
 ];
 
 export const AutomationSection = () => {
@@ -52,14 +52,14 @@ export const AutomationSection = () => {
           <AnimatedSection direction="left">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-600/15 border border-brand-600/20 text-brand-400 text-xs font-semibold mb-5 uppercase tracking-wide">
               <Zap className="w-3.5 h-3.5" />
-              Automation
+              Workflow Automation
             </div>
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-5 leading-tight">
-              Automate the repetitive.<br />
-              <span className="text-gradient">Focus on the human.</span>
+              Automate repetitive ops.<br />
+              <span className="text-gradient">Protect team response quality.</span>
             </h2>
             <p className="text-slate-400 text-lg leading-relaxed mb-8">
-              Build powerful no-code workflows in minutes. Set triggers, define conditions, and let OmniChat handle routine tasks 24/7 so your team can focus on what matters.
+              Set rules once and let AxoDesk handle routing, tagging, acknowledgements, and SLA follow-ups automatically. Your team spends less time triaging and more time solving real customer issues.
             </p>
 
             <div className="grid grid-cols-2 gap-4 mb-8">
@@ -112,7 +112,7 @@ export const AutomationSection = () => {
           <AnimatedSection direction="right" delay={150}>
             <div className="rounded-2xl bg-[#0d1220] border border-white/8 p-6 shadow-2xl shadow-black/30 hover:border-white/14 transition-all duration-500">
               <div className="flex items-center justify-between mb-6">
-                <h3 className="text-sm font-bold text-white">Example Workflow</h3>
+                <h3 className="text-sm font-bold text-white">Support Workflow Example</h3>
                 <span className="text-xs text-green-400 bg-green-400/10 px-2.5 py-1 rounded-full font-medium flex items-center gap-1.5">
                   <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
                   Active
@@ -150,8 +150,8 @@ export const AutomationSection = () => {
                 ))}
               </div>
               <div className="mt-5 pt-5 border-t border-white/5 flex items-center justify-between text-xs text-slate-500">
-                <span>⚡ Runs 247 times today</span>
-                <span className="text-brand-400 font-medium cursor-pointer hover:text-brand-300 transition-colors">Edit workflow →</span>
+                <span>Runs 247 times today</span>
+                <span className="text-brand-400 font-medium cursor-pointer hover:text-brand-300 transition-colors">Edit rule →</span>
               </div>
             </div>
           </AnimatedSection>

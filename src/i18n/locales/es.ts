@@ -33,7 +33,7 @@ const es = {
   "dropdown.resources.tools": "Herramientas",
   "dropdown.resources.partners": "Socios",
   "dropdown.resources.explorePartners": "Explorar programa de socios",
-  "dropdown.industries.noIndustry": "¿No ves tu industria? OmniChat funciona para cualquier negocio B2C.",
+  "dropdown.industries.noIndustry": "¿No ves tu industria? AxoDesk funciona para cualquier negocio B2C.",
 } as const;
 
 export default es;

@@ -324,10 +324,10 @@ function FeatureRow({ cat, index }: { cat: typeof categories[0]; index: number }
 
 export const FeaturesPage = () => {
   useSEO({
-    title: "OmniChat Features — Unified Inbox, AI Automation, Analytics & More",
-    description: "Explore OmniChat's full feature set: unified omnichannel inbox for WhatsApp & Instagram, no-code automation builder, AI assistant, real-time analytics, team collaboration, and enterprise security — all in one platform.",
-    canonical: "https://omnichat.io/features",
-    ogImage: "https://omnichat.io/og-features.png",
+    title: "AxoDesk Features — Unified Inbox, AI Automation, Analytics & More",
+    description: "Explore AxoDesk's full feature set: unified omnichannel inbox for WhatsApp & Instagram, no-code automation builder, AI assistant, real-time analytics, team collaboration, and enterprise security — all in one platform.",
+    canonical: "https://axodesk.in/features",
+    ogImage: "https://axodesk.in/og-features.png",
     keywords: "omnichannel inbox features, WhatsApp business automation, AI chatbot platform, no-code automation builder, customer support analytics, team inbox software, CRM messaging integration, respond.io features comparison, sleekflow features comparison, unified messaging platform features",
     breadcrumb: [
       { name: "Home", url: "/" },
@@ -337,14 +337,14 @@ export const FeaturesPage = () => {
       {
         "@context": "https://schema.org",
         "@type": "WebPage",
-        "name": "OmniChat Features — Complete Omnichannel Messaging Toolkit",
+        "name": "AxoDesk Features — Complete Omnichannel Messaging Toolkit",
         "description": "Full feature set: unified inbox, AI automation, analytics, team collaboration, API access.",
-        "url": "https://omnichat.io/features"
+        "url": "https://axodesk.in/features"
       },
       {
         "@context": "https://schema.org",
         "@type": "ItemList",
-        "name": "OmniChat Platform Features",
+        "name": "AxoDesk Platform Features",
         "itemListElement": [
           {"@type":"ListItem","position":1,"name":"Unified Inbox","description":"All messaging channels in one real-time inbox — WhatsApp, Instagram, Messenger, Email, Live Chat"},
           {"@type":"ListItem","position":2,"name":"Automation & Workflows","description":"No-code automation builder with 50+ triggers, conditions and actions"},

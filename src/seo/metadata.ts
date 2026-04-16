@@ -13,7 +13,7 @@ export type SeoMeta = {
   jsonLd?: object | object[];
 };
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://omnichat.io";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://axodesk.in";
 const DEFAULT_OG = `${SITE_URL}/og-default.png`;
 
 function absolute(path: string) {
@@ -22,18 +22,18 @@ function absolute(path: string) {
 
 export function getSeoMeta(pathname: string, query: ParsedUrlQuery, locale: SupportedLocale = "en"): SeoMeta {
   const localizedSiteName: Record<SupportedLocale, string> = {
-    en: "OmniChat",
-    es: "OmniChat",
-    ar: "OmniChat",
-    fr: "OmniChat",
-    pt: "OmniChat",
-    de: "OmniChat",
-    it: "OmniChat",
+    en: "AxoDesk",
+    es: "AxoDesk",
+    ar: "AxoDesk",
+    fr: "AxoDesk",
+    pt: "AxoDesk",
+    de: "AxoDesk",
+    it: "AxoDesk",
   };
   const base: SeoMeta = {
     title: `${localizedSiteName[locale]} — Omnichannel Customer Communication Platform`,
     description:
-      "OmniChat unifies WhatsApp, Instagram, Messenger, Email, and Live Chat in one inbox with AI automation.",
+      "AxoDesk unifies WhatsApp, Instagram, Messenger, Email, and Live Chat in one inbox with AI automation.",
     canonical: absolute(pathname === "/" ? "/" : pathname),
     ogImage: DEFAULT_OG,
     ogType: "website",
@@ -70,7 +70,7 @@ export function getSeoMeta(pathname: string, query: ParsedUrlQuery, locale: Supp
     const category = typeof query.category === "string" ? getCategoryBySlug(query.category) : undefined;
     if (article) {
       return {
-        title: `${article.title} — OmniChat Help Center`,
+        title: `${article.title} — AxoDesk Help Center`,
         description: article.excerpt,
         canonical: absolute(`/help/${article.category}/${article.slug}`),
         ogImage: DEFAULT_OG,
@@ -93,7 +93,7 @@ export function getSeoMeta(pathname: string, query: ParsedUrlQuery, locale: Supp
     const category = typeof query.category === "string" ? getCategoryBySlug(query.category) : undefined;
     if (category) {
       return {
-        title: `${category.label} — OmniChat Help Center`,
+        title: `${category.label} — AxoDesk Help Center`,
         description: category.description,
         canonical: absolute(`/help/${category.slug}`),
         ogImage: DEFAULT_OG,
@@ -104,8 +104,8 @@ export function getSeoMeta(pathname: string, query: ParsedUrlQuery, locale: Supp
   if (pathname === "/help") {
     return {
       ...base,
-      title: "OmniChat Help Center — Documentation, Guides & API",
-      description: `Official OmniChat help center with ${HELP_CATEGORIES.length}+ documentation categories, setup guides, and API docs.`,
+      title: "AxoDesk Help Center — Documentation, Guides & API",
+      description: `Official AxoDesk help center with ${HELP_CATEGORIES.length}+ documentation categories, setup guides, and API docs.`,
       canonical: absolute("/help"),
     };
   }

@@ -139,7 +139,7 @@ export const MobileMenu = ({ onClose }: Props) => {
             <span className="text-sm font-medium">{t("mobile.back")}</span>
           </button>
         ) : (
-          <img src="/img/logo/axodesk-new-logo-dark.png" alt="OmniChat" className="h-8 w-auto object-contain" />
+          <img src="/img/logo/axodesk-new-logo-dark.png" alt="AxoDesk" className="h-8 w-auto object-contain" />
         )}
 
         {view !== "main" && (
@@ -348,7 +348,7 @@ export const MobileMenu = ({ onClose }: Props) => {
             ))}
 
             <div className="pt-4 border-t border-white/[0.06]">
-              <p className="text-xs text-slate-600 text-center mb-3">Don&#39;t see your industry? OmniChat works for any B2C business.</p>
+              <p className="text-xs text-slate-600 text-center mb-3">Don&#39;t see your industry? AxoDesk works for any B2C business.</p>
               <Link to="/talk-to-sales" onClick={onClose} className="flex items-center justify-center gap-2 w-full py-3 text-sm font-semibold text-white bg-brand-600 rounded-xl hover:bg-brand-500 transition-all">
                 Talk to Sales <ArrowRight className="w-3.5 h-3.5" />
               </Link>

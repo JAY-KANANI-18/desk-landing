@@ -43,7 +43,7 @@ const FAQS = [
   },
   {
     q: "How can I track where leads came from when they click on a WhatsApp link?",
-    a: "You can use UTM parameters in your campaigns and combine them with OmniChat&#39;s analytics to track the source of each conversation."
+    a: "You can use UTM parameters in your campaigns and combine them with AxoDesk&#39;s analytics to track the source of each conversation."
   },
   {
     q: "Does a WhatsApp link work in my country?",
@@ -55,7 +55,7 @@ const FAQS = [
   },
   {
     q: "I&#39;m a current respond.io user, can I also generate a WhatsApp link from the platform?",
-    a: "Yes! OmniChat lets you generate links and manage all your WhatsApp conversations from a single unified inbox."
+    a: "Yes! AxoDesk lets you generate links and manage all your WhatsApp conversations from a single unified inbox."
   },
   {
     q: "If I have a WhatsApp link, why would I need a WhatsApp QR code?",
@@ -71,7 +71,7 @@ const FAQS = [
   },
   {
     q: "How can I manage leads generated from a WhatsApp link?",
-    a: "OmniChat automatically captures all conversations from your WhatsApp link into a unified inbox, where your team can assign, respond, and track leads."
+    a: "AxoDesk automatically captures all conversations from your WhatsApp link into a unified inbox, where your team can assign, respond, and track leads."
   },
   {
     q: "Is WhatsApp link available for WhatsApp Business App users?",
@@ -107,8 +107,8 @@ export const WhatsAppLinkGeneratorPage = () => {
   useSEO({
     title: "Free WhatsApp Link & QR Code Generator 2025 — Create wa.me Links Instantly",
     description: "Generate a WhatsApp click-to-chat link and scannable QR code in seconds. Add a pre-filled message, download your QR code, and share anywhere. Free, no sign-up required.",
-    canonical: "https://omnichat.io/whatsapp-link-generator",
-    ogImage: "https://omnichat.io/og-wa-link.png",
+    canonical: "https://axodesk.in/whatsapp-link-generator",
+    ogImage: "https://axodesk.in/og-wa-link.png",
     keywords: "WhatsApp link generator, WhatsApp QR code generator, wa.me link creator, click to chat WhatsApp, WhatsApp click to chat link, WhatsApp business link free, create WhatsApp QR code, WhatsApp link maker tool",
     breadcrumb: [
       { name: "Home", url: "/" },
@@ -119,7 +119,7 @@ export const WhatsAppLinkGeneratorPage = () => {
         "@context": "https://schema.org",
         "@type": "WebApplication",
         "name": "WhatsApp Link & QR Code Generator",
-        "url": "https://omnichat.io/whatsapp-link-generator",
+        "url": "https://axodesk.in/whatsapp-link-generator",
         "description": "Free tool to create WhatsApp click-to-chat links and downloadable QR codes with optional pre-filled messages.",
         "applicationCategory": "UtilityApplication",
         "operatingSystem": "Web",
@@ -130,9 +130,9 @@ export const WhatsAppLinkGeneratorPage = () => {
         "@type": "FAQPage",
         "mainEntity": [
           { "@type": "Question", "name": "What does a WhatsApp link look like?", "acceptedAnswer": { "@type": "Answer", "text": "A WhatsApp link looks like https://wa.me/[country-code][number]. When clicked, it opens WhatsApp directly to a chat with that number. You can add a pre-filled message with ?text= parameter." } },
-          { "@type": "Question", "name": "How do I create a free WhatsApp link?", "acceptedAnswer": { "@type": "Answer", "text": "Enter your country code and phone number in OmniChat's free generator, optionally add a pre-filled message, and click Generate. Your wa.me link and QR code are instantly ready to share." } },
+          { "@type": "Question", "name": "How do I create a free WhatsApp link?", "acceptedAnswer": { "@type": "Answer", "text": "Enter your country code and phone number in AxoDesk's free generator, optionally add a pre-filled message, and click Generate. Your wa.me link and QR code are instantly ready to share." } },
           { "@type": "Question", "name": "Can I add a WhatsApp link to Instagram?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — paste your WhatsApp link in your Instagram bio under Edit Profile > Website, or use the Link sticker in Stories." } },
-          { "@type": "Question", "name": "Is it free to generate a WhatsApp link?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, OmniChat's WhatsApp link and QR code generator is completely free with no sign-up required." } }
+          { "@type": "Question", "name": "Is it free to generate a WhatsApp link?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, AxoDesk's WhatsApp link and QR code generator is completely free with no sign-up required." } }
         ]
       }
     ],
@@ -572,7 +572,7 @@ export const WhatsAppLinkGeneratorPage = () => {
             <span className="text-gradient">managed conversation</span>
           </h2>
           <p className="text-lg text-slate-400 max-w-xl mx-auto mb-10">
-            OmniChat captures every WhatsApp conversation from your links into a unified inbox — so your team never misses a lead.
+            AxoDesk captures every WhatsApp conversation from your links into a unified inbox — so your team never misses a lead.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button className="px-8 py-3.5 bg-brand-600 hover:bg-brand-500 text-white font-semibold rounded-xl transition-all flex items-center gap-2 shadow-lg shadow-brand-600/25">

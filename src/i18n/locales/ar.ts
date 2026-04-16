@@ -33,7 +33,7 @@ const ar = {
   "dropdown.resources.tools": "الأدوات",
   "dropdown.resources.partners": "الشركاء",
   "dropdown.resources.explorePartners": "استكشف برنامج الشركاء",
-  "dropdown.industries.noIndustry": "لا ترى قطاعك؟ OmniChat مناسب لأي نشاط B2C.",
+  "dropdown.industries.noIndustry": "لا ترى قطاعك؟ AxoDesk مناسب لأي نشاط B2C.",
 } as const;
 
 export default ar;

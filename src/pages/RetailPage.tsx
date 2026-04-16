@@ -36,7 +36,7 @@ const subcategories: Record<string, {
     bg: "bg-pink-600/15",
     border: "border-pink-600/25",
     heroTitle: "Turn Every Conversation Into a Sale",
-    heroSub: "OmniChat powers retail businesses across electronics, fashion, furniture, and jewelry to sell more, support better, and retain customers — all from one inbox.",
+    heroSub: "AxoDesk powers retail businesses across electronics, fashion, furniture, and jewelry to sell more, support better, and retain customers — all from one inbox.",
     heroImg: "https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=900&h=500&fit=crop&auto=format",
     challenges: [
       "Customers reach you on WhatsApp, IG, Facebook, and email — all separately",
@@ -85,7 +85,7 @@ const subcategories: Record<string, {
       { title: "Flash sale campaigns", desc: "Hit high-intent segments with time-limited offers in seconds.", icon: <Zap className="w-5 h-5" /> },
     ],
     testimonial: {
-      quote: "We went from 2 agents handling 300+ daily WhatsApp chats manually to OmniChat handling 80% automatically. Our CSAT jumped from 71% to 94%.",
+      quote: "We went from 2 agents handling 300+ daily WhatsApp chats manually to AxoDesk handling 80% automatically. Our CSAT jumped from 71% to 94%.",
       name: "Sarah Chen",
       role: "Head of E-commerce",
       company: "Lamarsa Coffee",
@@ -148,7 +148,7 @@ const subcategories: Record<string, {
       { title: "Customer reviews", desc: "Auto-request ratings after product delivery.", icon: <Star className="w-5 h-5" /> },
     ],
     testimonial: {
-      quote: "Our electronics support team used to spend 70% of time answering 'does this work with X?' questions. OmniChat's AI now handles all of it — our team focuses on actual sales.",
+      quote: "Our electronics support team used to spend 70% of time answering 'does this work with X?' questions. AxoDesk's AI now handles all of it — our team focuses on actual sales.",
       name: "Ahmad Fauzi",
       role: "Customer Experience Lead",
       company: "TechZone Electronics",
@@ -211,7 +211,7 @@ const subcategories: Record<string, {
       { title: "Loyalty tier upgrades", desc: "Notify customers when they unlock new loyalty rewards.", icon: <Award className="w-5 h-5" /> },
     ],
     testimonial: {
-      quote: "Our Instagram DMs used to be a mess — hours of manual replies daily. Now OmniChat auto-qualifies every DM, shares size guides, and books styling calls. It&#39;s like having 3 extra staff.",
+      quote: "Our Instagram DMs used to be a mess — hours of manual replies daily. Now AxoDesk auto-qualifies every DM, shares size guides, and books styling calls. It&#39;s like having 3 extra staff.",
       name: "Priya Mehta",
       role: "Marketing Director",
       company: "Ayla Fashion",
@@ -274,7 +274,7 @@ const subcategories: Record<string, {
       { title: "Warranty & claim handling", desc: "Manage after-sales claims through automated flows.", icon: <Shield className="w-5 h-5" /> },
     ],
     testimonial: {
-      quote: "Delivery coordination was our biggest pain — 40% of our support calls were about estimated arrival times. OmniChat automated all of it. Our team now focuses on closing deals, not tracking trucks.",
+      quote: "Delivery coordination was our biggest pain — 40% of our support calls were about estimated arrival times. AxoDesk automated all of it. Our team now focuses on closing deals, not tracking trucks.",
       name: "Marco Rossi",
       role: "Operations Manager",
       company: "CasaLux Furniture",
@@ -288,7 +288,7 @@ const subcategories: Record<string, {
     bg: "bg-violet-600/15",
     border: "border-violet-600/25",
     heroTitle: "Sell Luxury Jewelry Through Premium Chat Experiences",
-    heroSub: "High-value purchases demand personal attention. OmniChat gives every jewelry customer a private, high-touch conversation experience — on WhatsApp, Instagram, and beyond.",
+    heroSub: "High-value purchases demand personal attention. AxoDesk gives every jewelry customer a private, high-touch conversation experience — on WhatsApp, Instagram, and beyond.",
     heroImg: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=900&h=500&fit=crop&auto=format",
     challenges: [
       "High-value buyers expect personal, premium service — not generic chatbots",
@@ -337,7 +337,7 @@ const subcategories: Record<string, {
       { title: "Loyalty VIP program", desc: "Exclusive early access drops for top customers.", icon: <Star className="w-5 h-5" /> },
     ],
     testimonial: {
-      quote: "Our clients expect white-glove service. With OmniChat, every WhatsApp inquiry gets a personal response with the right consultant — and our custom order consultations doubled.",
+      quote: "Our clients expect white-glove service. With AxoDesk, every WhatsApp inquiry gets a personal response with the right consultant — and our custom order consultations doubled.",
       name: "Layla Al-Hassan",
       role: "Brand Director",
       company: "Éclat Jewels",
@@ -499,7 +499,7 @@ export const RetailPage = () => {
       <section className="max-w-screen-xl mx-auto px-4 md:px-6 mb-20">
         <AnimatedSection direction="up" className="text-center mb-10">
           <p className="text-[10px] font-black uppercase tracking-widest text-slate-600 mb-2">Proven Results</p>
-          <h2 className="text-3xl font-black text-white">What {data.label} businesses achieve with OmniChat</h2>
+          <h2 className="text-3xl font-black text-white">What {data.label} businesses achieve with AxoDesk</h2>
         </AnimatedSection>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {data.metrics.map((m, i) => (
@@ -559,7 +559,7 @@ export const RetailPage = () => {
       <section className="max-w-screen-xl mx-auto px-4 md:px-6 mb-20">
         <AnimatedSection direction="up" className="text-center mb-10">
           <p className="text-[10px] font-black uppercase tracking-widest text-slate-600 mb-2">How We Solve It</p>
-          <h2 className="text-3xl font-black text-white">OmniChat features built for {data.label}</h2>
+          <h2 className="text-3xl font-black text-white">AxoDesk features built for {data.label}</h2>
         </AnimatedSection>
         <div
           ref={solRef as React.RefObject<HTMLDivElement>}
@@ -584,7 +584,7 @@ export const RetailPage = () => {
       <section className="max-w-screen-xl mx-auto px-4 md:px-6 mb-20">
         <AnimatedSection direction="up" className="text-center mb-10">
           <p className="text-[10px] font-black uppercase tracking-widest text-slate-600 mb-2">Popular Use Cases</p>
-          <h2 className="text-3xl font-black text-white">What {data.label} teams use OmniChat for</h2>
+          <h2 className="text-3xl font-black text-white">What {data.label} teams use AxoDesk for</h2>
         </AnimatedSection>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
           {data.useCases.map((uc, i) => (
@@ -618,7 +618,7 @@ export const RetailPage = () => {
       <section className="max-w-screen-xl mx-auto px-4 md:px-6 mb-20">
         <AnimatedSection direction="up" className="text-center mb-10">
           <p className="text-[10px] font-black uppercase tracking-widest text-slate-600 mb-2">Platform in Action</p>
-          <h2 className="text-3xl font-black text-white">See OmniChat working for {data.label}</h2>
+          <h2 className="text-3xl font-black text-white">See AxoDesk working for {data.label}</h2>
         </AnimatedSection>
         <div className="grid md:grid-cols-2 gap-6">
           {/* Dashboard screenshot placeholder */}
@@ -689,7 +689,7 @@ export const RetailPage = () => {
                 <span className="text-shimmer">every conversation</span>
               </h2>
               <p className="text-slate-400 text-lg mb-10 max-w-lg mx-auto">
-                Join 10,000+ {data.label.toLowerCase()} businesses using OmniChat to convert chats into revenue.
+                Join 10,000+ {data.label.toLowerCase()} businesses using AxoDesk to convert chats into revenue.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Link to="/" className="flex items-center gap-2 px-8 py-4 bg-brand-600 hover:bg-brand-500 text-white font-bold rounded-xl transition-all text-base">

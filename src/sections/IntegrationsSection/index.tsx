@@ -17,7 +17,7 @@ const integrations = [
 
 const apiFeatures = [
   { icon: <Webhook className="w-5 h-5" />, title: "REST API", desc: "Full-featured API to read and write conversations, contacts, and more.", color: "text-brand-400 bg-brand-600/15", glow: "rgba(79,70,229,0.3)" },
-  { icon: <Code2 className="w-5 h-5" />, title: "Real-time Webhooks", desc: "Push events to any endpoint the moment something happens in OmniChat.", color: "text-purple-400 bg-purple-600/15", glow: "rgba(139,92,246,0.3)" },
+  { icon: <Code2 className="w-5 h-5" />, title: "Real-time Webhooks", desc: "Push events to any endpoint the moment something happens in AxoDesk.", color: "text-purple-400 bg-purple-600/15", glow: "rgba(139,92,246,0.3)" },
   { icon: <GitBranch className="w-5 h-5" />, title: "Native Integrations", desc: "One-click connections to Zapier, n8n, Shopify, HubSpot, and more.", color: "text-emerald-400 bg-emerald-600/15", glow: "rgba(16,185,129,0.3)" },
 ];
 
@@ -37,7 +37,7 @@ export const IntegrationsSection = () => {
               <span className="text-gradient">with everything.</span>
             </h2>
             <p className="text-slate-400 text-xl max-w-2xl mx-auto">
-              Connect OmniChat to your CRM, helpdesk, e-commerce store, or any custom system with our full-featured API and webhook platform.
+              Connect AxoDesk to your CRM, helpdesk, e-commerce store, or any custom system with our full-featured API and webhook platform.
             </p>
           </div>
         </AnimatedSection>

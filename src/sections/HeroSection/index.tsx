@@ -244,7 +244,7 @@ hasDrawnRef.current = true;
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative min-h-screen flex items-center justify-center overflow-x-hidden pt-16">
+    <section ref={sectionRef} className="relative  flex items-center justify-center  pt-16 mt-20 ">
       {/* Animated particle canvas */}
       <style>{`
         @keyframes axo-pulse-ring {
@@ -302,7 +302,7 @@ hasDrawnRef.current = true;
       `}</style>
 
       {/* Bg gradients with parallax */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+      <div className="absolute inset-0 pointer-events-none ">
       <div className="absolute top-0 left-1/4 w-[min(420px,80vw)] h-[min(420px,80vw)] bg-brand-600/10 rounded-full blur-[70px]" />
 <div className="absolute bottom-0 right-1/4 w-[min(300px,60vw)] h-[min(300px,60vw)] bg-purple-600/8 rounded-full blur-[55px]" />
 <div className="absolute top-1/3 right-0 w-[min(220px,50vw)] h-[min(220px,50vw)] bg-brand-800/8 rounded-full blur-[45px]" />
@@ -324,7 +324,7 @@ hasDrawnRef.current = true;
           <div className="relative  lg:block" style={{ height: 360 }}>
             <div
               ref={visualRef}
-              className="absolute inset-0 rounded-[24px] overflow-hidden"
+              className="absolute inset-0 rounded-[24px] "
               style={{
                 background: "rgba(13,20,34,0.65)",
                 border: "0.5px solid rgba(255,255,255,0.1)",

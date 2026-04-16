@@ -42,7 +42,7 @@ const industryData: Record<string, {
       { icon: <MessageSquare className="w-5 h-5" />, title: "Unified Order Support", desc: "See order history and customer data right inside every conversation. No tab switching." },
       { icon: <Zap className="w-5 h-5" />, title: "Cart Recovery Automations", desc: "Trigger WhatsApp or SMS messages for abandoned carts automatically — within minutes." },
       { icon: <TrendingUp className="w-5 h-5" />, title: "Review & Feedback Collection", desc: "Auto-send CSAT surveys after order delivery to collect reviews and spot issues early." },
-      { icon: <CheckCircle2 className="w-5 h-5" />, title: "Shopify & WooCommerce Sync", desc: "Pull live order data into OmniChat without switching tools or copying links." },
+      { icon: <CheckCircle2 className="w-5 h-5" />, title: "Shopify & WooCommerce Sync", desc: "Pull live order data into AxoDesk without switching tools or copying links." },
     ],
     metrics: [
       { value: 3, suffix: "×", label: "More Sales Converted" },
@@ -366,42 +366,42 @@ function SolutionCard({ sol, accentRaw, textColor, bg, border, delay, inView }: 
 const industrySEO: Record<string, { title: string; desc: string; keywords: string }> = {
   ecommerce: {
     title: "E-commerce & Retail Messaging Platform — WhatsApp for Online Stores",
-    desc: "Boost e-commerce sales with OmniChat: unified WhatsApp + Instagram inbox, cart recovery automation, Shopify integration, and AI support. 3× more conversions. Start free.",
+    desc: "Boost e-commerce sales with AxoDesk: unified WhatsApp + Instagram inbox, cart recovery automation, Shopify integration, and AI support. 3× more conversions. Start free.",
     keywords: "ecommerce whatsapp platform, shopify whatsapp integration, cart recovery whatsapp, online store customer messaging, retail omnichannel platform, instagram dm ecommerce",
   },
   "real-estate": {
     title: "Real Estate CRM & Messaging Platform — WhatsApp for Property Teams",
-    desc: "Close more property deals with OmniChat. Auto-respond to portal leads, book viewings via WhatsApp, and nurture cold prospects with automated sequences. 5× faster lead response.",
+    desc: "Close more property deals with AxoDesk. Auto-respond to portal leads, book viewings via WhatsApp, and nurture cold prospects with automated sequences. 5× faster lead response.",
     keywords: "real estate whatsapp crm, property lead management, real estate messaging platform, viewing scheduler whatsapp, property portal lead response, real estate automation",
   },
   education: {
     title: "Education Messaging Platform — WhatsApp for Admissions & Student Support",
-    desc: "Handle admissions inquiries, send fee reminders, and engage students on WhatsApp. OmniChat helps education institutions automate multi-channel communication at scale.",
+    desc: "Handle admissions inquiries, send fee reminders, and engage students on WhatsApp. AxoDesk helps education institutions automate multi-channel communication at scale.",
     keywords: "education whatsapp platform, student admissions automation, university whatsapp messaging, school parent communication platform, enrollment automation whatsapp",
   },
   healthcare: {
     title: "Healthcare Patient Messaging — WhatsApp Appointment Reminders & Alerts",
-    desc: "Reduce no-shows by 40% with WhatsApp appointment reminders. OmniChat enables secure, HIPAA-friendly patient communication across WhatsApp, SMS, and web chat.",
+    desc: "Reduce no-shows by 40% with WhatsApp appointment reminders. AxoDesk enables secure, HIPAA-friendly patient communication across WhatsApp, SMS, and web chat.",
     keywords: "healthcare whatsapp messaging, patient appointment reminders, hospital messaging platform, clinic whatsapp automation, patient communication software, healthcare chatbot",
   },
   finance: {
     title: "Financial Services Messaging Platform — Secure Client Communication",
-    desc: "Build client trust with faster, more secure messaging. OmniChat powers KYC onboarding, portfolio alerts, and support routing for banks, fintechs, and financial advisors.",
+    desc: "Build client trust with faster, more secure messaging. AxoDesk powers KYC onboarding, portfolio alerts, and support routing for banks, fintechs, and financial advisors.",
     keywords: "financial services messaging, banking whatsapp platform, fintech customer communication, kyc onboarding automation, secure client messaging, wealth management messaging",
   },
   food: {
     title: "Restaurant & Food Business Messaging — WhatsApp Reservations & Orders",
-    desc: "Let customers book tables and track orders via WhatsApp. OmniChat helps restaurants, cloud kitchens, and food businesses automate reservations and drive repeat orders.",
+    desc: "Let customers book tables and track orders via WhatsApp. AxoDesk helps restaurants, cloud kitchens, and food businesses automate reservations and drive repeat orders.",
     keywords: "restaurant whatsapp booking, food business messaging platform, table reservation whatsapp, cloud kitchen customer messaging, food delivery order updates",
   },
   automotive: {
     title: "Automotive Dealer Messaging Platform — WhatsApp for Car Sales & Service",
-    desc: "Book more test drives and service appointments via WhatsApp. OmniChat helps auto dealers respond to leads instantly and automate follow-up for service reminders.",
+    desc: "Book more test drives and service appointments via WhatsApp. AxoDesk helps auto dealers respond to leads instantly and automate follow-up for service reminders.",
     keywords: "automotive whatsapp crm, car dealer messaging platform, test drive booking whatsapp, vehicle service reminder automation, auto dealer lead management",
   },
   professional: {
     title: "Professional Services Messaging — Client Communication for Agencies & Consultants",
-    desc: "Automate client intake, send proposals, and manage project updates via WhatsApp. OmniChat is the messaging platform for agencies, law firms, and consultants.",
+    desc: "Automate client intake, send proposals, and manage project updates via WhatsApp. AxoDesk is the messaging platform for agencies, law firms, and consultants.",
     keywords: "professional services messaging, agency client communication, consultant whatsapp platform, law firm messaging software, client intake automation",
   },
 };
@@ -416,7 +416,7 @@ export const IndustryPage = () => {
       ? {
           title: seo.title,
           description: seo.desc,
-          canonical: `https://omnichat.io/industry/${slug}`,
+          canonical: `https://axodesk.in/industry/${slug}`,
           keywords: seo.keywords,
           breadcrumb: [
             { name: "Home", url: "/" },
@@ -428,13 +428,13 @@ export const IndustryPage = () => {
             "@type": "WebPage",
             "name": seo.title,
             "description": seo.desc,
-            "url": `https://omnichat.io/industry/${slug}`,
+            "url": `https://axodesk.in/industry/${slug}`,
           },
         }
       : {
-          title: "OmniChat for Every Industry — E-commerce, Healthcare, Real Estate & More",
-          description: "OmniChat serves 8+ industries with tailored omnichannel messaging. E-commerce, real estate, healthcare, education, finance, food service, automotive, and professional services.",
-          canonical: "https://omnichat.io/industry",
+          title: "AxoDesk for Every Industry — E-commerce, Healthcare, Real Estate & More",
+          description: "AxoDesk serves 8+ industries with tailored omnichannel messaging. E-commerce, real estate, healthcare, education, finance, food service, automotive, and professional services.",
+          canonical: "https://axodesk.in/industry",
           keywords: "omnichannel messaging by industry, WhatsApp for ecommerce, WhatsApp for real estate, WhatsApp for healthcare, customer communication by industry, industry-specific WhatsApp automation",
           breadcrumb: [
             { name: "Home", url: "/" },
@@ -443,9 +443,9 @@ export const IndustryPage = () => {
           schema: {
             "@context": "https://schema.org",
             "@type": "WebPage",
-            "name": "OmniChat Industry Solutions",
+            "name": "AxoDesk Industry Solutions",
             "description": "Purpose-built omnichannel messaging solutions for every industry.",
-            "url": "https://omnichat.io/industry"
+            "url": "https://axodesk.in/industry"
           },
         }
   );
@@ -470,7 +470,7 @@ export const IndustryPage = () => {
           </AnimatedSection>
           <AnimatedSection delay={180} direction="up">
             <p className="text-slate-400 text-xl max-w-2xl mx-auto">
-              OmniChat is trusted by businesses across 8+ industries. Explore how we solve your specific communication challenges.
+              AxoDesk is trusted by businesses across 8+ industries. Explore how we solve your specific communication challenges.
             </p>
           </AnimatedSection>
         </section>
@@ -492,7 +492,7 @@ export const IndustryPage = () => {
             <div className="absolute inset-0 shimmer-bg pointer-events-none" />
             <div className="relative">
               <h2 className="text-4xl font-black text-white mb-4">Don&#39;t see your industry?</h2>
-              <p className="text-slate-400 text-lg mb-8 max-w-lg mx-auto">OmniChat works for any business that communicates with customers. Talk to our team to see a custom demo.</p>
+              <p className="text-slate-400 text-lg mb-8 max-w-lg mx-auto">AxoDesk works for any business that communicates with customers. Talk to our team to see a custom demo.</p>
               <Link to="/" className="inline-flex items-center gap-2 px-8 py-4 bg-brand-600 hover:bg-brand-500 text-white font-bold rounded-xl transition-all glow-brand-sm text-base">
                 Talk to Sales <ArrowRight className="w-5 h-5" />
               </Link>
@@ -612,7 +612,7 @@ export const IndustryPage = () => {
       <section className="max-w-screen-xl mx-auto px-4 md:px-6 mb-20">
         <AnimatedSection direction="up" className="text-center mb-10">
           <p className="text-xs font-black uppercase tracking-widest text-slate-600 mb-2">Popular use cases</p>
-          <h2 className="text-3xl font-black text-white">What {industry.short} teams use OmniChat for</h2>
+          <h2 className="text-3xl font-black text-white">What {industry.short} teams use AxoDesk for</h2>
         </AnimatedSection>
         <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
           {industry.useCases.map((uc, i) => (
@@ -658,7 +658,7 @@ export const IndustryPage = () => {
                 <span className="text-shimmer">starting today</span>
               </h2>
               <p className="text-slate-400 text-lg mb-10 max-w-lg mx-auto">
-                Join hundreds of {industry.label.toLowerCase()} businesses using OmniChat to grow faster.
+                Join hundreds of {industry.label.toLowerCase()} businesses using AxoDesk to grow faster.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Link to="/" className="flex items-center gap-2 px-8 py-4 bg-brand-600 hover:bg-brand-500 text-white font-bold rounded-xl transition-all glow-brand-sm text-base">

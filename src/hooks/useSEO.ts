@@ -24,7 +24,7 @@ export interface SEOConfig {
   breadcrumb?: { name: string; url: string }[];
 }
 
-const SITE_URL = "https://omnichat.io";
+const SITE_URL = "https://axodesk.in";
 const DEFAULT_OG = `${SITE_URL}/og-default.png`;
 
 function setMeta(attr: "name" | "property", key: string, value: string) {
@@ -83,7 +83,7 @@ export function useSEO({
     setMeta("name", "description", description);
     if (keywords) setMeta("name", "keywords", keywords);
     setMeta("name", "robots", noIndex ? "noindex, nofollow" : robots);
-    setMeta("name", "author", "OmniChat");
+    setMeta("name", "author", "AxoDesk");
 
     // Canonical
     if (canonical) setLink("canonical", canonical);
@@ -96,14 +96,14 @@ export function useSEO({
     setMeta("property", "og:image:height", "630");
     setMeta("property", "og:type", ogType);
     if (canonical) setMeta("property", "og:url", canonical);
-    setMeta("property", "og:site_name", "OmniChat");
+    setMeta("property", "og:site_name", "AxoDesk");
     setMeta("property", "og:locale", "en_US");
     if (publishedTime) setMeta("property", "article:published_time", publishedTime);
     if (modifiedTime) setMeta("property", "article:modified_time", modifiedTime);
 
     // Twitter
     setMeta("name", "twitter:card", twitterCard);
-    setMeta("name", "twitter:site", "@omnichat");
+    setMeta("name", "twitter:site", "@axodesk");
     setMeta("name", "twitter:title", title);
     setMeta("name", "twitter:description", description);
     setMeta("name", "twitter:image", ogImage);
@@ -131,7 +131,7 @@ export function useSEO({
     }
 
     return () => {
-      document.title = "OmniChat — Omnichannel Customer Communication Platform";
+      document.title = "AxoDesk — Omnichannel Customer Communication Platform";
       const p = document.getElementById("jsonld-page");
       if (p) p.remove();
       const b = document.getElementById("jsonld-breadcrumb");
@@ -148,28 +148,28 @@ export const ORG_SCHEMA = {
   "@context": "https://schema.org",
   "@type": "Organization",
   "@id": `${SITE_URL}/#organization`,
-  "name": "OmniChat",
+  "name": "AxoDesk",
   "url": SITE_URL,
   "logo": `${SITE_URL}/img/logo/axodesk-new-logo-dark.png`,
   "foundingDate": "2022",
-  "description": "OmniChat is the leading omnichannel customer messaging platform — unifying WhatsApp, Instagram, Messenger, Email and Live Chat with AI automation.",
+  "description": "AxoDesk is the leading omnichannel customer messaging platform — unifying WhatsApp, Instagram, Messenger, Email and Live Chat with AI automation.",
   "sameAs": [
-    "https://twitter.com/omnichat",
-    "https://linkedin.com/company/omnichat",
-    "https://facebook.com/omnichat",
-    "https://g2.com/products/omnichat",
-    "https://capterra.com/p/omnichat",
+    "https://twitter.com/axodesk",
+    "https://linkedin.com/company/axodesk",
+    "https://facebook.com/axodesk",
+    "https://g2.com/products/axodesk",
+    "https://capterra.com/p/axodesk",
   ],
   "contactPoint": [
-    { "@type": "ContactPoint", "contactType": "customer support", "email": "support@omnichat.io" },
-    { "@type": "ContactPoint", "contactType": "sales", "email": "sales@omnichat.io" },
+    { "@type": "ContactPoint", "contactType": "customer support", "email": "support@axodesk.in" },
+    { "@type": "ContactPoint", "contactType": "sales", "email": "sales@axodesk.in" },
   ],
 };
 
 export const SOFTWARE_APP_SCHEMA = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  "name": "OmniChat",
+  "name": "AxoDesk",
   "applicationCategory": "BusinessApplication",
   "applicationSubCategory": "Customer Communication Platform",
   "operatingSystem": "Web, iOS, Android",
@@ -204,7 +204,7 @@ export const SOFTWARE_APP_SCHEMA = {
 export const WEBSITE_SCHEMA = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "name": "OmniChat",
+  "name": "AxoDesk",
   "url": SITE_URL,
   "potentialAction": {
     "@type": "SearchAction",
@@ -240,7 +240,7 @@ export function buildArticleSchema(post: {
     "author": { "@type": "Person", "name": post.authorName },
     "publisher": {
       "@type": "Organization",
-      "name": "OmniChat",
+      "name": "AxoDesk",
       "logo": { "@type": "ImageObject", "url": `${SITE_URL}/img/logo/axodesk-new-logo-dark.png` },
     },
     "mainEntityOfPage": { "@type": "WebPage", "@id": `${SITE_URL}/blog/${post.slug}` },

@@ -155,7 +155,7 @@ const templateTypes = [
       "Customer loyalty programs",
     ],
     preview: {
-      senderName: "OmniChat Store",
+      senderName: "AxoDesk Store",
       senderColor: "#f59e0b",
       badge: "Marketing Template",
       badgeColor: "#f59e0b",
@@ -224,7 +224,7 @@ const templateTypes = [
       badge: "Authentication Template",
       badgeColor: "#8b5cf6",
       headerImg: false,
-      body: "🔐 Your OmniChat verification code is:\n\n*847 293*\n\nThis code expires in 10 minutes. Never share this code with anyone.",
+      body: "🔐 Your AxoDesk verification code is:\n\n*847 293*\n\nThis code expires in 10 minutes. Never share this code with anyone.",
       footer: "Didn&#39;t request this? Ignore.",
       cta: "Copy Code",
       ctaColor: "#8b5cf6",
@@ -718,7 +718,7 @@ const CallingCalculator = () => {
           For messaging costs, use the WhatsApp API messages pricing calculator above.
         </p>
         <p className="text-sm text-slate-400 leading-relaxed mb-8">
-          To manage your WhatsApp messages, calls, templates and listings in one place, try OmniChat — an official WhatsApp Business Solution Provider.
+          To manage your WhatsApp messages, calls, templates and listings in one place, try AxoDesk — an official WhatsApp Business Solution Provider.
         </p>
 
         {/* Calling support info */}
@@ -819,10 +819,10 @@ const CallingCalculator = () => {
 
 export const WhatsAppPricingPage = () => {
   useSEO({
-    title: "WhatsApp Business API Pricing Calculator 2025 — Free Tool | OmniChat",
+    title: "WhatsApp Business API Pricing Calculator 2025 — Free Tool | AxoDesk",
     description: "Calculate your exact WhatsApp Business API messaging and calling costs by country. Understand marketing, utility, and authentication template pricing from Meta. Free calculator, no sign-up.",
-    canonical: "https://omnichat.io/whatsapp-pricing",
-    ogImage: "https://omnichat.io/og-wa-pricing.png",
+    canonical: "https://axodesk.in/whatsapp-pricing",
+    ogImage: "https://axodesk.in/og-wa-pricing.png",
     keywords: "WhatsApp business API pricing, WhatsApp messaging cost calculator, WhatsApp template pricing 2025, Meta WhatsApp API cost, WhatsApp marketing message cost, WhatsApp utility message price, WhatsApp calling API pricing, WhatsApp BSP pricing calculator",
     breadcrumb: [
       { name: "Home", url: "/" },
@@ -834,7 +834,7 @@ export const WhatsAppPricingPage = () => {
         "@type": "WebPage",
         "name": "WhatsApp Business API Pricing Calculator",
         "description": "Free tool to calculate WhatsApp Business API messaging and calling costs by country and message type.",
-        "url": "https://omnichat.io/whatsapp-pricing"
+        "url": "https://axodesk.in/whatsapp-pricing"
       },
       {
         "@context": "https://schema.org",
@@ -906,7 +906,7 @@ export const WhatsAppPricingPage = () => {
         {/* ── Template Types Guide ── */}
         <TemplateTypesSection />
 
-        {/* ── Why OmniChat for WhatsApp ── */}
+        {/* ── Why AxoDesk for WhatsApp ── */}
         <div className="mb-20">
           <div className="text-center mb-10">
             <p className="text-xs font-bold uppercase tracking-widest text-brand-400 mb-3">Battle-tested on WhatsApp</p>
@@ -922,7 +922,7 @@ export const WhatsAppPricingPage = () => {
               {
                 icon: <CheckCircle2 className="w-5 h-5 text-green-400" />, iconBg: "bg-green-400/10 border-green-400/20",
                 title: "Send templates with guardrails",
-                desc: "OmniChat validates your template type before sending — automatically routing marketing, utility, and auth messages to correct template categories so you&#39;re never over-billed.",
+                desc: "AxoDesk validates your template type before sending — automatically routing marketing, utility, and auth messages to correct template categories so you&#39;re never over-billed.",
               },
               {
                 icon: <Shield className="w-5 h-5 text-brand-400" />, iconBg: "bg-brand-400/10 border-brand-400/20",
@@ -958,7 +958,7 @@ export const WhatsAppPricingPage = () => {
               Start messaging at the lowest cost
             </h2>
             <p className="text-slate-400 text-lg mb-8 max-w-xl mx-auto">
-              OmniChat helps you manage every WhatsApp conversation, template, and automation — all in one place. No extra per-message markup.
+              AxoDesk helps you manage every WhatsApp conversation, template, and automation — all in one place. No extra per-message markup.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <button className="flex items-center gap-2 px-8 py-4 bg-brand-600 hover:bg-brand-500 text-white font-bold rounded-xl transition-all glow-brand-sm text-base">

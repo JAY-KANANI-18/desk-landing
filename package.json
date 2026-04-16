@@ -2,8 +2,8 @@
   "version": "1.0.0",
   "source": "./index.html",
   "type": "module",
-  "name": "omnichat-saas",
-  "description": "OmniChat — Omnichannel Communication Platform",
+  "name": "axodesk-saas",
+  "description": "AxoDesk — Omnichannel Communication Platform",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

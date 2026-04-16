@@ -5,7 +5,7 @@ export const NavbarLogo = () => {
     <Link to="/" className="flex items-center gap-2.5 group">
       <img
         src="/img/logo/axodesk-new-logo-dark.png"
-        alt="OmniChat"
+        alt="AxoDesk"
         className="h-8 w-auto object-contain transition-transform duration-200 group-hover:scale-[1.02]"
       />
     </Link>

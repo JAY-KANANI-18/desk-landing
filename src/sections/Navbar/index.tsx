@@ -79,7 +79,7 @@ export const Navbar = () => {
           >
             <NavbarLogo />
 
-            <div className="hidden md:flex items-center gap-0.5" onMouseEnter={cancelClose} onMouseLeave={scheduleClose}>
+            <div className="hidden lg:flex items-center gap-0.5" onMouseEnter={cancelClose} onMouseLeave={scheduleClose}>
               {(["product", "industries", "resources"] as DropdownKey[]).map((key) => {
                 const label = key === "product" ? t("nav.product") : key === "industries" ? t("nav.industries") : t("nav.resources");
                 const isActive = activeDropdown === key;
@@ -118,7 +118,7 @@ export const Navbar = () => {
               </Link>
             </div>
 
-            <div className="hidden md:flex items-center gap-1.5">
+            <div className="hidden lg:flex items-center gap-1.5">
               {enableMultilanguage && (
                 <div className="flex items-center gap-1.5 px-2 py-1 text-sm text-slate-400 rounded-lg border border-white/10">
                   <Globe className="w-3.5 h-3.5" />
@@ -146,7 +146,7 @@ export const Navbar = () => {
               </Link>
             </div>
 
-            <button className="md:hidden p-2 text-slate-300 hover:text-white transition-colors" onClick={() => setMobileOpen(!mobileOpen)}>
+            <button className="lg:hidden p-2 text-slate-300 hover:text-white transition-colors" onClick={() => setMobileOpen(!mobileOpen)}>
               {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
           </div>

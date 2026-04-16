@@ -23,7 +23,7 @@ const sections = [
     border: "border-blue-600/25",
     accentRaw: "59,130,246",
     heroTitle: "Platform Documentation",
-    heroSub: "Everything you need to set up, integrate, and master OmniChat — from channel setup to full API docs.",
+    heroSub: "Everything you need to set up, integrate, and master AxoDesk — from channel setup to full API docs.",
     categories: [
       {
         title: "Getting Started",
@@ -58,7 +58,7 @@ const sections = [
     border: "border-green-600/25",
     accentRaw: "34,197,94",
     heroTitle: "Help Center",
-    heroSub: "Self-serve answers, step-by-step guides, and video walkthroughs for every part of OmniChat.",
+    heroSub: "Self-serve answers, step-by-step guides, and video walkthroughs for every part of AxoDesk.",
     categories: [
       {
         title: "Account & Billing",
@@ -162,7 +162,7 @@ const sections = [
     bg: "bg-orange-600/15",
     border: "border-orange-600/25",
     accentRaw: "249,115,22",
-    heroTitle: "OmniChat Blog",
+    heroTitle: "AxoDesk Blog",
     heroSub: "Insights on conversational marketing, AI for support, and growth tactics for B2C teams.",
     categories: [
       {
@@ -192,12 +192,12 @@ const sections = [
     slug: "community",
     icon: <Users className="w-5 h-5" />,
     label: "Community",
-    desc: "Join 2,000+ OmniChat practitioners",
+    desc: "Join 2,000+ AxoDesk practitioners",
     color: "text-cyan-400",
     bg: "bg-cyan-600/15",
     border: "border-cyan-600/25",
     accentRaw: "6,182,212",
-    heroTitle: "OmniChat Community",
+    heroTitle: "AxoDesk Community",
     heroSub: "A private Slack community of 2,000+ practitioners sharing automations, templates, and growth strategies.",
     categories: [
       {
@@ -218,7 +218,7 @@ const sections = [
       {
         title: "Community Events",
         icon: <Users className="w-4 h-4" />,
-        articles: ["Monthly Community Meetup", "Template Swaps (Bi-weekly)", "AMA with Founders", "Partner Spotlight Sessions", "Annual OmniChat Summit"],
+        articles: ["Monthly Community Meetup", "Template Swaps (Bi-weekly)", "AMA with Founders", "Partner Spotlight Sessions", "Annual AxoDesk Summit"],
       },
     ],
   },
@@ -292,11 +292,11 @@ function SectionTab({ sec, isActive, onClick }: { sec: Section; isActive: boolea
 
 export const ResourcesPage = () => {
   useSEO({
-    title: "OmniChat Resources — Docs, API Reference, Webinars & Blog",
-    description: "Everything to master OmniChat: full platform documentation, REST API reference, on-demand webinars, blog insights, and a 2,000+ member community. All free to access.",
-    canonical: "https://omnichat.io/resources",
-    ogImage: "https://omnichat.io/og-resources.png",
-    keywords: "omnichat documentation, WhatsApp API reference, omnichannel support guides, customer messaging tutorials, omnichat blog, WhatsApp business API docs, messaging platform resources, omnichat community",
+    title: "AxoDesk Resources — Docs, API Reference, Webinars & Blog",
+    description: "Everything to master AxoDesk: full platform documentation, REST API reference, on-demand webinars, blog insights, and a 2,000+ member community. All free to access.",
+    canonical: "https://axodesk.in/resources",
+    ogImage: "https://axodesk.in/og-resources.png",
+    keywords: "axodesk documentation, WhatsApp API reference, omnichannel support guides, customer messaging tutorials, axodesk blog, WhatsApp business API docs, messaging platform resources, axodesk community",
     breadcrumb: [
       { name: "Home", url: "/" },
       { name: "Resources", url: "/resources" },
@@ -304,9 +304,9 @@ export const ResourcesPage = () => {
     schema: {
       "@context": "https://schema.org",
       "@type": "WebPage",
-      "name": "OmniChat Resources — Docs, API, Webinars & Blog",
-      "description": "Documentation, API reference, webinars, blog and community for OmniChat users.",
-      "url": "https://omnichat.io/resources"
+      "name": "AxoDesk Resources — Docs, API, Webinars & Blog",
+      "description": "Documentation, API reference, webinars, blog and community for AxoDesk users.",
+      "url": "https://axodesk.in/resources"
     },
   });
 
@@ -329,7 +329,7 @@ export const ResourcesPage = () => {
         <AnimatedSection delay={80} direction="up">
           <h1 className="text-5xl md:text-6xl font-black text-white mb-5 leading-[1.05]">
             Everything you need to<br />
-            <span className="text-shimmer">succeed with OmniChat</span>
+            <span className="text-shimmer">succeed with AxoDesk</span>
           </h1>
         </AnimatedSection>
         <AnimatedSection delay={160} direction="up">
@@ -460,9 +460,9 @@ export const ResourcesPage = () => {
                 </div>
                 <p className="text-sm text-slate-400">2,000+ members & growing</p>
               </div>
-              <h2 className="text-4xl font-black text-white mb-4">Join the OmniChat Community</h2>
+              <h2 className="text-4xl font-black text-white mb-4">Join the AxoDesk Community</h2>
               <p className="text-slate-400 text-lg mb-8 max-w-lg mx-auto">
-                Share automation templates, ask questions, swap growth strategies, and learn from practitioners running OmniChat at scale.
+                Share automation templates, ask questions, swap growth strategies, and learn from practitioners running AxoDesk at scale.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <a href="#" className="flex items-center gap-2 px-8 py-4 bg-brand-600 hover:bg-brand-500 text-white font-bold rounded-xl transition-all glow-brand-sm text-base">

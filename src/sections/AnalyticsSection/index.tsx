@@ -11,11 +11,11 @@ const channelData = [
 ];
 
 const listFeatures = [
-  "Real-time team & agent performance dashboards",
-  "Response time and first-contact resolution tracking",
-  "Customer satisfaction (CSAT & NPS) collection",
-  "Conversation volume trends by channel",
-  "Custom report exports (CSV, PDF)",
+  "Live team, queue, and agent performance visibility",
+  "First response, SLA, and resolution tracking",
+  "CSAT and quality monitoring by channel",
+  "Conversation load trends for workforce planning",
+  "Exportable reports for weekly ops reviews",
 ];
 
 const MetricCard = ({ icon, value, label, sub, color, inView, delay }: { icon: React.ReactNode; value: string; label: string; sub: string; color: string; inView: boolean; delay: number }) => (
@@ -46,10 +46,10 @@ export const AnalyticsSection = () => {
           {/* Metrics Panel */}
           <div className="space-y-5">
             <div className="grid grid-cols-2 gap-4">
-              <MetricCard icon={<Clock className="w-5 h-5" />} value="1.8m" label="Avg Response Time" sub="↓ 40% vs last month" color="text-green-400 bg-green-600/15" inView={inView} delay={0} />
+              <MetricCard icon={<Clock className="w-5 h-5" />} value="1.8m" label="Median First Response" sub="↓ 40% vs last month" color="text-green-400 bg-green-600/15" inView={inView} delay={0} />
               <MetricCard icon={<Star className="w-5 h-5" />} value="96%" label="CSAT Score" sub="↑ 8% vs last month" color="text-yellow-400 bg-yellow-600/15" inView={inView} delay={100} />
-              <MetricCard icon={<MessageCircle className="w-5 h-5" />} value="1,842" label="Conversations Today" sub="↑ 12% vs yesterday" color="text-brand-400 bg-brand-600/15" inView={inView} delay={200} />
-              <MetricCard icon={<CheckCircle2 className="w-5 h-5" />} value="98.5%" label="Resolution Rate" sub="↑ 3% vs last month" color="text-purple-400 bg-purple-600/15" inView={inView} delay={300} />
+              <MetricCard icon={<MessageCircle className="w-5 h-5" />} value="1,842" label="Open Conversations" sub="Across all channels" color="text-brand-400 bg-brand-600/15" inView={inView} delay={200} />
+              <MetricCard icon={<CheckCircle2 className="w-5 h-5" />} value="98.5%" label="Resolution SLA Hit Rate" sub="↑ 3% vs last month" color="text-purple-400 bg-purple-600/15" inView={inView} delay={300} />
             </div>
 
             {/* Channel breakdown with animated bars */}
@@ -90,14 +90,14 @@ export const AnalyticsSection = () => {
           <AnimatedSection direction="right" delay={100}>
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-600/15 border border-brand-600/20 text-brand-400 text-xs font-semibold mb-5 uppercase tracking-wide">
               <BarChart3 className="w-3.5 h-3.5" />
-              Analytics & Insights
+              Support Analytics
             </div>
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-5 leading-tight">
-              Make data-driven<br />
-              <span className="text-gradient">support decisions</span>
+              See where your support<br />
+              <span className="text-gradient">operations are slowing down</span>
             </h2>
             <p className="text-slate-400 text-lg leading-relaxed mb-8">
-              Track everything from individual agent performance to channel-wide trends. Get the insights your managers need to continually improve customer experience.
+              AxoDesk turns conversation activity into actionable operational metrics, so managers can improve staffing, reduce response delays, and raise team consistency week over week.
             </p>
             <ul className="space-y-3 mb-8">
               {listFeatures.map((f, i) => (

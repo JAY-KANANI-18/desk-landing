@@ -7,18 +7,18 @@ import { Link } from "react-router-dom";
 import { useInView } from "../../hooks/useInView";
 
 const features = [
-  { icon: <Inbox />, title: "Unified Inbox", desc: "All channels in one place. WhatsApp, IG, FB, Email, Chat.", color: "brand" },
-  { icon: <Zap />, title: "Automation & Workflows", desc: "No-code rules to auto-assign, reply, and tag conversations.", color: "emerald" },
-  { icon: <Users />, title: "Team Collaboration", desc: "Assign, mention, and leave internal notes on any conversation.", color: "purple" },
-  { icon: <BarChart3 />, title: "Analytics & Reports", desc: "Response time, CSAT, agent performance, and conversation trends.", color: "orange" },
-  { icon: <Tag />, title: "Tags & Lifecycle", desc: "Tag contacts, set lifecycle stages, and segment your audience.", color: "pink" },
-  { icon: <FileText />, title: "Saved Replies", desc: "Store canned responses and share them instantly with your team.", color: "cyan" },
-  { icon: <GitBranch />, title: "Auto Assign", desc: "Route conversations to the right agent based on rules or skills.", color: "yellow" },
-  { icon: <Bot />, title: "AI Assistant", desc: "AI-powered replies trained on your knowledge base. Coming soon.", color: "rose", badge: "Beta" },
-  { icon: <Download />, title: "Bulk Import/Export", desc: "Import contacts from CSV, export conversations and reports.", color: "slate" },
-  { icon: <Webhook />, title: "API & Webhooks", desc: "REST API and webhooks to connect any external tool or system.", color: "indigo" },
-  { icon: <Search />, title: "Advanced Search", desc: "Find any message, contact, or conversation in milliseconds.", color: "teal" },
-  { icon: <Bell />, title: "Smart Notifications", desc: "Get notified for new messages, mentions, and SLA breaches.", color: "violet" },
+  { icon: <Inbox />, title: "Shared Omnichannel Inbox", desc: "Manage WhatsApp, Instagram, Messenger, Email, and Website Chat from one queue.", color: "brand" },
+  { icon: <Users />, title: "Team Ownership & Handoffs", desc: "Assign owners, mention teammates, and hand off threads without losing context.", color: "purple" },
+  { icon: <Tag />, title: "Conversation Organization", desc: "Use tags, statuses, and lifecycle stages to keep work clean and trackable.", color: "pink" },
+  { icon: <Zap />, title: "Routing & SLA Workflows", desc: "Auto-route incoming messages and enforce response SLAs with simple automations.", color: "emerald" },
+  { icon: <FileText />, title: "Saved Replies & Playbooks", desc: "Standardize quality with reusable replies and process templates for your team.", color: "cyan" },
+  { icon: <Search />, title: "Fast Search Across Threads", desc: "Find any customer, message, or internal note in seconds.", color: "teal" },
+  { icon: <Bell />, title: "Priority Alerts", desc: "Notify teams instantly for urgent conversations and delayed responses.", color: "violet" },
+  { icon: <BarChart3 />, title: "Operational Reporting", desc: "Track response times, resolution speed, agent throughput, and channel load.", color: "orange" },
+  { icon: <GitBranch />, title: "Scalable Routing Rules", desc: "Route by channel, language, tag, or intent as your support team grows.", color: "yellow" },
+  { icon: <Bot />, title: "AI Assist (Optional)", desc: "Use AI suggestions and summaries where helpful, without replacing your team workflow.", color: "rose", badge: "Optional" },
+  { icon: <Webhook />, title: "API & Integrations", desc: "Connect AxoDesk with your storefront, CRM, helpdesk, and internal systems.", color: "indigo" },
+  { icon: <Download />, title: "Data Portability", desc: "Import and export contacts, conversations, and reports without lock-in.", color: "slate" },
 ];
 
 const colorMap: Record<string, { icon: string; bg: string; border: string; glow: string }> = {
@@ -106,14 +106,14 @@ export const FeaturesSection = () => {
           className={`text-center mb-16 transition-all duration-700 ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
         >
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-600/15 border border-brand-600/20 text-brand-400 text-xs font-semibold mb-5 uppercase tracking-wide">
-            Powerful Features
+            Product Capabilities
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-5 leading-tight">
-            Everything to manage<br />
-            <span className="text-shimmer">customer conversations</span>
+            Built for day-to-day<br />
+            <span className="text-shimmer">support operations</span>
           </h2>
           <p className="text-slate-400 text-xl max-w-2xl mx-auto">
-            From inbox to automation to analytics — OmniChat has every tool your team needs to deliver exceptional customer experiences.
+            AxoDesk helps growing teams organize conversations, collaborate faster, and run support with fewer misses and less manual work.
           </p>
         </div>
 
@@ -130,7 +130,7 @@ export const FeaturesSection = () => {
             to="/features"
             className="group inline-flex items-center gap-2 px-7 py-3.5 border border-white/10 text-slate-300 hover:text-white hover:bg-white/5 font-medium rounded-xl transition-all hover:border-brand-600/30"
           >
-            Explore all features in detail
+            Explore AxoDesk capabilities
             <span className="group-hover:translate-x-1 transition-transform">→</span>
           </Link>
         </div>

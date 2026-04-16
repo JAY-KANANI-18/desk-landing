@@ -105,7 +105,7 @@ const pillars = [
 /* ─── Testimonials ─── */
 const testimonials = [
   {
-    quote: "We saw 4× more leads from ads, reduced response time and improved customer experience. OmniChat is the backbone of our growth team.",
+    quote: "We saw 4× more leads from ads, reduced response time and improved customer experience. AxoDesk is the backbone of our growth team.",
     name: "Sarah Mitchell",
     role: "Head of Growth, Bolt",
     rating: 5,
@@ -260,7 +260,7 @@ function CompRow({ item, index }: { item: typeof comparisons[0]; index: number }
           {item.icon}
         </div>
         <div>
-          <div className="text-[10px] font-bold uppercase tracking-wider text-brand-400 mb-1">OmniChat</div>
+          <div className="text-[10px] font-bold uppercase tracking-wider text-brand-400 mb-1">AxoDesk</div>
           <p className="text-sm text-slate-200 font-medium leading-snug">{item.ours}</p>
         </div>
         <CheckCircle2 className="w-5 h-5 text-green-400 shrink-0 mt-0.5 ml-auto" />
@@ -355,31 +355,31 @@ function LogoMarquee() {
 /* ═══════════════════════════════════════════════════ */
 export const WhyUsPage = () => {
   useSEO({
-    title: "Why Choose OmniChat? Best respond.io & SleekFlow Alternative | OmniChat",
-    description: "Why thousands choose OmniChat over respond.io, Sleekflow, and Intercom. True omnichannel unification, AI automation on day 1, live in 24h, 40% faster response times, and transparent pricing. See the comparison.",
-    canonical: "https://omnichat.io/why-us",
-    ogImage: "https://omnichat.io/og-why-us.png",
-    keywords: "respond.io alternative, sleekflow alternative, intercom alternative, best omnichannel platform, OmniChat vs respond.io, OmniChat vs sleekflow, why choose OmniChat, best WhatsApp business platform, omnichannel CRM comparison, best customer messaging software 2025",
+    title: "Why Choose AxoDesk? Best respond.io & SleekFlow Alternative | AxoDesk",
+    description: "Why thousands choose AxoDesk over respond.io, Sleekflow, and Intercom. True omnichannel unification, AI automation on day 1, live in 24h, 40% faster response times, and transparent pricing. See the comparison.",
+    canonical: "https://axodesk.in/why-us",
+    ogImage: "https://axodesk.in/og-why-us.png",
+    keywords: "respond.io alternative, sleekflow alternative, intercom alternative, best omnichannel platform, AxoDesk vs respond.io, AxoDesk vs sleekflow, why choose AxoDesk, best WhatsApp business platform, omnichannel CRM comparison, best customer messaging software 2025",
     breadcrumb: [
       { name: "Home", url: "/" },
-      { name: "Why OmniChat", url: "/why-us" },
+      { name: "Why AxoDesk", url: "/why-us" },
     ],
     schema: [
       {
         "@context": "https://schema.org",
         "@type": "WebPage",
-        "name": "Why OmniChat — Best Alternative to respond.io & SleekFlow",
-        "description": "Detailed comparison: OmniChat vs respond.io, SleekFlow, Intercom. Lower costs, faster onboarding, AI in every plan.",
-        "url": "https://omnichat.io/why-us"
+        "name": "Why AxoDesk — Best Alternative to respond.io & SleekFlow",
+        "description": "Detailed comparison: AxoDesk vs respond.io, SleekFlow, Intercom. Lower costs, faster onboarding, AI in every plan.",
+        "url": "https://axodesk.in/why-us"
       },
       {
         "@context": "https://schema.org",
         "@type": "FAQPage",
         "mainEntity": [
-          {"@type":"Question","name":"How is OmniChat different from respond.io?","acceptedAnswer":{"@type":"Answer","text":"OmniChat includes AI automation in every plan, has faster onboarding (under 24h), a truly unified inbox across all channels, and costs significantly less than respond.io."}},
-          {"@type":"Question","name":"How does OmniChat compare to SleekFlow?","acceptedAnswer":{"@type":"Answer","text":"OmniChat offers more channels, deeper AI features, better analytics, and more transparent pricing than SleekFlow — with no long-term contract required."}},
-          {"@type":"Question","name":"Does OmniChat support enterprise teams?","acceptedAnswer":{"@type":"Answer","text":"Yes. OmniChat scales from solo operators to 1,000-agent enterprise teams with custom SLAs, SSO, dedicated infrastructure, and a success manager."}},
-          {"@type":"Question","name":"How quickly can I get started with OmniChat?","acceptedAnswer":{"@type":"Answer","text":"Most teams are live within 24 hours — connect your channels, import contacts, and build your first automation with no developer needed."}}
+          {"@type":"Question","name":"How is AxoDesk different from respond.io?","acceptedAnswer":{"@type":"Answer","text":"AxoDesk includes AI automation in every plan, has faster onboarding (under 24h), a truly unified inbox across all channels, and costs significantly less than respond.io."}},
+          {"@type":"Question","name":"How does AxoDesk compare to SleekFlow?","acceptedAnswer":{"@type":"Answer","text":"AxoDesk offers more channels, deeper AI features, better analytics, and more transparent pricing than SleekFlow — with no long-term contract required."}},
+          {"@type":"Question","name":"Does AxoDesk support enterprise teams?","acceptedAnswer":{"@type":"Answer","text":"Yes. AxoDesk scales from solo operators to 1,000-agent enterprise teams with custom SLAs, SSO, dedicated infrastructure, and a success manager."}},
+          {"@type":"Question","name":"How quickly can I get started with AxoDesk?","acceptedAnswer":{"@type":"Answer","text":"Most teams are live within 24 hours — connect your channels, import contacts, and build your first automation with no developer needed."}}
         ]
       }
     ],
@@ -396,14 +396,14 @@ export const WhyUsPage = () => {
 
         <AnimatedSection direction="fade">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-600/15 border border-brand-600/20 text-brand-400 text-xs font-semibold mb-6 tracking-wide uppercase">
-            Why businesses choose OmniChat
+            Why businesses choose AxoDesk
           </div>
         </AnimatedSection>
 
         <AnimatedSection delay={80} direction="up">
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-white leading-[1.08] mb-5">
             Why businesses choose{" "}
-            <span className="text-shimmer">OmniChat</span>
+            <span className="text-shimmer">AxoDesk</span>
             <br />vs other alternatives
           </h1>
         </AnimatedSection>
@@ -450,7 +450,7 @@ export const WhyUsPage = () => {
         <AnimatedSection direction="up" className="text-center mb-14">
           <p className="text-xs font-bold uppercase tracking-widest text-slate-500 mb-3">Head-to-head</p>
           <h2 className="text-4xl md:text-5xl font-black text-white mb-4">
-            OmniChat vs Other <span className="text-gradient">Alternatives</span>
+            AxoDesk vs Other <span className="text-gradient">Alternatives</span>
           </h2>
           <p className="text-slate-400 text-lg max-w-xl mx-auto">
             Most tools solve ONE channel. We solve the conversation — end to end.
@@ -464,7 +464,7 @@ export const WhyUsPage = () => {
               <div className="w-6 h-6 rounded-lg bg-brand-600 flex items-center justify-center">
                 <CheckCircle2 className="w-3.5 h-3.5 text-white" />
               </div>
-              <span className="text-sm font-bold text-brand-400 uppercase tracking-wider">OmniChat</span>
+              <span className="text-sm font-bold text-brand-400 uppercase tracking-wider">AxoDesk</span>
             </div>
             <div className="hidden md:flex items-center gap-2 px-4 py-2">
               <div className="w-6 h-6 rounded-lg bg-slate-700/50 flex items-center justify-center">
@@ -485,7 +485,7 @@ export const WhyUsPage = () => {
       {/* ── WHY US PILLARS ── */}
       <section className="max-w-screen-xl mx-auto px-4 md:px-6 mb-28">
         <AnimatedSection direction="up" className="text-center mb-14">
-          <p className="text-xs font-bold uppercase tracking-widest text-slate-500 mb-3">The OmniChat difference</p>
+          <p className="text-xs font-bold uppercase tracking-widest text-slate-500 mb-3">The AxoDesk difference</p>
           <h2 className="text-4xl md:text-5xl font-black text-white mb-4">
             Built differently. <span className="text-gradient">On purpose.</span>
           </h2>
@@ -536,7 +536,7 @@ export const WhyUsPage = () => {
                     <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/80" />
                     <div className="w-2.5 h-2.5 rounded-full bg-green-500/80" />
                   </div>
-                  <span className="ml-3 text-xs text-slate-500 font-medium">OmniChat — Unified Inbox</span>
+                  <span className="ml-3 text-xs text-slate-500 font-medium">AxoDesk — Unified Inbox</span>
                   <div className="ml-auto flex items-center gap-2">
                     <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
                     <span className="text-[10px] text-green-400">Live</span>
@@ -626,7 +626,7 @@ export const WhyUsPage = () => {
               </div>
               <h2 className="text-4xl md:text-5xl font-black text-white mb-4 leading-tight">
                 3× your business results<br />
-                <span className="text-shimmer">with OmniChat</span>
+                <span className="text-shimmer">with AxoDesk</span>
               </h2>
               <p className="text-slate-300 text-lg mb-10 max-w-lg mx-auto">
                 Join 5,000+ growing businesses. Full platform access, no credit card required, cancel anytime.

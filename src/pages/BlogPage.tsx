@@ -206,10 +206,10 @@ function TagPill({ tag, active, onClick }: { tag: string; active: boolean; onCli
 ═══════════════════════════════════════════ */
 function BlogListPage() {
   useSEO({
-    title: "OmniChat Blog — WhatsApp Marketing, AI Automation & Omnichannel Growth Guides",
-    description: "Expert guides, case studies, AI automation playbooks, and product updates from OmniChat. Learn how to 3× leads, cut support costs, and master omnichannel messaging at scale.",
-    canonical: "https://omnichat.io/blog",
-    ogImage: "https://omnichat.io/og-blog.png",
+    title: "AxoDesk Blog — WhatsApp Marketing, AI Automation & Omnichannel Growth Guides",
+    description: "Expert guides, case studies, AI automation playbooks, and product updates from AxoDesk. Learn how to 3× leads, cut support costs, and master omnichannel messaging at scale.",
+    canonical: "https://axodesk.in/blog",
+    ogImage: "https://axodesk.in/og-blog.png",
     keywords: "omnichannel messaging blog, WhatsApp marketing strategy, AI customer support tips, WhatsApp automation guide, customer communication insights, messaging platform updates, omnichannel growth, WhatsApp business tips 2025",
     breadcrumb: [
       { name: "Home", url: "/" },
@@ -218,13 +218,13 @@ function BlogListPage() {
     schema: {
       "@context": "https://schema.org",
       "@type": "Blog",
-      "name": "OmniChat Blog",
+      "name": "AxoDesk Blog",
       "description": "Expert guides on omnichannel messaging, WhatsApp marketing, AI automation and customer communication.",
-      "url": "https://omnichat.io/blog",
+      "url": "https://axodesk.in/blog",
       "publisher": {
         "@type": "Organization",
-        "name": "OmniChat",
-        "logo": { "@type": "ImageObject", "url": "https://omnichat.io/img/logo/axodesk-new-logo-dark.png" }
+        "name": "AxoDesk",
+        "logo": { "@type": "ImageObject", "url": "https://axodesk.in/img/logo/axodesk-new-logo-dark.png" }
       }
     },
   });
@@ -269,7 +269,7 @@ function BlogListPage() {
         <div className="absolute -top-10 left-1/2 -translate-x-1/2 w-[700px] h-[300px] bg-brand-600/8 rounded-full blur-[120px] pointer-events-none" />
         <AnimatedSection direction="fade">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-orange-600/12 border border-orange-600/20 text-orange-400 text-xs font-bold mb-6 uppercase tracking-wide">
-            <Rss className="w-3 h-3" /> OmniChat Blog
+            <Rss className="w-3 h-3" /> AxoDesk Blog
           </div>
         </AnimatedSection>
         <AnimatedSection delay={80} direction="up">
@@ -280,7 +280,7 @@ function BlogListPage() {
         </AnimatedSection>
         <AnimatedSection delay={160} direction="up">
           <p className="text-slate-400 text-xl max-w-2xl mx-auto mb-8 leading-relaxed">
-            Product updates, growth playbooks, AI deep-dives, and real case studies from teams using OmniChat to scale.
+            Product updates, growth playbooks, AI deep-dives, and real case studies from teams using AxoDesk to scale.
           </p>
         </AnimatedSection>
 
@@ -493,7 +493,7 @@ function BlogListPage() {
                 <Rss className="w-6 h-6" />
               </div>
               <h2 className="text-2xl font-black text-white mb-2">Never miss an article</h2>
-              <p className="text-slate-400 text-sm mb-6 max-w-md mx-auto">Get the best OmniChat insights, case studies, and playbooks delivered to your inbox every other week.</p>
+              <p className="text-slate-400 text-sm mb-6 max-w-md mx-auto">Get the best AxoDesk insights, case studies, and playbooks delivered to your inbox every other week.</p>
               <div className="flex flex-col sm:flex-row items-center gap-3 max-w-sm mx-auto">
                 <input
                   type="email"
@@ -570,7 +570,7 @@ function PostDetailPage({ slug }: { slug: string }) {
     setMeta("twitter:title", post.og.title);
     setMeta("twitter:description", post.og.description);
     setMeta("twitter:image", post.og.image);
-    return () => { document.title = "OmniChat — Omnichannel Customer Communication Platform"; };
+    return () => { document.title = "AxoDesk — Omnichannel Customer Communication Platform"; };
   }, [post]);
 
   return (
@@ -687,7 +687,7 @@ function PostDetailPage({ slug }: { slug: string }) {
                   </div>
                   <div>
                     <p className="text-sm font-bold text-white">{post.author.name}</p>
-                    <p className="text-xs text-slate-500 mb-2">{post.author.role} at OmniChat</p>
+                    <p className="text-xs text-slate-500 mb-2">{post.author.role} at AxoDesk</p>
                     <p className="text-xs text-slate-400 leading-relaxed">Writes about conversational commerce, AI automation, and customer communication strategy.</p>
                   </div>
                 </div>
@@ -732,7 +732,7 @@ function PostDetailPage({ slug }: { slug: string }) {
               <div className="rounded-lg overflow-hidden border border-white/10 text-[10px]">
                 <img src={post.og.image} alt="OG preview" className="w-full" onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }} />
                 <div className="p-2.5 bg-white/5">
-                  <p className="text-[9px] text-slate-500 uppercase">omnichat.io</p>
+                  <p className="text-[9px] text-slate-500 uppercase">axodesk.in</p>
                   <p className="font-semibold text-white line-clamp-2 leading-snug mt-0.5">{post.og.title}</p>
                   <p className="text-slate-500 line-clamp-2 mt-0.5 leading-snug">{post.og.description}</p>
                 </div>

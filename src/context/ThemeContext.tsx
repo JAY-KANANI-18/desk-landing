@@ -12,7 +12,7 @@ const ThemeContext = createContext<ThemeContextValue>({ theme: "dark", toggle: (
 export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
   const [theme, setTheme] = useState<Theme>(() => {
     if (typeof window !== "undefined") {
-      return (localStorage.getItem("omnichat-theme") as Theme) || "dark";
+      return (localStorage.getItem("axodesk-theme") as Theme) || "dark";
     }
     return "dark";
   });
@@ -28,7 +28,7 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
       root.classList.add("light");
       document.body.style.background = "#f8fafc";
     }
-    localStorage.setItem("omnichat-theme", theme);
+    localStorage.setItem("axodesk-theme", theme);
   }, [theme]);
 
   const toggle = () => setTheme(t => (t === "dark" ? "light" : "dark"));
