@@ -26,6 +26,9 @@ export default function App({ Component, pageProps }: AppProps) {
         <title>{seo.title}</title>
         <meta name="description" content={seo.description} />
         <meta name="robots" content={seo.robots ?? "index,follow"} />
+        <link rel="icon" type="image/png" href="/favicon.png" />
+        <link rel="shortcut icon" href="/favicon.png" />
+        <link rel="apple-touch-icon" href="/favicon.png" />
         <link rel="canonical" href={seo.canonical} />
         <meta property="og:title" content={seo.title} />
         <meta property="og:description" content={seo.description} />
