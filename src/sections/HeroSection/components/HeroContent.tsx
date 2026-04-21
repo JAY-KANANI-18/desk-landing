@@ -72,7 +72,7 @@ export const HeroContent = () => {
         className={`text-slate-400 text-base sm:text-lg leading-relaxed mb-7 sm:mb-9 max-w-lg ${anim(300)}`}
         style={{ transitionDelay: visible ? "300ms" : "0ms" }}
       >
-        Boost team productivity, delight customers, and never miss a message again. AxoDesk unifies every channel in a single intelligent inbox.
+        AxoDesk is an AI-powered customer conversation management platform that unifies WhatsApp Business API, Instagram, Messenger, Email, and Live Chat in one intelligent inbox.
       </p>
 
       {/* CTAs */}

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Twitter, Linkedin, Github, Youtube, Mail, Phone, MapPin, ArrowRight } from "lucide-react";
+import { Facebook, Instagram, Mail, Phone, ArrowRight } from "lucide-react";
 import { useI18n } from "@/hooks/useI18n";
 
 const channels = [
@@ -57,12 +57,10 @@ export const Footer = () => {
             {/* Social links */}
             <div className="flex items-center gap-3">
               {[
-                { Icon: Twitter, label: "Twitter" },
-                { Icon: Linkedin, label: "LinkedIn" },
-                { Icon: Github, label: "GitHub" },
-                { Icon: Youtube, label: "YouTube" },
-              ].map(({ Icon, label }) => (
-                <a key={label} href="#" aria-label={label} className="w-8 h-8 rounded-lg bg-white/5 border border-white/8 flex items-center justify-center text-slate-400 hover:text-white hover:bg-brand-600/30 hover:border-brand-600/30 transition-all">
+                { Icon: Instagram, label: "Instagram", href: "https://www.instagram.com/axodesk/" },
+                { Icon: Facebook, label: "Facebook", href: "https://www.facebook.com/profile.php?id=61570976755467" },
+              ].map(({ Icon, label, href }) => (
+                <a key={label} href={href} target="_blank" rel="noopener noreferrer" aria-label={label} className="w-8 h-8 rounded-lg bg-white/5 border border-white/8 flex items-center justify-center text-slate-400 hover:text-white hover:bg-brand-600/30 hover:border-brand-600/30 transition-all">
                   <Icon className="w-3.5 h-3.5" />
                 </a>
               ))}

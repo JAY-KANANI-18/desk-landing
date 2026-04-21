@@ -1,8 +1,3 @@
-/**
- * useSEO — centralized, unified SEO hook
- * Injects <title>, description, keywords, canonical, OG, Twitter Card, JSON-LD
- * Used directly in every page component
- */
 import { useEffect } from "react";
 
 export interface SEOConfig {
@@ -13,19 +8,53 @@ export interface SEOConfig {
   ogType?: "website" | "article" | "product";
   keywords?: string;
   robots?: string;
-  /** JSON-LD structured data — single object or array */
   schema?: object | object[];
   twitterCard?: "summary" | "summary_large_image";
   noIndex?: boolean;
-  /** Article-specific: ISO date strings */
   publishedTime?: string;
   modifiedTime?: string;
-  /** Breadcrumb shorthand — auto-generated BreadcrumbList schema appended */
   breadcrumb?: { name: string; url: string }[];
 }
 
 const SITE_URL = "https://axodesk.in";
 const DEFAULT_OG = `${SITE_URL}/og-default.png`;
+
+function normalizePath(path: string) {
+  if (path === "/whatsapp-pricing") return "/tools/whatsapp-pricing";
+  if (path === "/whatsapp-link-generator") return "/tools/whatsapp-link-generator";
+  return path;
+}
+
+function normalizeSeoUrl(url: string) {
+  return url
+    .replace(`${SITE_URL}/whatsapp-pricing`, `${SITE_URL}/tools/whatsapp-pricing`)
+    .replace(`${SITE_URL}/whatsapp-link-generator`, `${SITE_URL}/tools/whatsapp-link-generator`);
+}
+
+function normalizeSeoText(value: string) {
+  return value.replace(/\b2025\b/g, "2026");
+}
+
+function normalizeSchemaUrls<T>(value: T): T {
+  if (Array.isArray(value)) {
+    return value.map((item) => normalizeSchemaUrls(item)) as T;
+  }
+
+  if (value && typeof value === "object") {
+    return Object.fromEntries(
+      Object.entries(value as Record<string, unknown>).map(([key, entryValue]) => [
+        key,
+        normalizeSchemaUrls(entryValue),
+      ])
+    ) as T;
+  }
+
+  if (typeof value === "string") {
+    return normalizeSeoUrl(value) as T;
+  }
+
+  return value;
+}
 
 function setMeta(attr: "name" | "property", key: string, value: string) {
   if (!value) return;
@@ -76,50 +105,52 @@ export function useSEO({
   breadcrumb,
 }: SEOConfig) {
   useEffect(() => {
-    // Title
-    document.title = title;
+    const normalizedTitle = normalizeSeoText(title);
+    const normalizedKeywords = keywords ? normalizeSeoText(keywords) : undefined;
+    const normalizedCanonical = canonical ? normalizeSeoUrl(canonical) : undefined;
+    const normalizedSchema = schema ? normalizeSchemaUrls(schema) : undefined;
+    const normalizedBreadcrumb = breadcrumb?.map((item) => ({
+      ...item,
+      url: normalizePath(item.url),
+    }));
 
-    // Core
+    document.title = normalizedTitle;
+
     setMeta("name", "description", description);
-    if (keywords) setMeta("name", "keywords", keywords);
+    if (normalizedKeywords) setMeta("name", "keywords", normalizedKeywords);
     setMeta("name", "robots", noIndex ? "noindex, nofollow" : robots);
     setMeta("name", "author", "AxoDesk");
 
-    // Canonical
-    if (canonical) setLink("canonical", canonical);
+    if (normalizedCanonical) setLink("canonical", normalizedCanonical);
 
-    // OG
-    setMeta("property", "og:title", title);
+    setMeta("property", "og:title", normalizedTitle);
     setMeta("property", "og:description", description);
     setMeta("property", "og:image", ogImage);
     setMeta("property", "og:image:width", "1200");
     setMeta("property", "og:image:height", "630");
     setMeta("property", "og:type", ogType);
-    if (canonical) setMeta("property", "og:url", canonical);
+    if (normalizedCanonical) setMeta("property", "og:url", normalizedCanonical);
     setMeta("property", "og:site_name", "AxoDesk");
     setMeta("property", "og:locale", "en_US");
     if (publishedTime) setMeta("property", "article:published_time", publishedTime);
     if (modifiedTime) setMeta("property", "article:modified_time", modifiedTime);
 
-    // Twitter
     setMeta("name", "twitter:card", twitterCard);
     setMeta("name", "twitter:site", "@axodesk");
-    setMeta("name", "twitter:title", title);
+    setMeta("name", "twitter:title", normalizedTitle);
     setMeta("name", "twitter:description", description);
     setMeta("name", "twitter:image", ogImage);
 
-    // Page schema
-    if (schema) {
-      injectSchema(schema, "jsonld-page");
+    if (normalizedSchema) {
+      injectSchema(normalizedSchema, "jsonld-page");
     }
 
-    // Breadcrumb schema
-    if (breadcrumb && breadcrumb.length > 0) {
+    if (normalizedBreadcrumb && normalizedBreadcrumb.length > 0) {
       injectSchema(
         {
           "@context": "https://schema.org",
           "@type": "BreadcrumbList",
-          "itemListElement": breadcrumb.map((item, i) => ({
+          "itemListElement": normalizedBreadcrumb.map((item, i) => ({
             "@type": "ListItem",
             "position": i + 1,
             "name": item.name,
@@ -131,18 +162,28 @@ export function useSEO({
     }
 
     return () => {
-      document.title = "AxoDesk — Omnichannel Customer Communication Platform";
-      const p = document.getElementById("jsonld-page");
-      if (p) p.remove();
-      const b = document.getElementById("jsonld-breadcrumb");
-      if (b) b.remove();
+      document.title = "AxoDesk | AI Customer Conversation Management Platform";
+      const pageSchema = document.getElementById("jsonld-page");
+      if (pageSchema) pageSchema.remove();
+      const breadcrumbSchema = document.getElementById("jsonld-breadcrumb");
+      if (breadcrumbSchema) breadcrumbSchema.remove();
     };
-  }, [title, description, canonical, ogImage, ogType, keywords, robots, schema, twitterCard, noIndex, publishedTime, modifiedTime, breadcrumb]);
+  }, [
+    title,
+    description,
+    canonical,
+    ogImage,
+    ogType,
+    keywords,
+    robots,
+    schema,
+    twitterCard,
+    noIndex,
+    publishedTime,
+    modifiedTime,
+    breadcrumb,
+  ]);
 }
-
-/* ════════════════════════
-   REUSABLE SCHEMA HELPERS
-════════════════════════ */
 
 export const ORG_SCHEMA = {
   "@context": "https://schema.org",
@@ -152,11 +193,11 @@ export const ORG_SCHEMA = {
   "url": SITE_URL,
   "logo": `${SITE_URL}/img/logo/axodesk-new-logo-dark.png`,
   "foundingDate": "2022",
-  "description": "AxoDesk is the leading omnichannel customer messaging platform — unifying WhatsApp, Instagram, Messenger, Email and Live Chat with AI automation.",
+  "description":
+    "AxoDesk is an AI-powered customer conversation management platform that unifies WhatsApp, Instagram, Messenger, Email, and Live Chat with automation.",
   "sameAs": [
-    "https://twitter.com/axodesk",
-    "https://linkedin.com/company/axodesk",
-    "https://facebook.com/axodesk",
+    "https://www.facebook.com/profile.php?id=61570976755467",
+    "https://www.instagram.com/axodesk/",
     "https://g2.com/products/axodesk",
     "https://capterra.com/p/axodesk",
   ],
@@ -171,7 +212,7 @@ export const SOFTWARE_APP_SCHEMA = {
   "@type": "SoftwareApplication",
   "name": "AxoDesk",
   "applicationCategory": "BusinessApplication",
-  "applicationSubCategory": "Customer Communication Platform",
+  "applicationSubCategory": "Customer Conversation Management Platform",
   "operatingSystem": "Web, iOS, Android",
   "url": SITE_URL,
   "offers": [
@@ -186,18 +227,19 @@ export const SOFTWARE_APP_SCHEMA = {
     "bestRating": "5",
     "worstRating": "1",
   },
-  "description": "All-in-one omnichannel inbox: WhatsApp, Instagram, Messenger, Email, Live Chat. AI automation, team collaboration, analytics, and CRM.",
+  "description":
+    "All-in-one customer conversation platform with WhatsApp, Instagram, Messenger, Email, Live Chat, AI automation, analytics, and CRM sync.",
   "featureList": [
-    "Unified Omnichannel Inbox",
-    "WhatsApp Business API (official BSP)",
-    "No-code Automation Workflows",
-    "AI-Powered Chatbot",
-    "Team Collaboration with Internal Notes",
-    "Real-Time Analytics & Reports",
-    "CRM & Contact Management",
-    "REST API & Webhooks",
-    "Shopify & WooCommerce Integration",
-    "GDPR & SOC2 Compliant",
+    "Omnichannel Team Inbox",
+    "WhatsApp Business API",
+    "AI Agents",
+    "Lead Routing Automation",
+    "Team Collaboration",
+    "Conversation Analytics",
+    "CRM and Contact Management",
+    "REST API and Webhooks",
+    "Shopify and WooCommerce Integration",
+    "GDPR and SOC 2 compliance",
   ],
 };
 
@@ -226,8 +268,12 @@ export function buildFAQSchema(faqs: { q: string; a: string }[]) {
 }
 
 export function buildArticleSchema(post: {
-  title: string; excerpt: string; publishedAt: string;
-  authorName: string; slug: string; ogImage: string;
+  title: string;
+  excerpt: string;
+  publishedAt: string;
+  authorName: string;
+  slug: string;
+  ogImage: string;
 }) {
   return {
     "@context": "https://schema.org",
@@ -248,18 +294,20 @@ export function buildArticleSchema(post: {
 }
 
 export function buildHowToSchema(article: {
-  title: string; description: string; steps: { title: string; body: string }[];
+  title: string;
+  description: string;
+  steps: { title: string; body: string }[];
 }) {
   return {
     "@context": "https://schema.org",
     "@type": "HowTo",
     "name": article.title,
     "description": article.description,
-    "step": article.steps.map((s, i) => ({
+    "step": article.steps.map((step, i) => ({
       "@type": "HowToStep",
       "position": i + 1,
-      "name": s.title,
-      "text": s.body,
+      "name": step.title,
+      "text": step.body,
     })),
   };
 }

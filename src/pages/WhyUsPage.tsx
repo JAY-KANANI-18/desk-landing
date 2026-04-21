@@ -355,11 +355,11 @@ function LogoMarquee() {
 /* ═══════════════════════════════════════════════════ */
 export const WhyUsPage = () => {
   useSEO({
-    title: "Why Choose AxoDesk? Best respond.io & SleekFlow Alternative | AxoDesk",
-    description: "Why thousands choose AxoDesk over respond.io, Sleekflow, and Intercom. True omnichannel unification, AI automation on day 1, live in 24h, 40% faster response times, and transparent pricing. See the comparison.",
+    title: "AxoDesk vs Respond.io | AI Customer Conversation Platform Alternative",
+    description: "Compare AxoDesk vs respond.io, SleekFlow, and Intercom. Get AI agents, an omnichannel team inbox, WhatsApp CRM workflows, and transparent pricing in one customer conversation platform.",
     canonical: "https://axodesk.in/why-us",
     ogImage: "https://axodesk.in/og-why-us.png",
-    keywords: "respond.io alternative, sleekflow alternative, intercom alternative, best omnichannel platform, AxoDesk vs respond.io, AxoDesk vs sleekflow, why choose AxoDesk, best WhatsApp business platform, omnichannel CRM comparison, best customer messaging software 2025",
+    keywords: "respond.io alternative, respond io alternative, AxoDesk vs respond.io, customer conversation management software, AI customer conversation platform, omnichannel team inbox, WhatsApp CRM alternative, conversation-led growth platform, SleekFlow alternative, Intercom alternative",
     breadcrumb: [
       { name: "Home", url: "/" },
       { name: "Why AxoDesk", url: "/why-us" },
@@ -427,14 +427,14 @@ export const WhyUsPage = () => {
       </section>
 
       {/* ── TRUSTED BY ── */}
-      <section className="py-10 border-y border-white/5 bg-white/[0.015] mb-20">
+      {/* <section className="py-10 border-y border-white/5 bg-white/[0.015] mb-20">
         <AnimatedSection direction="fade">
           <p className="text-center text-xs font-bold uppercase tracking-widest text-slate-600 mb-6">
             Powering the conversations of global icons
           </p>
         </AnimatedSection>
         <LogoMarquee />
-      </section>
+      </section> */}
 
       {/* ── STATS ── */}
       <AnimatedSection className="max-w-screen-xl mx-auto px-4 md:px-6 mb-24">
